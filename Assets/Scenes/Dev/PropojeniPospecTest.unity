@@ -203,6 +203,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: money
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: livesText
       value: 
       objectReference: {fileID: 641134897}
@@ -215,6 +219,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1238456439}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: validCommands.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: 'validCommands.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 461ed6887e7fdc9419030d90472b67f7, type: 2}
@@ -226,6 +234,18 @@ PrefabInstance:
       propertyPath: 'validCommands.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 5489f5695c97269438ab530710a9beb7, type: 2}
+    - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: 'validCommands.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e6866e1192ead44480b49c43b9609ce, type: 2}
+    - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: 'validCommands.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7aa325dbb90c9524396a18bf636481a5, type: 2}
+    - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: 'validCommands.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 351c47b15052753419155ca7d9eb9d40, type: 2}
     - target: {fileID: 4035798321127636470, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: m_Name
       value: playerManager
@@ -5027,7 +5047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 31}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1023992892
@@ -5108,7 +5128,11 @@ MonoBehaviour:
   cellPrefab: {fileID: 5874636972513746989, guid: efefb23f7183200468d596b732113e1c, type: 3}
   gridLayout: {fileID: 1023992892}
   emptyCellVal: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
-  buildCommands: []
+  buildCommands:
+  - {fileID: 11400000, guid: 461ed6887e7fdc9419030d90472b67f7, type: 2}
+  - {fileID: 11400000, guid: 351c47b15052753419155ca7d9eb9d40, type: 2}
+  - {fileID: 11400000, guid: 5a74afb492d6cee48b35ef0739340829, type: 2}
+  - {fileID: 11400000, guid: 9e6866e1192ead44480b49c43b9609ce, type: 2}
   shootCommand: {fileID: 11400000, guid: 5489f5695c97269438ab530710a9beb7, type: 2}
   shootAllCommand: {fileID: 11400000, guid: 7aa325dbb90c9524396a18bf636481a5, type: 2}
   cells:
@@ -7355,7 +7379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 61}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1526180750

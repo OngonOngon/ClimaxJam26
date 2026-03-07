@@ -42,9 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4035798321127636470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c9e67bb86d204b419b2501ae120fbeb, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd7a2751c87dd240beb7918fc7f1d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  livesText: {fileID: 0}
+  moneyText: {fileID: 0}
   lives: 3
   money: 0
   moneyPerStoryLine: 50
