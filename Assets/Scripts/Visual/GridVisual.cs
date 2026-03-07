@@ -10,10 +10,7 @@ namespace Dubinci
         [SerializeField] private CellVisual cellPrefab;
         [SerializeField] private GridLayoutGroup gridLayout;
         [SerializeField] private CellValueSO emptyCellVal;
-        [SerializeField] private BuildCommandSO buildSingleTowerCommand;
-        [SerializeField] private BuildCommandSO buildAOETowerCommand;
-        [SerializeField] private BuildCommandSO buildWallCommand;
-        [SerializeField] private BuildCommandSO buildAutoTowerCommand;
+        [SerializeField] private List<BuildCommandSO> buildCommands;
         [SerializeField] private CommandSO shootCommand;
         [SerializeField] private CommandSO shootAllCommand;
 
@@ -77,20 +74,16 @@ namespace Dubinci
             foreach (var cell in cells)
                 cell.Setup(grid);
             GetCell(selectedCell).HighliteCell();
-            buildSingleTowerCommand.OnBuildCommand += BuildTower;
-            buildAOETowerCommand.OnBuildCommand += BuildTower;
-            buildAutoTowerCommand.OnBuildCommand += BuildTower;
-            buildWallCommand.OnBuildCommand += BuildTower;
+            foreach (var b in buildCommands)
+                b.OnBuildCommand += BuildTower;
             shootCommand.OnCommand += ActivateTower;
             shootAllCommand.OnCommand += ActivateAll;
         }
 
         private void OnDestroy()
         {
-            buildSingleTowerCommand.OnBuildCommand -= BuildTower;
-            buildAOETowerCommand.OnBuildCommand -= BuildTower;
-            buildAutoTowerCommand.OnBuildCommand -= BuildTower;
-            buildWallCommand.OnBuildCommand -= BuildTower;
+            foreach (var b in buildCommands)
+                b.OnBuildCommand -= BuildTower;
             shootCommand.OnCommand -= ActivateTower;
             shootAllCommand.OnCommand -= ActivateAll;
         }

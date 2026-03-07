@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Letter: 84
   HP: 2
-  Damage: 1
-  Range: 2
+  Damage: 2
+  Range: 3
   AOE: 0
+  type: 0

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e32ae356b39a59541afe4c89f1668063, type: 3}
-  m_Name: AOE Tower
+  m_Name: Wall
   m_EditorClassIdentifier: 
-  Letter: 79
-  HP: 2
-  Damage: 1
-  Range: 1
-  AOE: 1
+  Letter: 87
+  HP: 8
+  Damage: 0
+  Range: 0
+  AOE: 0
   type: 0

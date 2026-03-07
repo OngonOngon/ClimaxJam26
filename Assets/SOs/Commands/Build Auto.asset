@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32ae356b39a59541afe4c89f1668063, type: 3}
-  m_Name: AOE Tower
+  m_Script: {fileID: 11500000, guid: 9e53ea61c588f514f8cc64f9264fa2bd, type: 3}
+  m_Name: Build Auto
   m_EditorClassIdentifier: 
-  Letter: 79
-  HP: 2
-  Damage: 1
-  Range: 1
-  AOE: 1
-  type: 0
+  text: build auto
+  type: 2
+  tower: {fileID: 11400000, guid: 8b55b0e6fc88b3f46973d498ee3575ab, type: 2}
