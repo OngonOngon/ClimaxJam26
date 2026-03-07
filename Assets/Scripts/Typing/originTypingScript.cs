@@ -4,9 +4,35 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+// Defines whether the user is typing story text or entering commands
+public enum TypingMode { Story, Command }
 
+// Static helper for input detection
+public static class CInput
+{
+    public static string GetCapturedInput() => Input.inputString;
+    public static bool IsActionTriggered() => Input.GetKeyDown(KeyCode.Tab);
+    public static bool IsSubmitTriggered() => Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter);
+    public static bool IsToggleModeTriggered() => Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl);
+}
 
-public class typingScript : MonoBehaviour
+// Interface for objects that want to react to typing events (e.g., PlayerResources)
+public interface ITypingHandler
+{
+    void OnLineCompleted(string completedLine);
+    void OnCommandExecuted(string command);
+    void OnAllLinesCompleted();
+}
+
+// Interface for modular sound handling
+public interface ITypingSoundProvider
+{
+    void PlayCharSound(char c);
+    void PlaySuccess();
+    void PlayFail();
+}
+
+public class originTypingScript : MonoBehaviour
 {
     [Header("General Settings")]
     [SerializeField] private TypingMode mode = TypingMode.Story;
@@ -60,7 +86,7 @@ public class typingScript : MonoBehaviour
     void Start()
     {
         PrepareStoryText();
-        ToggleSystem(); 
+        if (displayLabel != null) displayLabel.gameObject.SetActive(false);
     }
 
     void Update()

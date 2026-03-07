@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Antiquity print
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: cdfd88b53e169834b99bade003ab9b0e, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
