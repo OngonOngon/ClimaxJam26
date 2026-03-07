@@ -14,6 +14,7 @@ namespace Dubinci
         [SerializeField, HideInInspector] private List<CellVisual> cells = new List<CellVisual>();
 
         private Grid grid;
+        private Vector2Int selectedCell;
 
         [ContextMenu("Generate")]
         private void GenerateCells()
@@ -65,9 +66,11 @@ namespace Dubinci
 
         private void Awake()
         {
+            selectedCell = gridSize / 2;
             grid = new Grid(gridSize);
             foreach (var cell in cells)
                 cell.Setup(grid);
+            GetCell(selectedCell).HighliteCell();
         }
 
         private void Update()
@@ -78,6 +81,48 @@ namespace Dubinci
                 foreach (var cell in cells)
                     cell.UpdateVisual(grid.GetCell(cell.Pos));
             }
+        }
+
+        private CellVisual GetCell(Vector2Int pos)
+        {
+            return cells[pos.y + pos.x * gridSize.y];
+        }
+
+        public void MoveUp()
+        {
+            GetCell(selectedCell).DeselectCell();
+            selectedCell.y = (selectedCell.y + 1 + gridSize.y) % gridSize.y;
+            Debug.Log(selectedCell);
+            GetCell(selectedCell).HighliteCell();
+        }
+
+        public void MoveDown()
+        {
+            GetCell(selectedCell).DeselectCell();
+            selectedCell.y = (selectedCell.y - 1 + gridSize.y) % gridSize.y;
+            Debug.Log(selectedCell);
+            GetCell(selectedCell).HighliteCell();
+        }
+
+        public void MoveLeft()
+        {
+            GetCell(selectedCell).DeselectCell();
+            selectedCell.x = (selectedCell.x - 1 + gridSize.x) % gridSize.x;
+            Debug.Log(selectedCell);
+            GetCell(selectedCell).HighliteCell();
+        }
+
+        public void MoveRight()
+        {
+            GetCell(selectedCell).DeselectCell();
+            selectedCell.x = (selectedCell.x + 1 + gridSize.x) % gridSize.x;
+            Debug.Log(selectedCell);
+            GetCell(selectedCell).HighliteCell();
+        }
+
+        public void Select()
+        {
+            GetCell(selectedCell).SelectCell();
         }
     }
 }
