@@ -1,0 +1,13 @@
+﻿<Solution>
+  <Project Path="Pospec.SaveSystem.csproj" />
+  <Project Path="Pospec.Common.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="Pospec.Audio.csproj" />
+  <Project Path="Pospec.ScreenSettings.csproj" />
+  <Project Path="Pospec.VolumeSettings.csproj" />
+  <Project Path="Pospec.Movement.csproj" />
+  <Project Path="Pospec.Popups.csproj" />
+  <Project Path="Pospec.Common.Editor.csproj" />
+  <Project Path="Pospec.Audio.Editor.csproj" />
+</Solution>
