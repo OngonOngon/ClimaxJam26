@@ -75,9 +75,29 @@ namespace Dubinci
                 cell.Setup(grid);
             GetCell(selectedCell).HighliteCell();
             foreach (var b in buildCommands)
+            {
                 b.OnBuildCommand += BuildTower;
+                b.Validate += ValidateBuild;
+            }
             shootCommand.OnCommand += ActivateTower;
+            shootCommand.Validate += ValidateShoot;
             shootAllCommand.OnCommand += ActivateAll;
+            shootAllCommand.Validate += ValidateShootAll;
+        }
+
+        private bool ValidateBuild()
+        {
+            return grid.GetCell(selectedCell).Content == null;
+        }
+
+        private bool ValidateShoot()
+        {
+            return grid.GetCell(selectedCell).Content is TowerEntity;
+        }
+
+        private bool ValidateShootAll()
+        {
+            return true;
         }
 
         private void Start()
@@ -89,9 +109,14 @@ namespace Dubinci
         private void OnDestroy()
         {
             foreach (var b in buildCommands)
+            {
                 b.OnBuildCommand -= BuildTower;
+                b.Validate -= ValidateBuild;
+            }
             shootCommand.OnCommand -= ActivateTower;
+            shootCommand.Validate -= ValidateShoot;
             shootAllCommand.OnCommand -= ActivateAll;
+            shootAllCommand.Validate -= ValidateShootAll;
         }
 
         private void Update()
@@ -111,7 +136,7 @@ namespace Dubinci
 
         void BuildTower(TowerSO tower)
         {
-            if (grid.GetCell(selectedCell).Content == null)
+            if (ValidateBuild())
             {
                 tower.Build(grid, selectedCell);
                 // use resources
@@ -121,7 +146,7 @@ namespace Dubinci
 
         void ActivateTower()
         {
-            if (grid.GetCell(selectedCell).Content is TowerEntity)
+            if (ValidateShoot())
             {
                 grid.Command(shootCommand, selectedCell);
                 // use resources
