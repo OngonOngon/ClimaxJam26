@@ -174,8 +174,8 @@ MonoBehaviour:
   blackOverlay: {fileID: 7126983979566629873}
   selectIMG: {fileID: 1906020419788491940}
   mainImage: {fileID: 5642754376437439947}
-  selectedCol: {r: 0.8490566, g: 0.73091257, b: 0.21226415, a: 1}
-  highlitedCol: {r: 0.9339623, g: 0.7850892, b: 0.118948035, a: 0.64705884}
+  selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
+  highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
   numberColor: {r: 0.4, g: 0.8117647, b: 0.40784314, a: 1}
@@ -292,8 +292,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.4908, y: 0}
+  m_SizeDelta: {x: -0.9816, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3585152540278024749
 CanvasRenderer:
@@ -452,15 +452,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7924528, g: 0.78822833, b: 0.4448202, a: 0.6}
+  m_Color: {r: 0.79607844, g: 0.627451, b: 0.09803922, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4929819740224467812, guid: ad9e0df2955156172a87b7abf8798554, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
