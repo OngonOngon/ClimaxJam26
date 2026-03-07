@@ -13,6 +13,8 @@ namespace Dubinci
         [SerializeField] private Image selectIMG;
         [SerializeField] private Color selectedCol = Color.white;
         [SerializeField] private Color highlitedCol = Color.white;
+        [SerializeField] public TMP_FontAsset numberSDF;
+        [SerializeField] public TMP_FontAsset letterSDF;
         [SerializeField, HideInInspector] private Vector2Int pos;
         [SerializeField, HideInInspector] private GridVisual grid;
 
@@ -73,10 +75,20 @@ namespace Dubinci
             valueTXT.text = "";
             HideModifier();
         }
-
+ 
         public void UpdateVisual(Cell cell)
         {
             SetMainText(cell.GetContentString());
+            if (cell.Content != null && cell.Content is Dubinci.NumberEntity)
+            {
+                valueTXT.font = numberSDF;
+                // change bg to black
+            }
+            else 
+            {
+                valueTXT.font = letterSDF;
+                // remove black bg
+            }
         }
 
         public void HighliteCell()
