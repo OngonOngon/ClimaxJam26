@@ -58,7 +58,7 @@ namespace Dubinci
             this.nextCells[pos.x, pos.y].CreateModifier(type, value);
         }
 
-        public void AddTowerAt(char letter, int damage, int range, int hp, int aoe, Vector2Int pos)
+        public void AddTowerAt(TowerType type, char letter, int damage, int range, int hp, int aoe, Vector2Int pos)
         {
             if (!IsValidPos(pos))
             {
@@ -67,7 +67,7 @@ namespace Dubinci
 
             Cell targetCell = this.cells[pos.x, pos.y];
 
-            targetCell.Content = new TowerEntity(letter, damage, range, hp, aoe);
+            targetCell.Content = new TowerEntity(type, letter, damage, range, hp, aoe);
         }
 
         public bool IsValidPos(Vector2Int pos)
@@ -89,6 +89,24 @@ namespace Dubinci
                     {
                         nextCells[x, y].Content = null;
                     }
+                }
+            }
+
+            // first shoot, only then move
+            for (int x = 0; x < dim.x; x++)
+            {
+                for (int y = 0; y < dim.y; y++)
+                {
+                    Cell currentCell = this.cells[x, y];
+
+                    if (currentCell.Content is TowerEntity towerEntity && towerEntity.Type == TowerType.Auto)
+                    {
+                        // create shoot command and execute it
+                        CommandSO cmd = ScriptableObject.CreateInstance<CommandSO>();
+                        cmd.changeType(CommandType.Shoot);
+                        Command(cmd, currentCell.Position);
+                    }
+
                 }
             }
 
@@ -220,6 +238,7 @@ namespace Dubinci
         {
             Cell bestTarget = null;
             int maxNumber = -1;
+            int minDistance = int.MaxValue;
 
             for (int y = pos.y - range; y <= pos.y + range; y++)
             {
@@ -229,19 +248,73 @@ namespace Dubinci
 
                     if (!IsValidPos(checkPos)) continue;
 
-                    if (Mathf.Abs(x - pos.x) + Mathf.Abs(y - pos.y) > range) continue;
+                    int distance = Mathf.Abs(x - pos.x) + Mathf.Abs(y - pos.y);
+
+                    if (distance > range) continue;
 
                     Cell currentCell = cells[checkPos.x, checkPos.y];
-                    if (currentCell.Content is NumberEntity numberEntity && numberEntity.Value > maxNumber)
+                    if (currentCell.Content is NumberEntity numberEntity)
                     {
-                        maxNumber = numberEntity.Value;
-                        bestTarget = currentCell;
+                        if (numberEntity.Value > maxNumber)
+                        {
+                            maxNumber = numberEntity.Value;
+                            minDistance = distance;
+                            bestTarget = currentCell;
+                        }
+                        else if (numberEntity.Value == maxNumber && distance < minDistance)
+                        {
+                            minDistance = distance;
+                            bestTarget = currentCell;
+                        }
                     }
                 }
             }
 
             return bestTarget;
         }
+        private void Shoot(Vector2Int pos)
+        {
+            Cell currentCell = cells[pos.x, pos.y];
+            if (currentCell.Content is TowerEntity tower)
+            {
+                Cell hitCell = GetTarget(tower.Range, pos);
+
+                if (hitCell == null)
+                {
+                    Debug.Log("No target in range");
+                    return;
+                }
+
+                Vector2Int targetPos = hitCell.Position;
+
+                // apply aoe
+                for (int y = targetPos.y - tower.AOE; y <= targetPos.y + tower.AOE; y++)
+                {
+                    for (int x = targetPos.x + tower.AOE; x >= targetPos.x - tower.AOE; x--)
+                    {
+                        Vector2Int checkPos = new Vector2Int(x, y);
+
+                        if (!IsValidPos(checkPos)) continue;
+
+
+                        Cell aoeCell = cells[checkPos.x, checkPos.y];
+                        if (aoeCell.Content is NumberEntity numberEntity)
+                        {
+                            numberEntity.Value -= tower.Damage;
+
+                            if (numberEntity.Value <= 0)
+                            {
+                                // make the cell be null
+                                aoeCell.Content = null;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+
         public void Command(CommandSO command, Vector2Int pos)
         {
             if (!IsValidPos(pos))
@@ -254,45 +327,7 @@ namespace Dubinci
             switch (command.type)
             {
                 case CommandType.Shoot:
-                    Cell currentCell = cells[pos.x, pos.y];
-                    if (currentCell.Content is TowerEntity tower)
-                    {
-                        Cell hitCell = GetTarget(tower.Range, pos);
-
-                        if (hitCell == null)
-                        {
-                            Debug.Log("No target in range");
-                            return;
-                        }
-
-                        Vector2Int targetPos = hitCell.Position;
-
-                        // apply aoe
-                        for (int y = targetPos.y - tower.AOE; y <= targetPos.y + tower.AOE; y++)
-                        {
-                            for (int x = targetPos.x + tower.AOE; x >= targetPos.x - tower.AOE; x--)
-                            {
-                                Vector2Int checkPos = new Vector2Int(x, y);
-
-                                if (!IsValidPos(checkPos)) continue;
-
-
-                                Cell aoeCell = cells[checkPos.x, checkPos.y];
-                                if (aoeCell.Content is NumberEntity numberEntity)
-                                {
-                                    numberEntity.Value -= tower.Damage;
-
-                                    if (numberEntity.Value <= 0)
-                                    {
-                                        // make the cell be null
-                                        aoeCell.Content = null;
-                                    }
-                                }
-                            }
-                        }
-
-
-                    }
+                    Shoot(pos);
                     break;
             }
         }

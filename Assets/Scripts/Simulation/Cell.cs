@@ -16,6 +16,12 @@ namespace Dubinci
         public bool addThisTick = false;
     }
 
+    public enum TowerType
+    {
+        Basic,
+        Auto,
+    };
+
     public class TowerEntity : IGridEntity
     {
         public char Letter;
@@ -23,13 +29,15 @@ namespace Dubinci
         public int Range;
         public int HP;
         public int AOE;
-        public TowerEntity(char letter, int damage, int range, int hp, int aoe)
+        public TowerType Type;
+        public TowerEntity(TowerType type, char letter, int damage, int range, int hp, int aoe)
         {
             Letter = letter;
             Damage = damage;
             Range = range;
             HP = hp;
             AOE = aoe;
+            Type = type;
         }
 
         // letter + HP

@@ -128,7 +128,7 @@ namespace Dubinci
             var c = grid.GetCell(selectedCell).Content;
             if (c == null)
             {
-                grid.AddTowerAt('T', 5, 2, 2, 1, selectedCell);
+                grid.AddTowerAt(TowerType.Auto, 'T', damage: 5, range: 2, hp: 2, aoe: 0, selectedCell);
                 GetCell(selectedCell).UpdateVisual(grid.GetCell(selectedCell));
             }
             else if (grid.GetCell(selectedCell).Content is TowerEntity tower)

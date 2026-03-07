@@ -11,7 +11,7 @@ namespace Dubinci
 
         public override void Build(Grid grid, Vector2Int pos)
         {
-            grid.AddTowerAt(Letter, Damage, Range, HP, AOE, pos);
+            grid.AddTowerAt(TowerType.Auto, Letter, Damage, Range, HP, AOE, pos);
         }
 
         public override void Activate(Grid grid, Vector2Int pos)
