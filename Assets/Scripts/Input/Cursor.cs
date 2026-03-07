@@ -7,6 +7,10 @@ namespace Dubinci
         public GridVisual grid;
         public bool moveMode = true;
         [SerializeField] private typingScript terminal;
+        public AudioSource audioSource;
+        public AudioClip moveCursorSound;
+        public AudioClip selectCursorSound;
+
 
         void Update()
         {
@@ -18,19 +22,33 @@ namespace Dubinci
             {
                 if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
                 {
+                    audioSource.PlayOneShot(selectCursorSound); // play select sound
                     ExitSelection();
                 }
                 return;
             }
 
-            if (Input.GetKeyDown(KeyCode.W)) grid.MoveUp();
-            if (Input.GetKeyDown(KeyCode.A)) grid.MoveLeft();
-            if (Input.GetKeyDown(KeyCode.S)) grid.MoveDown();
-            if (Input.GetKeyDown(KeyCode.D)) grid.MoveRight();
+            if (Input.GetKeyDown(KeyCode.W)) { 
+                grid.MoveUp();
+                audioSource.PlayOneShot(moveCursorSound);// play move sound
+            }
+            if (Input.GetKeyDown(KeyCode.A)){
+                grid.MoveLeft();
+                audioSource.PlayOneShot(moveCursorSound);// play move sound
+            }
+            if (Input.GetKeyDown(KeyCode.S)){ 
+                grid.MoveDown();
+                audioSource.PlayOneShot(moveCursorSound);// play move sound
+            }
+            if (Input.GetKeyDown(KeyCode.D)){ 
+                grid.MoveRight();
+                audioSource.PlayOneShot(moveCursorSound); // play move sound
+            }
 
-            if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
             {
                 grid.Select();
+                audioSource.PlayOneShot(selectCursorSound); // play select sound
                 moveMode = false;
 
                 if (terminal != null)
