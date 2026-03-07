@@ -24,8 +24,6 @@ namespace Dubinci
 
             gridLayout.constraintCount = gridSize.x;
             gridLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-            gridLayout.startAxis = GridLayoutGroup.Axis.Horizontal;
-            gridLayout.startCorner = GridLayoutGroup.Corner.UpperLeft;
             for (int x = 0; x < gridSize.x; x++)
             {
                 for (int y = 0; y < gridSize.y; y++)
@@ -51,8 +49,6 @@ namespace Dubinci
 
             gridLayout.constraintCount = gridSize.x;
             gridLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-            gridLayout.startAxis = GridLayoutGroup.Axis.Horizontal;
-            gridLayout.startCorner = GridLayoutGroup.Corner.UpperLeft;
             for (int x = 0; x < gridSize.x; x++)
             {
                 for (int y = 0; y < gridSize.y; y++)
@@ -72,6 +68,16 @@ namespace Dubinci
             grid = new Grid(gridSize);
             foreach (var cell in cells)
                 cell.Setup(grid);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                grid.Tick();
+                foreach (var cell in cells)
+                    cell.UpdateVisual(grid.GetCell(cell.Pos));
+            }
         }
     }
 }

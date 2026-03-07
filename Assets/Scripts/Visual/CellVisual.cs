@@ -12,6 +12,8 @@ namespace Dubinci
         [SerializeField, HideInInspector] private Vector2Int pos;
         [SerializeField, HideInInspector] private GridVisual grid;
 
+        public Vector2Int Pos => pos;
+
         private void OnValidate()
         {
             if (value == null)
@@ -66,6 +68,11 @@ namespace Dubinci
         {
             valueTXT.text = "";
             HideModifier();
+        }
+
+        public void UpdateVisual(Cell cell)
+        {
+            SetMainText(cell.GetContentString());
         }
     }
 }
