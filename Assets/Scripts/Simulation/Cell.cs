@@ -14,10 +14,10 @@ namespace Dubinci
         public string GetContentString() => Value.ToString();
     }
 
-    public class LetterEntity : IGridEntity
+    public class TowerEntity : IGridEntity
     {
         public char Letter;
-        public LetterEntity(char letter) { Letter = letter; }
+        public TowerEntity(char letter) { Letter = letter; }
         public string GetContentString() => Letter.ToString();
     }
 
@@ -25,14 +25,51 @@ namespace Dubinci
     {
         public IGridEntity Content = null;
 
+        public Modifier modifier;
+
+        public Cell()
+        {
+            modifier = new Modifier { type = ModifierType.None, value = 0 };
+        }
+
+
         public bool IsEmpty()
         {
             return Content == null;
         }
 
+        public Modifier GetModifier()
+        {
+            return modifier;
+        }
+
         public string GetContentString()
         {
+            // if empty and has modifier, show modifier
+            if (IsEmpty() && modifier.type != ModifierType.None)
+            {
+                return modifier.type == ModifierType.Add ? $"A{modifier.value}" : $"M{modifier.value}";
+            }
             return IsEmpty() ? "." : Content.GetContentString();
         }
+
+        public void CreateModifier(ModifierType type, int value)
+        {
+            modifier.type = type;
+            modifier.value = value;
+        }
+    }
+
+    public enum ModifierType
+    {
+        None = -1,
+        Add = 0,
+        Multiply = 1
+    }
+
+    public class Modifier
+    {
+        public ModifierType type;
+        public int value;
     }
 }

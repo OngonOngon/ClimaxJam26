@@ -1,3 +1,4 @@
+using System.Text;
 using UnityEngine;
 
 namespace Dubinci
@@ -9,22 +10,40 @@ namespace Dubinci
 
         private void PrintGrid()
         {
-            for (int x = 0; x < dim.x; x++)
+            StringBuilder sb = new StringBuilder();
+
+            for (int y = dim.y - 1; y >= 0; y--)
             {
-                string line = "";
-                for (int y = 0; y < dim.y; y++)
+                for (int x = 0; x < dim.x; x++)
                 {
-                    line += grid.GetCell(new Vector2Int(x, y)) + " ";
+                    Cell cell = grid.GetCell(new Vector2Int(x, y));
+                    sb.Append(cell.GetContentString());
+                    sb.Append(" ");
                 }
-                Debug.Log(line);
+                sb.AppendLine();
             }
+
+            Debug.Log(sb.ToString());
         }
 
         private void Awake()
         {
             grid = new Grid(dim);
             Debug.Log(dim);
-            grid.AddNumberAt(5, new Vector2Int(1, 1));
+
+            // Jonášovo grid
+            /*
+            grid.AddNumberAt(3, new Vector2Int(0, 0));
+            grid.AddNumberAt(5, new Vector2Int(4, 0));
+            grid.AddNumberAt(12, new Vector2Int(2, 2));
+            */
+
+            // Plus modifier
+            grid.AddModifierAt(ModifierType.Add, 3, new Vector2Int(1, 1));
+            grid.AddModifierAt(ModifierType.Add, 3, new Vector2Int(0, 1));
+            grid.AddNumberAt(1, new Vector2Int(0, 0));
+            grid.AddNumberAt(1, new Vector2Int(1, 0));
+            grid.AddNumberAt(1, new Vector2Int(2, 0));
         }
 
         private void Update()
