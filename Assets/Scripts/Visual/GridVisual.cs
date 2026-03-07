@@ -20,6 +20,9 @@ namespace Dubinci
         private Grid grid;
         private Vector2Int selectedCell;
 
+        private float Timer;
+        [SerializeField] private float TickInterval;
+
         [ContextMenu("Generate")]
         private void GenerateCells()
         {
@@ -132,11 +135,13 @@ namespace Dubinci
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            Timer += Time.deltaTime;
+            if (Timer >= TickInterval)
             {
                 grid.Tick();
                 foreach (var cell in cells)
                     cell.UpdateVisual(grid.GetCell(cell.Pos));
+                Timer = 0;
             }
         }
 
