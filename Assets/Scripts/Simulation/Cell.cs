@@ -41,7 +41,7 @@ namespace Dubinci
         }
 
         // letter + HP
-        public string GetContentString() => $"{Letter}{HP}";
+        public string GetContentString() => $"{Letter}";
     }
 
     public class Cell
@@ -68,12 +68,12 @@ namespace Dubinci
 
         public string GetContentString()
         {
-            // if empty and has modifier, show modifier
-            if (IsEmpty() && modifier.type != ModifierType.None)
+            if (IsEmpty())
             {
-                return modifier.type == ModifierType.Add ? $"A{modifier.value}" : $"M{modifier.value}";
+                return "";
             }
-            return IsEmpty() ? "." : Content.GetContentString();
+
+            return Content.GetContentString();
         }
 
         public void CreateModifier(ModifierType type, int value)
