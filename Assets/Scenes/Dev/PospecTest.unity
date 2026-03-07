@@ -5466,7 +5466,7 @@ GameObject:
   - component: {fileID: 1370079869}
   - component: {fileID: 1370079868}
   m_Layer: 5
-  m_Name: '[1,1] Mul 2 Cell'
+  m_Name: '[1,1] Mull 2 Cell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5487,7 +5487,7 @@ MonoBehaviour:
   valueTXT: {fileID: 238364792}
   modifPanel: {fileID: 719279655}
   modifTXT: {fileID: 382209496}
-  value: {fileID: 11400000, guid: cc8353c8203a5844db68bed6923bf3a6, type: 2}
+  value: {fileID: 11400000, guid: 3f0bee5d3d3fdfd41852b40a4b878d95, type: 2}
   pos: {x: 1, y: 1}
   grid: {fileID: 1023992895}
 --- !u!114 &1370079869

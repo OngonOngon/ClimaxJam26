@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb021f0a42d762439f8bf53900efe7f, type: 3}
   m_Name: 2, Add 3 Cell
   m_EditorClassIdentifier: 
+  type: 0
   modifText: +3
-  numberVal: {fileID: 11400000, guid: 17392f7962919414887b652b8aec0465, type: 2}
   value: 3
+  numberVal: {fileID: 11400000, guid: 17392f7962919414887b652b8aec0465, type: 2}

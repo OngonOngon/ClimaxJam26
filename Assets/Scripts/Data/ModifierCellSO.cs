@@ -2,9 +2,12 @@ using UnityEngine;
 
 namespace Dubinci
 {
-    public abstract class ModifierCellSO : CellValueSO
+    [CreateAssetMenu(fileName = "Modif Cell", menuName = "Scriptable Objects/Cell/Modifier")]
+    public class ModifierCellSO : CellValueSO
     {
+        public ModifierType type = ModifierType.None;
         public string modifText;
+        public int value;
         public NumberCellValSO numberVal;
 
         public override void SetupUI(CellVisual vis)
@@ -19,6 +22,7 @@ namespace Dubinci
         {
             if (numberVal)
                 numberVal.Setup(grid, pos);
+            grid.AddModifierAt(type, value, pos);
         }
     }
 }
