@@ -11,19 +11,20 @@ namespace Dubinci
 
         public override bool TryCommand(string text)
         {
-            if (base.TryCommand(text))
-            {
-                OnBuildCommand?.Invoke(tower);
-                return true;
-            }
-            else
-                return false;
+            // Tady jen ověříme, jestli text sedí, ale NIC nestavíme
+            return base.TryCommand(text);
+        }
+
+        // Tuhle metodu zavoláme, až když budeme vědět, že máme peníze
+        public void Execute()
+        {
+            OnBuildCommand?.Invoke(tower);
         }
 
         [ContextMenu("Build")]
         public void PlayBuild()
         {
-            OnBuildCommand?.Invoke(tower);
+            Execute();
         }
     }
 }

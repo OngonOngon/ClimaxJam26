@@ -32,37 +32,42 @@ public class playerResources : MonoBehaviour, ITypingHandler
 
     // --- ITypingHandler Implementation ---
 
-    public void OnLineCompleted(string completedLine)
+    public bool OnLineCompleted(string completedLine)
     {
-        if (_isGameOver) return;
-
+        if (_isGameOver) return false;
         money += moneyPerStoryLine;
-        Debug.Log($"[Resources] Story line finished! Earned: {moneyPerStoryLine}. Total Money: {money}");
+        return true;
     }
 
-    public void OnCommandExecuted(string command)
+    public bool OnCommandExecuted(string command)
     {
-        if (_isGameOver) return;
+        if (_isGameOver) return false;
 
-        switch (command.ToLower())
+        string cmd = command.ToLower();
+
+        // Check if the command starts with "build" (covers "build shooter", "build wall" etc.)
+        if (cmd.StartsWith("build"))
         {
-            case "build":
-                TrySpendMoney(buildCost, "Building structure");
-                break;
-
-            case "upgrade":
-                TrySpendMoney(upgradeCost, "Upgrading system");
-                break;
-
-            case "shoot":
-                Debug.Log("[Resources] PEW PEW! Shooting costs nothing but skill.");
-                break;
-
-            default:
-                Debug.Log($"[Resources] Command '{command}' executed but has no resource cost.");
-                break;
+            return TrySpendMoney(buildCost, "Building structure");
         }
+
+        if (cmd.StartsWith("upgrade"))
+        {
+            return TrySpendMoney(upgradeCost, "Upgrading system");
+        }
+
+        if (cmd == "shoot")
+        {
+            Debug.Log("[Resources] PEW PEW!");
+            return true;
+        }
+
+        // Command not recognized as a paid action
+        Debug.Log($"[Resources] Command '{command}' is free or unknown.");
+        return true;
     }
+
+
 
     public void OnAllLinesCompleted()
     {
@@ -73,17 +78,18 @@ public class playerResources : MonoBehaviour, ITypingHandler
 
     // --- Logic ---
 
-    private void TrySpendMoney(int cost, string actionName)
+    private bool TrySpendMoney(int cost, string actionName)
     {
         if (money >= cost)
         {
             money -= cost;
-            Debug.Log($"[Resources] {actionName} success! Spent: {cost}. Remaining: {money}");
+            Debug.Log($"[Resources] {actionName} success! Remaining: {money}");
+            return true; // we got money
         }
         else
         {
-            Debug.LogWarning($"[Resources] Not enough money for {actionName}! Need: {cost}, Have: {money}");
-            // Optional: trigger some "No Money" sound or effect here
+            Debug.LogWarning($"[Resources] Not enough money for {actionName}!");
+            return false; // no money
         }
     }
 

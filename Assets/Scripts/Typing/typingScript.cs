@@ -18,8 +18,8 @@ public static class CInput
 
 public interface ITypingHandler
 {
-    void OnLineCompleted(string completedLine);
-    void OnCommandExecuted(string command);
+    bool OnLineCompleted(string completedLine); 
+    bool OnCommandExecuted(string command);     
     void OnAllLinesCompleted();
 }
 
@@ -226,23 +226,41 @@ public class typingScript : MonoBehaviour
         if (CInput.IsSubmitTriggered() && !string.IsNullOrEmpty(_playerInput))
         {
             string cmd = _playerInput.Trim().ToLower();
-            bool success = false;
+            bool commandFound = false;
 
             foreach (var c in validCommands)
             {
                 if (c != null && c.TryCommand(cmd))
                 {
-                    _soundProvider?.PlaySuccess();
-                    Handler?.OnCommandExecuted(cmd);
-                    success = true;
-                    DeactivateSystem(); // Close terminal after successful command
+                    commandFound = true;
+
+                    // 1. NEJDŘÍV se zeptáme na peníze
+                    bool canAfford = (Handler == null) || Handler.OnCommandExecuted(cmd);
+
+                    if (canAfford)
+                    {
+                        // 2. AŽ TEĎ reálně stavíme (pokud je to build příkaz)
+                        if (c is BuildCommandSO buildCmd)
+                        {
+                            buildCmd.Execute();
+                        }
+
+                        _soundProvider?.PlaySuccess();
+                        DeactivateSystem(); // SUCCESS: Zavřeme terminál
+                    }
+                    else
+                    {
+                        // FAILURE: Málo peněz -> červené bliknutí, terminál zůstane
+                        TriggerError(_playerInput);
+                    }
                     break;
                 }
             }
 
-            if (!success) TriggerError(_playerInput);
+            if (!commandFound) TriggerError(_playerInput);
         }
     }
+
 
     private void TriggerError(string textToFlash)
     {
