@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Dubinci
@@ -15,8 +16,10 @@ namespace Dubinci
     {
         public string text;
         public CommandType type;
+        public int cost;
 
         public event Action OnCommand;
+        public event Func<bool> Validate;
 
         public void changeType(CommandType type)
         {
@@ -31,6 +34,15 @@ namespace Dubinci
                 return true;
             }
             return false;
+        }
+
+        public virtual bool ValidCommand()
+        {
+            if (Validate == null)
+                return false;
+            return Validate.GetInvocationList()
+                        .Cast<Func<bool>>()
+                        .All(f => f());
         }
 
         [ContextMenu("Play")]
