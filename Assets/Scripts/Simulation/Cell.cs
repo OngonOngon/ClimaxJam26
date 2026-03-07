@@ -87,7 +87,10 @@ namespace Dubinci
     {
         None = -1,
         Add = 0,
-        Multiply = 1
+        Multiply = 1,
+        // Player-built
+        Subtract = 2,
+        Divide = 3
     }
 
     public class Modifier
