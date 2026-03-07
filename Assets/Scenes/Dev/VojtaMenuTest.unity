@@ -1735,6 +1735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   displayLabel: {fileID: 603554613}
+  availableTexts: {fileID: 0}
   referenceText: 'lorem ipsum
 
     dolor sit amet
@@ -1757,9 +1758,9 @@ MonoBehaviour:
     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
     laborum'
   validCommands:
-  - build
-  - upgrade
-  - shoot
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   commandPrefix: '> '
   correctColor: {r: 1, g: 1, b: 1, a: 1}
   idleColor: {r: 0.7132075, g: 0.7132075, b: 0.7132075, a: 1}
@@ -3125,11 +3126,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   displayLabel: {fileID: 1233267025}
+  availableTexts: {fileID: 0}
   referenceText: start
   validCommands:
-  - build
-  - upgrade
-  - shoot
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   commandPrefix: '> '
   correctColor: {r: 1, g: 0.83137256, b: 0.36862746, a: 1}
   idleColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
@@ -4490,11 +4492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9e67bb86d204b419b2501ae120fbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
-  money: 0
-  moneyPerStoryLine: 50
-  buildCost: 100
-  upgradeCost: 250
 --- !u!4 &1629278242
 Transform:
   m_ObjectHideFlags: 0
