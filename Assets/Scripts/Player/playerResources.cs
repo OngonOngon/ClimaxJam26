@@ -1,13 +1,7 @@
 using UnityEngine;
-using TMPro; // Added for TextMeshPro support
 
 public class playerResources : MonoBehaviour, ITypingHandler
 {
-    [Header("UI Elements")]
-    [Tooltip("Drag the TextMeshPro objects for the numbers here")]
-    [SerializeField] private TextMeshProUGUI livesText;
-    [SerializeField] private TextMeshProUGUI moneyText;
-
     [Header("Stats")]
     [SerializeField] private int lives = 3;
     [SerializeField] private int money = 0;
@@ -34,17 +28,6 @@ public class playerResources : MonoBehaviour, ITypingHandler
         }
 
         PrintStats();
-        UpdateUI(); // Initial UI update
-    }
-
-    // --- Method to update the texts on the screen ---
-    private void UpdateUI()
-    {
-        if (livesText != null) 
-            livesText.text = lives.ToString();
-            
-        if (moneyText != null) 
-            moneyText.text = money.ToString();
     }
 
     // --- ITypingHandler Implementation ---
@@ -52,10 +35,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
     public bool OnLineCompleted(string completedLine)
     {
         if (_isGameOver) return false;
-        
         money += moneyPerStoryLine;
-        UpdateUI(); // Update UI after earning money
-        
         return true;
     }
 
@@ -87,11 +67,12 @@ public class playerResources : MonoBehaviour, ITypingHandler
         return true;
     }
 
+
+
     public void OnAllLinesCompleted()
     {
         Debug.Log("[Resources] Story finished! Bonus 500 money awarded.");
         money += 500;
-        UpdateUI(); // Update UI after earning bonus
         PrintStats();
     }
 
@@ -102,7 +83,6 @@ public class playerResources : MonoBehaviour, ITypingHandler
         if (money >= cost)
         {
             money -= cost;
-            UpdateUI(); // Update UI after successfully spending money
             Debug.Log($"[Resources] {actionName} success! Remaining: {money}");
             return true; // we got money
         }
@@ -118,7 +98,6 @@ public class playerResources : MonoBehaviour, ITypingHandler
         if (_isGameOver) return;
 
         lives -= amount;
-        UpdateUI(); // Update UI after taking damage
         Debug.Log($"[Resources] Ouch! Took {amount} damage. Lives left: {lives}");
 
         if (lives <= 0)
@@ -131,7 +110,6 @@ public class playerResources : MonoBehaviour, ITypingHandler
     {
         _isGameOver = true;
         lives = 0;
-        UpdateUI(); // Final UI update to show 0 lives
         Debug.LogError("==========================");
         Debug.LogError("GAME OVER - YOU DIED");
         Debug.LogError("==========================");
