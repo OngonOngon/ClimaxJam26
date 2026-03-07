@@ -124,5 +124,10 @@ namespace Dubinci
         {
             GetCell(selectedCell).SelectCell();
         }
+
+        public void Unselect()
+        {
+            GetCell(selectedCell).HighliteCell();
+        }
     }
 }
