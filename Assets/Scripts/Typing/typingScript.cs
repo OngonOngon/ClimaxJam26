@@ -4,8 +4,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+// Defines whether the user is typing story text or entering commands
 public enum TypingMode { Story, Command }
 
+// Static helper for input detection
 public static class CInput
 {
     public static string GetCapturedInput() => Input.inputString;
@@ -14,6 +16,7 @@ public static class CInput
     public static bool IsToggleModeTriggered() => Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl);
 }
 
+// Interface for objects that want to react to typing events (e.g., PlayerResources)
 public interface ITypingHandler
 {
     void OnLineCompleted(string completedLine);
@@ -21,7 +24,14 @@ public interface ITypingHandler
     void OnAllLinesCompleted();
 }
 
-[RequireComponent(typeof(AudioSource))]
+// Interface for modular sound handling
+public interface ITypingSoundProvider
+{
+    void PlayCharSound(char c);
+    void PlaySuccess();
+    void PlayFail();
+}
+
 public class typingScript : MonoBehaviour
 {
     [Header("General Settings")]
@@ -36,12 +46,6 @@ public class typingScript : MonoBehaviour
     [SerializeField] private List<string> validCommands = new List<string> { "build", "upgrade", "shoot" };
     [SerializeField] private string commandPrefix = "> ";
 
-    [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip correctCharClip;
-    [SerializeField] private AudioClip successClip;
-    [SerializeField] private AudioClip failClip;
-
     [Header("Colors")]
     [SerializeField] private Color correctColor = Color.green;
     [SerializeField] private Color idleColor = Color.gray;
@@ -51,15 +55,32 @@ public class typingScript : MonoBehaviour
     private List<string> _lines = new List<string>();
     private int _currentLineIndex = 0;
     private string _playerInput = "";
-    private string _failedInput = ""; // Stores text to show during red flash
+    private string _failedInput = "";
     private bool _isActive = false;
     private bool _isFlashingError = false;
 
+    private ITypingSoundProvider _soundProvider;
     public ITypingHandler Handler { get; set; }
 
     void Awake()
     {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+        // First, try to find the provider on the same GameObject
+        _soundProvider = GetComponent<ITypingSoundProvider>();
+
+        // If not found, search the scene for any MonoBehaviour that implements the interface
+        if (_soundProvider == null)
+        {
+            // We search for all MonoBehaviours because FindFirstObjectByType cannot find interfaces directly
+            var providers = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
+            foreach (var p in providers)
+            {
+                if (p is ITypingSoundProvider found)
+                {
+                    _soundProvider = found;
+                    break;
+                }
+            }
+        }
     }
 
     void Start()
@@ -70,11 +91,12 @@ public class typingScript : MonoBehaviour
 
     void Update()
     {
+        // Toggle the whole typing system
         if (CInput.IsActionTriggered()) ToggleSystem();
 
         if (!_isActive) return;
 
-        // Toggle Mode logic
+        // Switch between Story and Command modes
         if (CInput.IsToggleModeTriggered())
         {
             mode = (mode == TypingMode.Story) ? TypingMode.Command : TypingMode.Story;
@@ -84,7 +106,7 @@ public class typingScript : MonoBehaviour
             Debug.Log($"[TypingSystem] Mode switched to: {mode}");
         }
 
-        // Block typing during error flash
+        // Do not process input while the screen is flashing red
         if (_isFlashingError) return;
 
         HandleTyping();
@@ -105,7 +127,9 @@ public class typingScript : MonoBehaviour
     private void PrepareStoryText()
     {
         if (string.IsNullOrEmpty(referenceText)) return;
+        // Split text by newlines and store in a list
         string[] split = referenceText.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+        _lines.Clear();
         _lines.AddRange(split);
     }
 
@@ -129,26 +153,30 @@ public class typingScript : MonoBehaviour
         foreach (char c in input)
         {
             if (c == '\r' || c == '\n') continue;
+
+            // Handle backspace
             if (c == '\b')
             {
                 if (_playerInput.Length > 0) _playerInput = _playerInput.Substring(0, _playerInput.Length - 1);
                 continue;
             }
 
+            // Compare character with target text
             int idx = _playerInput.Length;
             if (idx < target.Length && c == target[idx])
             {
                 _playerInput += c;
-                PlaySound(correctCharClip);
+                _soundProvider?.PlayCharSound(c);
             }
             else
             {
-                // Error: Save what we had (plus the wrong char) for the red flash
+                // Mismatch triggers immediate error state
                 TriggerError(_playerInput + c);
                 break;
             }
         }
 
+        // Completion check
         if (_playerInput == target && CInput.IsSubmitTriggered())
         {
             CompleteStoryLine();
@@ -166,15 +194,16 @@ public class typingScript : MonoBehaviour
                 continue;
             }
             _playerInput += c;
-            PlaySound(correctCharClip);
+            _soundProvider?.PlayCharSound(c);
         }
 
+        // Submit command on Enter
         if (CInput.IsSubmitTriggered() && !string.IsNullOrEmpty(_playerInput))
         {
             string cmd = _playerInput.Trim().ToLower();
             if (validCommands.Contains(cmd))
             {
-                PlaySound(successClip);
+                _soundProvider?.PlaySuccess();
                 Handler?.OnCommandExecuted(cmd);
                 _playerInput = "";
             }
@@ -188,8 +217,8 @@ public class typingScript : MonoBehaviour
     private void TriggerError(string textToFlash)
     {
         _failedInput = textToFlash;
-        _playerInput = ""; // Clear working input
-        PlaySound(failClip);
+        _playerInput = "";
+        _soundProvider?.PlayFail();
         StartCoroutine(FlashErrorRoutine());
     }
 
@@ -205,10 +234,19 @@ public class typingScript : MonoBehaviour
 
     private void CompleteStoryLine()
     {
-        PlaySound(successClip);
+        string finishedLine = _lines[_currentLineIndex];
+        _soundProvider?.PlaySuccess();
         _playerInput = "";
         _currentLineIndex++;
-        if (_currentLineIndex >= _lines.Count) ToggleSystem();
+
+        // Notify external handlers like PlayerResources
+        Handler?.OnLineCompleted(finishedLine);
+
+        if (_currentLineIndex >= _lines.Count)
+        {
+            Handler?.OnAllLinesCompleted();
+            ToggleSystem();
+        }
     }
 
     private void UpdateVisuals()
@@ -226,13 +264,14 @@ public class typingScript : MonoBehaviour
 
             if (_isFlashingError)
             {
-                // During flash, show the failed part in red
+                // Render the failed attempt in red
                 string errorPart = target.Substring(0, Mathf.Min(_failedInput.Length, target.Length));
                 string rest = target.Substring(Mathf.Min(_failedInput.Length, target.Length));
                 displayLabel.text = $"<color=#{errorHex}>{errorPart}</color><color=#{idleHex}>{rest}</color>";
             }
             else
             {
+                // Render typed part (green) and remaining part (gray)
                 string typed = target.Substring(0, _playerInput.Length);
                 string untyped = target.Substring(_playerInput.Length);
                 displayLabel.text = $"<color=#{correctHex}>{typed}</color><color=#{idleHex}>{untyped}</color>";
@@ -240,15 +279,10 @@ public class typingScript : MonoBehaviour
         }
         else
         {
-            // Command Mode visuals
+            // Standard console-like command prompt
             string content = _isFlashingError ? _failedInput : _playerInput;
             string color = _isFlashingError ? errorHex : correctHex;
             displayLabel.text = $"{commandPrefix}<color=#{color}>{content}</color>";
         }
-    }
-
-    private void PlaySound(AudioClip clip)
-    {
-        if (audioSource != null && clip != null) audioSource.PlayOneShot(clip);
     }
 }
