@@ -143,6 +143,13 @@ namespace Dubinci
             GetCell(selectedCell).DeselectCell();
             selectedCell.y = (selectedCell.y + 1 + gridSize.y) % gridSize.y;
             Debug.Log(selectedCell);
+
+            // we skip void cell
+            if (grid.GetCell(selectedCell).Content is VoidEntity ve)
+            {
+                MoveUp();
+                return;
+            }
             GetCell(selectedCell).HighliteCell();
         }
 
@@ -151,14 +158,29 @@ namespace Dubinci
             GetCell(selectedCell).DeselectCell();
             selectedCell.y = (selectedCell.y - 1 + gridSize.y) % gridSize.y;
             Debug.Log(selectedCell);
+
+            // we skip void cell
+            if (grid.GetCell(selectedCell).Content is VoidEntity ve)
+            {
+                MoveDown();
+                return;
+            }
             GetCell(selectedCell).HighliteCell();
         }
 
         public void MoveLeft()
         {
             GetCell(selectedCell).DeselectCell();
+
             selectedCell.x = (selectedCell.x - 1 + gridSize.x) % gridSize.x;
             Debug.Log(selectedCell);
+
+            // we skip void cell
+            if (grid.GetCell(selectedCell).Content is VoidEntity ve)
+            {
+                MoveLeft();
+                return;
+            }
             GetCell(selectedCell).HighliteCell();
         }
 
@@ -167,6 +189,13 @@ namespace Dubinci
             GetCell(selectedCell).DeselectCell();
             selectedCell.x = (selectedCell.x + 1 + gridSize.x) % gridSize.x;
             Debug.Log(selectedCell);
+
+            // we skip void cell
+            if (grid.GetCell(selectedCell).Content is VoidEntity ve)
+            {
+                MoveRight();
+                return;
+            }
             GetCell(selectedCell).HighliteCell();
         }
 

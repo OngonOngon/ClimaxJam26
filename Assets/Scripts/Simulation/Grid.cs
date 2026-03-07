@@ -38,6 +38,12 @@ namespace Dubinci
 
             Cell targetCell = this.cells[pos.x, pos.y];
 
+            if (number == -1)
+            {
+                targetCell.Content = new VoidEntity();
+                return;
+            }
+
             targetCell.Content = new NumberEntity(number);
         }
 
@@ -72,7 +78,16 @@ namespace Dubinci
 
         public bool IsValidPos(Vector2Int pos)
         {
-            return pos.x >= 0 && pos.y >= 0 && pos.x < dim.x && pos.y < dim.y;
+            if (!(pos.x >= 0 && pos.y >= 0 && pos.x < dim.x && pos.y < dim.y))
+            {
+                return false;
+            }
+            if (cells[pos.x, pos.y].Content is VoidEntity)
+            {
+                return false;
+            }
+
+            return true;
         }
         public void Tick()
         {
@@ -81,9 +96,10 @@ namespace Dubinci
             {
                 for (int y = 0; y < dim.y; y++)
                 {
-                    if (cells[x, y].Content is TowerEntity)
+                    IGridEntity content = cells[x, y].Content;
+                    if (content is TowerEntity || content is VoidEntity)
                     {
-                        nextCells[x, y].Content = cells[x, y].Content;
+                        nextCells[x, y].Content = content;
                     }
                     else
                     {
@@ -214,7 +230,7 @@ namespace Dubinci
                                 num.Value -= subValue;
                                 break;
                             case Modifier { type: ModifierType.Divide, value: var divValue }:
-                                num.Value =  Mathf.FloorToInt((float)num.Value / divValue);
+                                num.Value = Mathf.FloorToInt((float)num.Value / divValue);
                                 break;
                         }
                         num.addThisTick = false;

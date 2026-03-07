@@ -7,6 +7,11 @@ namespace Dubinci
         string GetContentString();
     }
 
+    public class VoidEntity : IGridEntity
+    {
+        public string GetContentString() => "~";
+    }
+
     public class NumberEntity : IGridEntity
     {
         public int Value;
