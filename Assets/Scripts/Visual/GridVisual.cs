@@ -136,6 +136,8 @@ namespace Dubinci
                 CommandSO co = ScriptableObject.CreateInstance<CommandSO>();
                 co.changeType(CommandType.Shoot);
                 grid.Command(co, selectedCell);
+                foreach (var cell in cells)
+                    cell.UpdateVisual(grid.GetCell(cell.Pos));
             }
             GetCell(selectedCell).SelectCell();
         }
