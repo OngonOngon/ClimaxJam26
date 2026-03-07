@@ -2091,11 +2091,14 @@ MonoBehaviour:
   modifPanel: {fileID: 1326140326}
   modifTXT: {fileID: 80321027}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 1412692912}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 2, y: 0}
   grid: {fileID: 1023992895}
 --- !u!1 &486616860
@@ -2193,11 +2196,14 @@ MonoBehaviour:
   modifPanel: {fileID: 1511606138}
   modifTXT: {fileID: 161567980}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 511979044}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 1, y: 2}
   grid: {fileID: 1023992895}
 --- !u!1 &500160946
@@ -2295,11 +2301,14 @@ MonoBehaviour:
   modifPanel: {fileID: 1021774915}
   modifTXT: {fileID: 153683017}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 1543894347}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 3, y: 1}
   grid: {fileID: 1023992895}
 --- !u!1 &511979042
@@ -3031,11 +3040,14 @@ MonoBehaviour:
   modifPanel: {fileID: 1581117578}
   modifTXT: {fileID: 1203705367}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 246502954}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 0, y: 1}
   grid: {fileID: 1023992895}
 --- !u!1 &870298771
@@ -3533,8 +3545,8 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 2
   m_StartAxis: 1
-  m_CellSize: {x: 30, y: 30}
-  m_Spacing: {x: 2, y: 2}
+  m_CellSize: {x: 32, y: 32}
+  m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 4
 --- !u!114 &1023992893
@@ -3557,8 +3569,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3591,6 +3603,7 @@ MonoBehaviour:
   cellPrefab: {fileID: 5874636972513746989, guid: efefb23f7183200468d596b732113e1c, type: 3}
   gridLayout: {fileID: 1023992892}
   emptyCellVal: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  e: {fileID: 0}
   cells:
   - {fileID: 2060346244}
   - {fileID: 830600793}
@@ -3910,11 +3923,14 @@ MonoBehaviour:
   modifPanel: {fileID: 2100802866}
   modifTXT: {fileID: 221481299}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 1443942150}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 1, y: 1}
   grid: {fileID: 1023992895}
 --- !u!1 &1203705365
@@ -4148,11 +4164,14 @@ MonoBehaviour:
   modifPanel: {fileID: 788418099}
   modifTXT: {fileID: 119934576}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 2094058070}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 1, y: 0}
   grid: {fileID: 1023992895}
 --- !u!1 &1326140326
@@ -5263,11 +5282,14 @@ MonoBehaviour:
   modifPanel: {fileID: 1603235394}
   modifTXT: {fileID: 392281679}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 2037367797}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 0, y: 2}
   grid: {fileID: 1023992895}
 --- !u!1 &1801195703
@@ -5365,11 +5387,14 @@ MonoBehaviour:
   modifPanel: {fileID: 1947430192}
   modifTXT: {fileID: 1894175077}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 771207589}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 2, y: 1}
   grid: {fileID: 1023992895}
 --- !u!1 &1838711212
@@ -5860,11 +5885,14 @@ MonoBehaviour:
   modifPanel: {fileID: 142605957}
   modifTXT: {fileID: 432950110}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 407026147}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 3, y: 0}
   grid: {fileID: 1023992895}
 --- !u!1 &1947430192
@@ -5978,11 +6006,14 @@ MonoBehaviour:
   modifPanel: {fileID: 2123177452}
   modifTXT: {fileID: 733380945}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 1185306654}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 3, y: 2}
   grid: {fileID: 1023992895}
 --- !u!224 &2010555360
@@ -6140,11 +6171,14 @@ MonoBehaviour:
   modifPanel: {fileID: 1617761217}
   modifTXT: {fileID: 79808044}
   value: {fileID: 11400000, guid: 17392f7962919414887b652b8aec0465, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 1927761484}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 2, y: 2}
   grid: {fileID: 1023992895}
 --- !u!1 &2037367795
@@ -6317,11 +6351,14 @@ MonoBehaviour:
   modifPanel: {fileID: 256625731}
   modifTXT: {fileID: 9042257}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  blackOverlay: {fileID: 0}
   selectIMG: {fileID: 901953528}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
   numberSDF: {fileID: 0}
   letterSDF: {fileID: 0}
+  numberColor: {r: 0, g: 0, b: 0, a: 0}
+  letterColor: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 0, y: 0}
   grid: {fileID: 1023992895}
 --- !u!1 &2065956222

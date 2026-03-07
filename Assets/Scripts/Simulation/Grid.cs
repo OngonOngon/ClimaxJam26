@@ -210,6 +210,12 @@ namespace Dubinci
                             case Modifier { type: ModifierType.Add, value: var addValue }:
                                 num.Value += addValue;
                                 break;
+                            case Modifier { type: ModifierType.Subtract, value: var subValue }:
+                                num.Value -= subValue;
+                                break;
+                            case Modifier { type: ModifierType.Divide, value: var divValue }:
+                                num.Value =  Mathf.FloorToInt((float)num.Value / divValue);
+                                break;
                         }
                         num.addThisTick = false;
                     }
@@ -328,6 +334,19 @@ namespace Dubinci
             {
                 case CommandType.Shoot:
                     Shoot(pos);
+                    break;
+                case CommandType.ShootAll:
+                    for (int x = pos.x; x >= pos.x; x--)
+                    {
+                        for (int y = pos.y; y <= pos.y; y++)
+                        {
+                            Vector2Int checkPos = new Vector2Int(x, y);
+
+                            if (!IsValidPos(checkPos)) continue;
+
+                            Shoot(checkPos);
+                        }
+                    }
                     break;
             }
         }

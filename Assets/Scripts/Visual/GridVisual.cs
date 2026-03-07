@@ -10,7 +10,9 @@ namespace Dubinci
         [SerializeField] private CellVisual cellPrefab;
         [SerializeField] private GridLayoutGroup gridLayout;
         [SerializeField] private CellValueSO emptyCellVal;
-        [SerializeField] private Pospec.Audio.AudioEvent e;
+        [SerializeField] private List<BuildCommandSO> buildCommands;
+        [SerializeField] private CommandSO shootCommand;
+        [SerializeField] private CommandSO shootAllCommand;
 
         [SerializeField, HideInInspector] private List<CellVisual> cells = new List<CellVisual>();
 
@@ -72,6 +74,18 @@ namespace Dubinci
             foreach (var cell in cells)
                 cell.Setup(grid);
             GetCell(selectedCell).HighliteCell();
+            foreach (var b in buildCommands)
+                b.OnBuildCommand += BuildTower;
+            shootCommand.OnCommand += ActivateTower;
+            shootAllCommand.OnCommand += ActivateAll;
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var b in buildCommands)
+                b.OnBuildCommand -= BuildTower;
+            shootCommand.OnCommand -= ActivateTower;
+            shootAllCommand.OnCommand -= ActivateAll;
         }
 
         private void Update()
@@ -82,13 +96,40 @@ namespace Dubinci
                 foreach (var cell in cells)
                     cell.UpdateVisual(grid.GetCell(cell.Pos));
             }
-            if (Input.GetKeyDown(KeyCode.F))
-                Pospec.Audio.AudioSourcePoolLocator.Get().Play(e);
         }
 
         private CellVisual GetCell(Vector2Int pos)
         {
             return cells[pos.y + pos.x * gridSize.y];
+        }
+
+        void BuildTower(TowerSO tower)
+        {
+            if (grid.GetCell(selectedCell).Content == null)
+            {
+                tower.Build(grid, selectedCell);
+                // use resources
+                GetCell(selectedCell).UpdateVisual(grid.GetCell(selectedCell));
+            }
+        }
+
+        void ActivateTower()
+        {
+            if (grid.GetCell(selectedCell).Content is TowerSO)
+            {
+                grid.Command(shootCommand, selectedCell);
+                // use resources
+                foreach (var cell in cells)
+                    cell.UpdateVisual(grid.GetCell(cell.Pos));
+            }
+        }
+
+        void ActivateAll()
+        {
+            grid.Command(shootAllCommand, selectedCell);
+            // use resources
+            foreach (var cell in cells)
+                cell.UpdateVisual(grid.GetCell(cell.Pos));
         }
 
         public void MoveUp()
@@ -125,20 +166,6 @@ namespace Dubinci
 
         public void Select()
         {
-            var c = grid.GetCell(selectedCell).Content;
-            if (c == null)
-            {
-                grid.AddTowerAt(TowerType.Auto, 'T', damage: 5, range: 2, hp: 2, aoe: 0, selectedCell);
-                GetCell(selectedCell).UpdateVisual(grid.GetCell(selectedCell));
-            }
-            else if (grid.GetCell(selectedCell).Content is TowerEntity tower)
-            {
-                CommandSO co = ScriptableObject.CreateInstance<CommandSO>();
-                co.changeType(CommandType.Shoot);
-                grid.Command(co, selectedCell);
-                foreach (var cell in cells)
-                    cell.UpdateVisual(grid.GetCell(cell.Pos));
-            }
             GetCell(selectedCell).SelectCell();
         }
 
