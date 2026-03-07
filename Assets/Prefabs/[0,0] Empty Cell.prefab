@@ -173,6 +173,7 @@ MonoBehaviour:
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
   blackOverlay: {fileID: 7126983979566629873}
   selectIMG: {fileID: 1906020419788491940}
+  mainImage: {fileID: 5642754376437439947}
   selectedCol: {r: 0.8490566, g: 0.73091257, b: 0.21226415, a: 1}
   highlitedCol: {r: 0.9339623, g: 0.7850892, b: 0.118948035, a: 0.64705884}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}

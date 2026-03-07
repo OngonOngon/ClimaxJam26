@@ -71,7 +71,7 @@ namespace Dubinci
             grid.AddNumberAt(1, new Vector2Int(2, 0)); */
 
             // Tower
-            grid.AddTowerAt('T', damage: 1, range: 4, hp: 3, aoe: 3, new Vector2Int(0, 0));
+            grid.AddTowerAt(type: TowerType.Basic, letter: 'T', damage: 1, range: 4, hp: 3, aoe: 3, new Vector2Int(0, 0));
             grid.AddNumberAt(2, new Vector2Int(2, 2));
             grid.AddNumberAt(1, new Vector2Int(2, 1));
             grid.AddNumberAt(1, new Vector2Int(1, 2));

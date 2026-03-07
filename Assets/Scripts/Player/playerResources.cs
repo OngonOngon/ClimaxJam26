@@ -1,7 +1,13 @@
 using UnityEngine;
+using TMPro; // Added for TextMeshPro support
 
 public class playerResources : MonoBehaviour, ITypingHandler
 {
+    [Header("UI Elements")]
+    [Tooltip("Drag the TextMeshPro objects for the numbers here")]
+    [SerializeField] private TextMeshProUGUI livesText;
+    [SerializeField] private TextMeshProUGUI moneyText;
+
     [Header("Stats")]
     [SerializeField] private int lives = 3;
     [SerializeField] private int money = 0;
@@ -28,62 +34,82 @@ public class playerResources : MonoBehaviour, ITypingHandler
         }
 
         PrintStats();
+        UpdateUI(); // Initial UI update
+    }
+
+    // --- Method to update the texts on the screen ---
+    private void UpdateUI()
+    {
+        if (livesText != null) 
+            livesText.text = lives.ToString();
+            
+        if (moneyText != null) 
+            moneyText.text = money.ToString();
     }
 
     // --- ITypingHandler Implementation ---
 
-    public void OnLineCompleted(string completedLine)
+    public bool OnLineCompleted(string completedLine)
     {
-        if (_isGameOver) return;
-
+        if (_isGameOver) return false;
+        
         money += moneyPerStoryLine;
-        Debug.Log($"[Resources] Story line finished! Earned: {moneyPerStoryLine}. Total Money: {money}");
+        UpdateUI(); // Update UI after earning money
+        
+        return true;
     }
 
-    public void OnCommandExecuted(string command)
+    public bool OnCommandExecuted(string command)
     {
-        if (_isGameOver) return;
+        if (_isGameOver) return false;
 
-        switch (command.ToLower())
+        string cmd = command.ToLower();
+
+        // Check if the command starts with "build" (covers "build shooter", "build wall" etc.)
+        if (cmd.StartsWith("build"))
         {
-            case "build":
-                TrySpendMoney(buildCost, "Building structure");
-                break;
-
-            case "upgrade":
-                TrySpendMoney(upgradeCost, "Upgrading system");
-                break;
-
-            case "shoot":
-                Debug.Log("[Resources] PEW PEW! Shooting costs nothing but skill.");
-                break;
-
-            default:
-                Debug.Log($"[Resources] Command '{command}' executed but has no resource cost.");
-                break;
+            return TrySpendMoney(buildCost, "Building structure");
         }
+
+        if (cmd.StartsWith("upgrade"))
+        {
+            return TrySpendMoney(upgradeCost, "Upgrading system");
+        }
+
+        if (cmd == "shoot")
+        {
+            Debug.Log("[Resources] PEW PEW!");
+            return true;
+        }
+
+        // Command not recognized as a paid action
+        Debug.Log($"[Resources] Command '{command}' is free or unknown.");
+        return true;
     }
 
     public void OnAllLinesCompleted()
     {
         Debug.Log("[Resources] Story finished! Bonus 500 money awarded.");
         money += 500;
+        UpdateUI(); // Update UI after earning bonus
         PrintStats();
     }
 
     // --- Logic ---
 
-    private void TrySpendMoney(int cost, string actionName)
+    private bool TrySpendMoney(int cost, string actionName)
     {
         if (money >= cost)
         {
             money -= cost;
-            Debug.Log($"[Resources] {actionName} success! Spent: {cost}. Remaining: {money}");
+            UpdateUI(); // Update UI after successfully spending money
+            Debug.Log($"[Resources] {actionName} success! Remaining: {money}");
+            return true; // we got money
         }
         else
         {
-            Debug.LogWarning($"[Resources] Not enough money for {actionName}! Need: {cost}, Have: {money}");
-            // Optional: trigger some "No Money" sound or effect here
+            Debug.LogWarning($"[Resources] Not enough money for {actionName}!");
+            return false; // no money
         }
     }
 
@@ -92,6 +118,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
         if (_isGameOver) return;
 
         lives -= amount;
+        UpdateUI(); // Update UI after taking damage
         Debug.Log($"[Resources] Ouch! Took {amount} damage. Lives left: {lives}");
 
         if (lives <= 0)
@@ -104,6 +131,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
     {
         _isGameOver = true;
         lives = 0;
+        UpdateUI(); // Final UI update to show 0 lives
         Debug.LogError("==========================");
         Debug.LogError("GAME OVER - YOU DIED");
         Debug.LogError("==========================");

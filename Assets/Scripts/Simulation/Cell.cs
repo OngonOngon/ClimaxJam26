@@ -7,6 +7,11 @@ namespace Dubinci
         string GetContentString();
     }
 
+    public class VoidEntity : IGridEntity
+    {
+        public string GetContentString() => "~";
+    }
+
     public class NumberEntity : IGridEntity
     {
         public int Value;
@@ -16,6 +21,12 @@ namespace Dubinci
         public bool addThisTick = false;
     }
 
+    public enum TowerType
+    {
+        Basic,
+        Auto,
+    };
+
     public class TowerEntity : IGridEntity
     {
         public char Letter;
@@ -23,17 +34,19 @@ namespace Dubinci
         public int Range;
         public int HP;
         public int AOE;
-        public TowerEntity(char letter, int damage, int range, int hp, int aoe)
+        public TowerType Type;
+        public TowerEntity(TowerType type, char letter, int damage, int range, int hp, int aoe)
         {
             Letter = letter;
             Damage = damage;
             Range = range;
             HP = hp;
             AOE = aoe;
+            Type = type;
         }
 
         // letter + HP
-        public string GetContentString() => $"{Letter}{HP}";
+        public string GetContentString() => $"{Letter}";
     }
 
     public class Cell
@@ -60,12 +73,12 @@ namespace Dubinci
 
         public string GetContentString()
         {
-            // if empty and has modifier, show modifier
-            if (IsEmpty() && modifier.type != ModifierType.None)
+            if (IsEmpty())
             {
-                return modifier.type == ModifierType.Add ? $"A{modifier.value}" : $"M{modifier.value}";
+                return "";
             }
-            return IsEmpty() ? "." : Content.GetContentString();
+
+            return Content.GetContentString();
         }
 
         public void CreateModifier(ModifierType type, int value)
@@ -79,7 +92,10 @@ namespace Dubinci
     {
         None = -1,
         Add = 0,
-        Multiply = 1
+        Multiply = 1,
+        // Player-built
+        Subtract = 2,
+        Divide = 3
     }
 
     public class Modifier

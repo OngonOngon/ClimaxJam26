@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Dubinci
 {
-    public class TowerSO : ScriptableObject
+    public abstract class TowerSO : ScriptableObject
     {
         public char Letter;
         public int HP;

@@ -10,7 +10,9 @@ namespace Dubinci
         [SerializeField] private CellVisual cellPrefab;
         [SerializeField] private GridLayoutGroup gridLayout;
         [SerializeField] private CellValueSO emptyCellVal;
-        [SerializeField] private Pospec.Audio.AudioEvent e;
+        [SerializeField] private List<BuildCommandSO> buildCommands;
+        [SerializeField] private CommandSO shootCommand;
+        [SerializeField] private CommandSO shootAllCommand;
 
         [SerializeField, HideInInspector] private List<CellVisual> cells = new List<CellVisual>();
 
@@ -72,6 +74,24 @@ namespace Dubinci
             foreach (var cell in cells)
                 cell.Setup(grid);
             GetCell(selectedCell).HighliteCell();
+            foreach (var b in buildCommands)
+                b.OnBuildCommand += BuildTower;
+            shootCommand.OnCommand += ActivateTower;
+            shootAllCommand.OnCommand += ActivateAll;
+        }
+
+        private void Start()
+        {
+            foreach (var cell in cells)
+                cell.UpdateVisual(grid.GetCell(cell.Pos));
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var b in buildCommands)
+                b.OnBuildCommand -= BuildTower;
+            shootCommand.OnCommand -= ActivateTower;
+            shootAllCommand.OnCommand -= ActivateAll;
         }
 
         private void Update()
@@ -82,8 +102,6 @@ namespace Dubinci
                 foreach (var cell in cells)
                     cell.UpdateVisual(grid.GetCell(cell.Pos));
             }
-            if (Input.GetKeyDown(KeyCode.F))
-                Pospec.Audio.AudioSourcePoolLocator.Get().Play(e);
         }
 
         private CellVisual GetCell(Vector2Int pos)
@@ -91,11 +109,47 @@ namespace Dubinci
             return cells[pos.y + pos.x * gridSize.y];
         }
 
+        void BuildTower(TowerSO tower)
+        {
+            if (grid.GetCell(selectedCell).Content == null)
+            {
+                tower.Build(grid, selectedCell);
+                // use resources
+                GetCell(selectedCell).UpdateVisual(grid.GetCell(selectedCell));
+            }
+        }
+
+        void ActivateTower()
+        {
+            if (grid.GetCell(selectedCell).Content is TowerEntity)
+            {
+                grid.Command(shootCommand, selectedCell);
+                // use resources
+                foreach (var cell in cells)
+                    cell.UpdateVisual(grid.GetCell(cell.Pos));
+            }
+        }
+
+        void ActivateAll()
+        {
+            grid.Command(shootAllCommand, selectedCell);
+            // use resources
+            foreach (var cell in cells)
+                cell.UpdateVisual(grid.GetCell(cell.Pos));
+        }
+
         public void MoveUp()
         {
             GetCell(selectedCell).DeselectCell();
             selectedCell.y = (selectedCell.y + 1 + gridSize.y) % gridSize.y;
             Debug.Log(selectedCell);
+
+            // we skip void cell
+            if (grid.GetCell(selectedCell).Content is VoidEntity ve)
+            {
+                MoveUp();
+                return;
+            }
             GetCell(selectedCell).HighliteCell();
         }
 
@@ -104,14 +158,29 @@ namespace Dubinci
             GetCell(selectedCell).DeselectCell();
             selectedCell.y = (selectedCell.y - 1 + gridSize.y) % gridSize.y;
             Debug.Log(selectedCell);
+
+            // we skip void cell
+            if (grid.GetCell(selectedCell).Content is VoidEntity ve)
+            {
+                MoveDown();
+                return;
+            }
             GetCell(selectedCell).HighliteCell();
         }
 
         public void MoveLeft()
         {
             GetCell(selectedCell).DeselectCell();
+
             selectedCell.x = (selectedCell.x - 1 + gridSize.x) % gridSize.x;
             Debug.Log(selectedCell);
+
+            // we skip void cell
+            if (grid.GetCell(selectedCell).Content is VoidEntity ve)
+            {
+                MoveLeft();
+                return;
+            }
             GetCell(selectedCell).HighliteCell();
         }
 
@@ -120,25 +189,18 @@ namespace Dubinci
             GetCell(selectedCell).DeselectCell();
             selectedCell.x = (selectedCell.x + 1 + gridSize.x) % gridSize.x;
             Debug.Log(selectedCell);
+
+            // we skip void cell
+            if (grid.GetCell(selectedCell).Content is VoidEntity ve)
+            {
+                MoveRight();
+                return;
+            }
             GetCell(selectedCell).HighliteCell();
         }
 
         public void Select()
         {
-            var c = grid.GetCell(selectedCell).Content;
-            if (c == null)
-            {
-                grid.AddTowerAt('T', 5, 2, 2, 1, selectedCell);
-                GetCell(selectedCell).UpdateVisual(grid.GetCell(selectedCell));
-            }
-            else if (grid.GetCell(selectedCell).Content is TowerEntity tower)
-            {
-                CommandSO co = ScriptableObject.CreateInstance<CommandSO>();
-                co.changeType(CommandType.Shoot);
-                grid.Command(co, selectedCell);
-                foreach (var cell in cells)
-                    cell.UpdateVisual(grid.GetCell(cell.Pos));
-            }
             GetCell(selectedCell).SelectCell();
         }
 
