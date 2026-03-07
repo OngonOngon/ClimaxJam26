@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 477bf4f6eb4e38245a2e49007ddbf034, type: 3}
-  m_Name: 67 Cell
+  m_Name: 2 Cell
   m_EditorClassIdentifier: 
-  mainText: 67
-  number: 67
+  mainText: 2
+  number: 2

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477bf4f6eb4e38245a2e49007ddbf034, type: 3}
   m_Name: 1 Cell
   m_EditorClassIdentifier: 
-  text: 1
+  mainText: 1
   number: 1

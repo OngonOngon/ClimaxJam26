@@ -5,7 +5,9 @@ namespace Dubinci
 {
     public class CellVisual : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI valueTMP;
+        [SerializeField] private TextMeshProUGUI valueTXT;
+        [SerializeField] private GameObject modifPanel;
+        [SerializeField] private TextMeshProUGUI modifTXT;
         [SerializeField] private CellValueSO value;
         [SerializeField, HideInInspector] private Vector2Int pos;
         [SerializeField, HideInInspector] private GridVisual grid;
@@ -18,9 +20,8 @@ namespace Dubinci
                 return;
             }
 
-            name = $"C[{pos.x},{pos.y}] {value.text}";
-            if (valueTMP)
-                valueTMP.text = value.text;
+            name = $"[{pos.x},{pos.y}] {value.name}";
+            value.SetupUI(this);
         }
 
         public void Create(GridVisual grid, Vector2Int pos, CellValueSO defaultVal)
@@ -41,7 +42,30 @@ namespace Dubinci
             if (value == null)
                 return;
             value.Setup(g, pos);
-            valueTMP.text = value.text;
+            value.SetupUI(this);
+        }
+
+        public void SetMainText(string text)
+        {
+            if (valueTXT)
+                valueTXT.text = text;
+        }
+
+        public void ShowModifier(string text)
+        {
+            modifPanel.SetActive(true);
+            modifTXT.text = text;
+        }
+
+        public void HideModifier()
+        {
+            modifPanel.SetActive(false);
+        }
+
+        public void ClearViz()
+        {
+            valueTXT.text = "";
+            HideModifier();
         }
     }
 }

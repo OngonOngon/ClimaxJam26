@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 477bf4f6eb4e38245a2e49007ddbf034, type: 3}
-  m_Name: 67 Cell
+  m_Script: {fileID: 11500000, guid: acb021f0a42d762439f8bf53900efe7f, type: 3}
+  m_Name: Add 1 Cell
   m_EditorClassIdentifier: 
-  mainText: 67
-  number: 67
+  modifText: +1
+  numberVal: {fileID: 0}
+  value: 1
