@@ -1274,7 +1274,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 135643407}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
-<<<<<<< HEAD
       propertyPath: errorColor.b
       value: 0.0035154943
       objectReference: {fileID: 0}
@@ -1285,7 +1284,6 @@ PrefabInstance:
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: errorColor.r
       value: 0.745283
-=======
       propertyPath: referenceText
       value: 'war starts
 
@@ -1320,7 +1318,6 @@ PrefabInstance:
         writing is winning
 
         hit every key'
->>>>>>> c855f5d5a8283f5003c8937382a491994a0640ec
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableTexts
