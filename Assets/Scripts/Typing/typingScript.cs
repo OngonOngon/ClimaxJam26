@@ -35,6 +35,7 @@ public class typingScript : MonoBehaviour
     [Header("General Settings")]
     [SerializeField] private TypingMode mode = TypingMode.Story;
     [SerializeField] private TextMeshProUGUI displayLabel;
+    [SerializeField] private TextMeshProUGUI availableTexts;
 
     [Header("Story Mode Settings")]
     [TextArea(3, 5)]
@@ -91,6 +92,8 @@ public class typingScript : MonoBehaviour
 
     void Update()
     {
+        availableTexts.gameObject.SetActive(false);
+
         // Handle dedicated Story Mode activation (Tab)
         if (CInput.IsStoryTriggered())
         {
@@ -211,6 +214,14 @@ public class typingScript : MonoBehaviour
 
     private void HandleCommandInput(string input)
     {
+        availableTexts.gameObject.SetActive(true);
+        availableTexts.text = "";
+        foreach (var c in validCommands)
+        {
+            if (c.ValidCommand())
+                availableTexts.text += c.text + "\n";
+        }
+
         foreach (char c in input)
         {
             if (c == '\r' || c == '\n') continue;
@@ -230,7 +241,7 @@ public class typingScript : MonoBehaviour
 
             foreach (var c in validCommands)
             {
-                if (c != null && c.TryCommand(cmd))
+                if (c != null && c.ValidCommand() && c.TryCommand(cmd))
                 {
                     commandFound = true;
 
