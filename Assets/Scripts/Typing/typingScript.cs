@@ -5,19 +5,16 @@ using Dubinci;
 using System.Collections;
 using System.Collections.Generic;
 
-// Defines whether the user is typing story text or entering commands
 public enum TypingMode { Story, Command }
 
-// Static helper for input detection
 public static class CInput
 {
     public static string GetCapturedInput() => Input.inputString;
-    public static bool IsActionTriggered() => Input.GetKeyDown(KeyCode.Tab);
+    // Tab is now dedicated to Story mode
+    public static bool IsStoryTriggered() => Input.GetKeyDown(KeyCode.Tab);
     public static bool IsSubmitTriggered() => Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter);
-    public static bool IsToggleModeTriggered() => Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl);
 }
 
-// Interface for objects that want to react to typing events (e.g., PlayerResources)
 public interface ITypingHandler
 {
     void OnLineCompleted(string completedLine);
@@ -25,7 +22,6 @@ public interface ITypingHandler
     void OnAllLinesCompleted();
 }
 
-// Interface for modular sound handling
 public interface ITypingSoundProvider
 {
     void PlayCharSound(char c);
@@ -61,25 +57,21 @@ public class typingScript : MonoBehaviour
     private bool _isFlashingError = false;
 
     private ITypingSoundProvider _soundProvider;
+    private Dubinci.Cursor _activeCursor;
+
     public ITypingHandler Handler { get; set; }
+    public bool IsActive => _isActive;
 
     void Awake()
     {
-        // First, try to find the provider on the same GameObject
+        // Interface-compliant search for sound provider
         _soundProvider = GetComponent<ITypingSoundProvider>();
-
-        // If not found, search the scene for any MonoBehaviour that implements the interface
         if (_soundProvider == null)
         {
-            // We search for all MonoBehaviours because FindFirstObjectByType cannot find interfaces directly
             var providers = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
             foreach (var p in providers)
             {
-                if (p is ITypingSoundProvider found)
-                {
-                    _soundProvider = found;
-                    break;
-                }
+                if (p is ITypingSoundProvider found) { _soundProvider = found; break; }
             }
         }
     }
@@ -92,43 +84,70 @@ public class typingScript : MonoBehaviour
 
     void Update()
     {
-        // Toggle the whole typing system
-        if (CInput.IsActionTriggered()) ToggleSystem();
-
-        if (!_isActive) return;
-
-        // Switch between Story and Command modes
-        if (CInput.IsToggleModeTriggered())
+        // Handle dedicated Story Mode activation (Tab)
+        if (CInput.IsStoryTriggered())
         {
-            mode = (mode == TypingMode.Story) ? TypingMode.Command : TypingMode.Story;
-            _playerInput = "";
-            _failedInput = "";
-            UpdateVisuals();
-            Debug.Log($"[TypingSystem] Mode switched to: {mode}");
+            if (!_isActive) ActivateStoryMode();
+            else DeactivateSystem(); // Toggle off if already active
         }
 
-        // Do not process input while the screen is flashing red
-        if (_isFlashingError) return;
+        if (!_isActive || _isFlashingError) return;
 
         HandleTyping();
     }
 
-    private void ToggleSystem()
+    // Called internally via Tab
+    public void ActivateStoryMode()
     {
-        _isActive = !_isActive;
+        _isActive = true;
+        mode = TypingMode.Story;
+        ResetInputState();
+        ShowUI(true);
+    }
+
+    // Called externally by the Cursor via Enter
+    public void ActivateCommandMode(Dubinci.Cursor caller)
+    {
+        _activeCursor = caller;
+        _isActive = true;
+        mode = TypingMode.Command;
+        ResetInputState();
+        ShowUI(true);
+    }
+
+    // Completely shuts down the typing interface
+    public void DeactivateSystem()
+    {
+        _isActive = false;
+        ResetInputState();
+        ShowUI(false);
+
+        // Notify cursor to unlock if it was a command session
+        if (_activeCursor != null)
+        {
+            _activeCursor.ExitSelection();
+            _activeCursor = null;
+        }
+    }
+
+    private void ResetInputState()
+    {
         _playerInput = "";
         _failedInput = "";
+    }
+
+    private void ShowUI(bool state)
+    {
         if (displayLabel != null)
         {
-            displayLabel.gameObject.SetActive(_isActive);
-            UpdateVisuals();
+            displayLabel.gameObject.SetActive(state);
+            if (state) UpdateVisuals();
         }
     }
 
     private void PrepareStoryText()
     {
         if (string.IsNullOrEmpty(referenceText)) return;
-        // Split text by newlines and store in a list
         string[] split = referenceText.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
         _lines.Clear();
         _lines.AddRange(split);
@@ -154,15 +173,12 @@ public class typingScript : MonoBehaviour
         foreach (char c in input)
         {
             if (c == '\r' || c == '\n') continue;
-
-            // Handle backspace
             if (c == '\b')
             {
                 if (_playerInput.Length > 0) _playerInput = _playerInput.Substring(0, _playerInput.Length - 1);
                 continue;
             }
 
-            // Compare character with target text
             int idx = _playerInput.Length;
             if (idx < target.Length && c == target[idx])
             {
@@ -171,13 +187,11 @@ public class typingScript : MonoBehaviour
             }
             else
             {
-                // Mismatch triggers immediate error state
                 TriggerError(_playerInput + c);
                 break;
             }
         }
 
-        // Completion check
         if (_playerInput == target && CInput.IsSubmitTriggered())
         {
             CompleteStoryLine();
@@ -198,23 +212,24 @@ public class typingScript : MonoBehaviour
             _soundProvider?.PlayCharSound(c);
         }
 
-        // Submit command on Enter
         if (CInput.IsSubmitTriggered() && !string.IsNullOrEmpty(_playerInput))
         {
             string cmd = _playerInput.Trim().ToLower();
             bool success = false;
+
             foreach (var c in validCommands)
             {
-                if (c.TryCommand(cmd))
+                if (c != null && c.TryCommand(cmd))
                 {
                     _soundProvider?.PlaySuccess();
                     Handler?.OnCommandExecuted(cmd);
-                    _playerInput = "";
                     success = true;
+                    DeactivateSystem(); // Close terminal after successful command
+                    break;
                 }
             }
-            if (!success)
-                TriggerError(_playerInput);
+
+            if (!success) TriggerError(_playerInput);
         }
     }
 
@@ -243,13 +258,12 @@ public class typingScript : MonoBehaviour
         _playerInput = "";
         _currentLineIndex++;
 
-        // Notify external handlers like PlayerResources
         Handler?.OnLineCompleted(finishedLine);
 
         if (_currentLineIndex >= _lines.Count)
         {
             Handler?.OnAllLinesCompleted();
-            ToggleSystem();
+            DeactivateSystem();
         }
     }
 
@@ -268,14 +282,12 @@ public class typingScript : MonoBehaviour
 
             if (_isFlashingError)
             {
-                // Render the failed attempt in red
                 string errorPart = target.Substring(0, Mathf.Min(_failedInput.Length, target.Length));
                 string rest = target.Substring(Mathf.Min(_failedInput.Length, target.Length));
                 displayLabel.text = $"<color=#{errorHex}>{errorPart}</color><color=#{idleHex}>{rest}</color>";
             }
             else
             {
-                // Render typed part (green) and remaining part (gray)
                 string typed = target.Substring(0, _playerInput.Length);
                 string untyped = target.Substring(_playerInput.Length);
                 displayLabel.text = $"<color=#{correctHex}>{typed}</color><color=#{idleHex}>{untyped}</color>";
@@ -283,7 +295,6 @@ public class typingScript : MonoBehaviour
         }
         else
         {
-            // Standard console-like command prompt
             string content = _isFlashingError ? _failedInput : _playerInput;
             string color = _isFlashingError ? errorHex : correctHex;
             displayLabel.text = $"{commandPrefix}<color=#{color}>{content}</color>";
