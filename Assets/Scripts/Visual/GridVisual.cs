@@ -115,7 +115,7 @@ namespace Dubinci
 
         void ActivateTower()
         {
-            if (grid.GetCell(selectedCell).Content is TowerSO)
+            if (grid.GetCell(selectedCell).Content is TowerEntity)
             {
                 grid.Command(shootCommand, selectedCell);
                 // use resources
