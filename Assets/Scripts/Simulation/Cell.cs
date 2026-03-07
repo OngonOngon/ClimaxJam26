@@ -22,18 +22,23 @@ namespace Dubinci
         public int Damage;
         public int Range;
         public int HP;
-        public TowerEntity(char letter, int damage, int range, int hp)
+        public int AOE;
+        public TowerEntity(char letter, int damage, int range, int hp, int aoe)
         {
             Letter = letter;
             Damage = damage;
             Range = range;
             HP = hp;
+            AOE = aoe;
         }
-        public string GetContentString() => Letter.ToString();
+
+        // letter + HP
+        public string GetContentString() => $"{Letter}{HP}";
     }
 
     public class Cell
     {
+        public Vector2Int Position;
         public IGridEntity Content = null;
 
         public Modifier modifier;
@@ -42,7 +47,6 @@ namespace Dubinci
         {
             modifier = new Modifier { type = ModifierType.None, value = 0 };
         }
-
 
         public bool IsEmpty()
         {
@@ -56,12 +60,6 @@ namespace Dubinci
 
         public string GetContentString()
         {
-            // if turret show its name and hp
-            if (Content is TowerEntity tower)
-            {
-                return $"{tower.Letter}{tower.HP}";
-            }
-
             // if empty and has modifier, show modifier
             if (IsEmpty() && modifier.type != ModifierType.None)
             {

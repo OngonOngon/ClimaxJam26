@@ -98,6 +98,8 @@ MonoBehaviour:
   selectIMG: {fileID: 1906020419788491940}
   selectedCol: {r: 0, g: 0, b: 0, a: 1}
   highlitedCol: {r: 0, g: 0, b: 0, a: 0.39215687}
+  numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
+  letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
   pos: {x: 0, y: 0}
   grid: {fileID: 0}
 --- !u!1 &2090194991455658606
@@ -243,8 +245,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
+  m_sharedMaterial: {fileID: 7394284130901499604, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -268,8 +270,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
