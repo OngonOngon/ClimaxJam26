@@ -19792,7 +19792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: $
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   m_sharedMaterial: {fileID: 7394284130901499604, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
@@ -22973,7 +22973,7 @@ GameObject:
   - component: {fileID: 1952149126}
   - component: {fileID: 1952149125}
   m_Layer: 5
-  m_Name: '[0,3] Empty Cell'
+  m_Name: '[0,3] PlayerBase'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22994,7 +22994,7 @@ MonoBehaviour:
   valueTXT: {fileID: 1734457416}
   modifPanel: {fileID: 384400013}
   modifTXT: {fileID: 1372560364}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: ef1e66c30c3b34df4bf27462079426d8, type: 2}
   blackOverlay: {fileID: 733418461}
   selectIMG: {fileID: 1940932911}
   mainImage: {fileID: 1952149126}
