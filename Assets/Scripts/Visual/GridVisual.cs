@@ -80,6 +80,12 @@ namespace Dubinci
             shootAllCommand.OnCommand += ActivateAll;
         }
 
+        private void Start()
+        {
+            foreach (var cell in cells)
+                cell.UpdateVisual(grid.GetCell(cell.Pos));
+        }
+
         private void OnDestroy()
         {
             foreach (var b in buildCommands)
