@@ -39,9 +39,34 @@ namespace Dubinci
             */
 
             // Plus modifier
+            /* grid.AddModifierAt(ModifierType.Add, 1, new Vector2Int(0, 1));
+            grid.AddModifierAt(ModifierType.Add, 2, new Vector2Int(1, 1));
+            grid.AddNumberAt(2, new Vector2Int(0, 0));
+            grid.AddNumberAt(1, new Vector2Int(1, 0));
+            grid.AddNumberAt(1, new Vector2Int(2, 0)); */
+
+            // Plus modifier 2
+            /* grid.AddModifierAt(ModifierType.Add, 2, new Vector2Int(0, 1));
             grid.AddModifierAt(ModifierType.Add, 3, new Vector2Int(1, 1));
-            grid.AddModifierAt(ModifierType.Add, 3, new Vector2Int(0, 1));
-            grid.AddNumberAt(1, new Vector2Int(0, 0));
+            grid.AddNumberAt(2, new Vector2Int(0, 0));
+            grid.AddNumberAt(3, new Vector2Int(1, 0)); */
+
+            // Plus modifier 3
+            /* grid.AddModifierAt(ModifierType.Add, 2, new Vector2Int(1, 1));
+            grid.AddNumberAt(1, new Vector2Int(1, 1));
+            grid.AddNumberAt(1, new Vector2Int(1, 0));
+            grid.AddNumberAt(2, new Vector2Int(2, 0)); */
+
+            // Multiply modifier
+            /* grid.AddModifierAt(ModifierType.Multiply, 9, new Vector2Int(1, 1));
+            grid.AddModifierAt(ModifierType.Add, 2, new Vector2Int(2, 1));
+            grid.AddNumberAt(9, new Vector2Int(1, 1)); */
+
+            // Multiply add modifier
+            grid.AddModifierAt(ModifierType.Multiply, 3, new Vector2Int(1, 2));
+            grid.AddModifierAt(ModifierType.Multiply, 2, new Vector2Int(3, 3));
+            grid.AddModifierAt(ModifierType.Add, 1, new Vector2Int(1, 1));
+            grid.AddModifierAt(ModifierType.Add, 2, new Vector2Int(2, 1));
             grid.AddNumberAt(1, new Vector2Int(1, 0));
             grid.AddNumberAt(1, new Vector2Int(2, 0));
         }

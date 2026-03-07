@@ -12,6 +12,8 @@ namespace Dubinci
         public int Value;
         public NumberEntity(int val) { Value = val; }
         public string GetContentString() => Value.ToString();
+
+        public bool addThisTick = false;
     }
 
     public class TowerEntity : IGridEntity

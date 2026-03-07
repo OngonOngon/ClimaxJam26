@@ -58,6 +58,22 @@ namespace Dubinci
         }
         public void Tick()
         {
+            Debug.Log("Tickiiiing!!!!!!!");
+            for (int x = 0; x < dim.x; x++)
+            {
+                for (int y = 0; y < dim.y; y++)
+                {
+                    if (cells[x, y].Content is TowerEntity)
+                    {
+                        nextCells[x, y].Content = cells[x, y].Content;
+                    }
+                    else
+                    {
+                        nextCells[x, y].Content = null;
+                    }
+                }
+            }
+
             // for each cell in current grid, spread its contents into the surrounding in nextCells
             // order of spreading: 1) top, 2) top right, 3) top left, 4) left, 5) right, 6) bottom left, 7) bottom right, 8) bottom
             for (int x = 0; x < dim.x; x++)
@@ -101,10 +117,11 @@ namespace Dubinci
                                         switch (targetCell.GetModifier())
                                         {
                                             case Modifier { type: ModifierType.Add, value: var addValue }:
-                                                newNumberEntity.Value += 1 + addValue;
+                                                newNumberEntity.Value = 1;
+                                                newNumberEntity.addThisTick = true;
                                                 break;
                                             case Modifier { type: ModifierType.Multiply, value: var mulValue }:
-                                                newNumberEntity.Value += mulValue;
+                                                newNumberEntity.Value += 1 * mulValue;
                                                 break;
                                             case Modifier { type: ModifierType.None, value: _ }:
                                                 newNumberEntity.Value = 1;
@@ -115,12 +132,14 @@ namespace Dubinci
                                     case NumberEntity targetNumberEntity: // already a number cell
                                         switch (targetCell.GetModifier())
                                         {
-                                            case Modifier { type: ModifierType.Multiply, value: var mulValue }:
-                                                targetNumberEntity.Value *= mulValue;
-                                                break;
                                             case Modifier { type: ModifierType.Add, value: _ }:
+                                                targetNumberEntity.Value += 1;
+                                                targetNumberEntity.addThisTick = true;
+                                                break;
+                                            case Modifier { type: ModifierType.Multiply, value: var mulValue }:
+                                                targetNumberEntity.Value += 1 * mulValue;
+                                                break;
                                             case Modifier { type: ModifierType.None, value: _ }:
-                                                Debug.Log($"NE Adding 1 to {targetNumberEntity.Value}");
                                                 targetNumberEntity.Value++;
                                                 break;
                                         }
@@ -135,6 +154,24 @@ namespace Dubinci
                             currDirectionIndex += 1;
                             currDirectionIndex %= directions.Length;
                         }
+                    }
+                }
+            }
+
+            // add modifier value to all numbers that got added this tick
+            for (int x = 0; x < dim.x; x++)
+            {
+                for (int y = 0; y < dim.y; y++)
+                {
+                    if (nextCells[x, y].Content is NumberEntity num && num.addThisTick)
+                    {
+                        switch (nextCells[x, y].GetModifier())
+                        {
+                            case Modifier { type: ModifierType.Add, value: var addValue }:
+                                num.Value += addValue;
+                                break;
+                        }
+                        num.addThisTick = false;
                     }
                 }
             }
