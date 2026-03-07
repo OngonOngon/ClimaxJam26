@@ -1284,40 +1284,6 @@ PrefabInstance:
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: errorColor.r
       value: 0.745283
-      propertyPath: referenceText
-      value: 'war starts
-
-        letters vs digits
-
-        type for cash
-
-        fast
-        lines flow
-
-        data is wealth
-
-        input meets output
-
-        words
-        gain power
-
-        zeros fall back
-
-        ones lose ground
-
-        script
-        is running
-
-        code builds profit
-
-        chars earn gold
-
-        system
-        is stable
-
-        writing is winning
-
-        hit every key'
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableTexts
@@ -11613,6 +11579,7 @@ MonoBehaviour:
   - {fileID: 1340736743}
   - {fileID: 1686785863}
   - {fileID: 1799005024}
+  TickInterval: 2
 --- !u!1 &1055099400
 GameObject:
   m_ObjectHideFlags: 0
@@ -21012,6 +20979,9 @@ MonoBehaviour:
   grid: {fileID: 1023992895}
   moveMode: 1
   terminal: {fileID: 1670364569}
+  audioSource: {fileID: 0}
+  moveCursorSound: {fileID: 0}
+  selectCursorSound: {fileID: 0}
 --- !u!4 &1838711214
 Transform:
   m_ObjectHideFlags: 0
