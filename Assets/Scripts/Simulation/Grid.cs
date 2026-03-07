@@ -18,8 +18,14 @@ namespace Dubinci
             {
                 for (int y = 0; y < dim.y; y++)
                 {
-                    cells[x, y] = new Cell();
-                    nextCells[x, y] = new Cell();
+                    cells[x, y] = new Cell
+                    {
+                        Position = new Vector2Int(x, y)
+                    };
+                    nextCells[x, y] = new Cell
+                    {
+                        Position = new Vector2Int(x, y)
+                    };
                 }
             }
         }
@@ -52,7 +58,7 @@ namespace Dubinci
             this.nextCells[pos.x, pos.y].CreateModifier(type, value);
         }
 
-        public void AddTowerAt(char letter, int damage, int range, int hp, Vector2Int pos)
+        public void AddTowerAt(char letter, int damage, int range, int hp, int aoe, Vector2Int pos)
         {
             if (!IsValidPos(pos))
             {
@@ -61,7 +67,7 @@ namespace Dubinci
 
             Cell targetCell = this.cells[pos.x, pos.y];
 
-            targetCell.Content = new TowerEntity(letter, damage, range, hp);
+            targetCell.Content = new TowerEntity(letter, damage, range, hp, aoe);
         }
 
         public bool IsValidPos(Vector2Int pos)
@@ -213,7 +219,7 @@ namespace Dubinci
         private Cell GetTarget(int range, Vector2Int pos)
         {
             Cell bestTarget = null;
-            int maxNumber = 0;
+            int maxNumber = -1;
 
             for (int y = pos.y - range; y <= pos.y + range; y++)
             {
@@ -253,15 +259,39 @@ namespace Dubinci
                     {
                         Cell hitCell = GetTarget(tower.Range, pos);
 
-                        if (hitCell.Content is NumberEntity number)
+                        if (hitCell == null)
                         {
-                            number.Value -= tower.Damage;
-                            if (number.Value <= 0)
+                            Debug.Log("No target in range");
+                            return;
+                        }
+
+                        Vector2Int targetPos = hitCell.Position;
+
+                        // apply aoe
+                        for (int y = targetPos.y - tower.AOE; y <= targetPos.y + tower.AOE; y++)
+                        {
+                            for (int x = targetPos.x + tower.AOE; x >= targetPos.x - tower.AOE; x--)
                             {
-                                // make the cell be null
-                                hitCell.Content = null;
+                                Vector2Int checkPos = new Vector2Int(x, y);
+
+                                if (!IsValidPos(checkPos)) continue;
+
+
+                                Cell aoeCell = cells[checkPos.x, checkPos.y];
+                                if (aoeCell.Content is NumberEntity numberEntity)
+                                {
+                                    numberEntity.Value -= tower.Damage;
+
+                                    if (numberEntity.Value <= 0)
+                                    {
+                                        // make the cell be null
+                                        aoeCell.Content = null;
+                                    }
+                                }
                             }
                         }
+
+
                     }
                     break;
             }
