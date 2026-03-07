@@ -49,6 +49,21 @@ namespace Dubinci
         public string GetContentString() => $"{Letter}";
     }
 
+    public class PlayerBase : IGridEntity
+    {
+        public string GetContentString() => "$";
+
+        public PlayerBase() { }
+
+        public void DamageBase()
+        {
+            playerResources resources = Object.FindAnyObjectByType<playerResources>();
+
+            resources.TakeDamage(1);
+        }
+
+    }
+
     public class Cell
     {
         public Vector2Int Position;

@@ -9,7 +9,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
     [SerializeField] private TextMeshProUGUI moneyText;
 
     [Header("Stats")]
-    [SerializeField] private int lives = 3;
+    [SerializeField] private int lives = 3; // player hp Health
     [SerializeField] private int money = 0;
 
     [Header("Rewards & Costs")]

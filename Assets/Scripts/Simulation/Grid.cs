@@ -76,6 +76,18 @@ namespace Dubinci
             targetCell.Content = new TowerEntity(type, letter, damage, range, hp, aoe);
         }
 
+        public void AddPlayerBase(Vector2Int pos)
+        {
+            if (!IsValidPos(pos))
+            {
+                return;
+            }
+
+            Cell targetCell = this.cells[pos.x, pos.y];
+
+            targetCell.Content = new PlayerBase();
+        }
+
         public bool IsValidPos(Vector2Int pos)
         {
             if (!(pos.x >= 0 && pos.y >= 0 && pos.x < dim.x && pos.y < dim.y))
@@ -97,7 +109,7 @@ namespace Dubinci
                 for (int y = 0; y < dim.y; y++)
                 {
                     IGridEntity content = cells[x, y].Content;
-                    if (content is TowerEntity || content is VoidEntity)
+                    if (content is TowerEntity || content is VoidEntity || content is PlayerBase)
                     {
                         nextCells[x, y].Content = content;
                     }
@@ -206,6 +218,10 @@ namespace Dubinci
                                         {
                                             targetCell.Content = null;
                                         }
+                                        break;
+                                    case PlayerBase playerBase: // player base cell
+                                        playerBase.DamageBase();
+                                        Debug.Log("Base got damaged!");
                                         break;
                                 }
                                 numberEntity.Value--;
