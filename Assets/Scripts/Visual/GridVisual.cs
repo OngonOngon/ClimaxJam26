@@ -11,6 +11,7 @@ namespace Dubinci
         [SerializeField] private GridLayoutGroup gridLayout;
         [SerializeField] private CellValueSO emptyCellVal;
         [SerializeField] private List<BuildCommandSO> buildCommands;
+        [SerializeField] private List<BuildModifierSO> buildModifierCommands;
         [SerializeField] private CommandSO shootCommand;
         [SerializeField] private CommandSO shootAllCommand;
 
@@ -139,6 +140,17 @@ namespace Dubinci
             if (ValidateBuild())
             {
                 tower.Build(grid, selectedCell);
+                // use resources
+                GetCell(selectedCell).UpdateVisual(grid.GetCell(selectedCell));
+            }
+        }
+
+        void BuildModifier(ModifierCellSO modifier)
+        {
+            if (grid.GetCell(selectedCell).Content == null)
+            {
+                modifier.Setup(grid, selectedCell);
+                modifier.SetupUI(GetCell(selectedCell));
                 // use resources
                 GetCell(selectedCell).UpdateVisual(grid.GetCell(selectedCell));
             }

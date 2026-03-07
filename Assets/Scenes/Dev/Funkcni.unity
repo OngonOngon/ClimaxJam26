@@ -1012,6 +1012,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1915439579}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: referenceText
+      value: 'war starts
+
+        letters vs digits
+
+        type for cash
+
+        fast
+        lines flow
+
+        data is wealth
+
+        input meets output
+
+        words
+        gain power
+
+        zeros fall back
+
+        ones lose ground
+
+        script
+        is running
+
+        code builds profit
+
+        chars earn gold
+
+        system
+        is stable
+
+        writing is winning
+
+        hit every key'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: validCommands.Array.size
       value: 6
       objectReference: {fileID: 0}

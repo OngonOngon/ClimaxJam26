@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d983fb8f95205146be47e4b6db447e1, type: 3}
-  m_Name: DivideModifier
+  m_Script: {fileID: 11500000, guid: 998addcb09ae44b1ab8a82623a0ce6a4, type: 3}
+  m_Name: Build Modifier Subtract
   m_EditorClassIdentifier: 
-  type: 3
-  modifText: /2
-  value: 2
-  numberVal: {fileID: 0}
+  text: modifier subtract
+  type: 2
+  modifier: {fileID: 11400000, guid: d90cb0933fab740b4b74b650ad7ce459, type: 2}
