@@ -80,6 +80,11 @@ namespace Dubinci
                 b.OnBuildCommand += BuildTower;
                 b.Validate += ValidateBuild;
             }
+            foreach (var b in buildModifierCommands)
+            {
+                b.OnBuildCommand += BuildModifier;
+                b.Validate += ValidateBuild;
+            }
             shootCommand.OnCommand += ActivateTower;
             shootCommand.Validate += ValidateShoot;
             shootAllCommand.OnCommand += ActivateAll;
@@ -112,6 +117,11 @@ namespace Dubinci
             foreach (var b in buildCommands)
             {
                 b.OnBuildCommand -= BuildTower;
+                b.Validate -= ValidateBuild;
+            }
+            foreach (var b in buildModifierCommands)
+            {
+                b.OnBuildCommand -= BuildModifier;
                 b.Validate -= ValidateBuild;
             }
             shootCommand.OnCommand -= ActivateTower;
