@@ -63,12 +63,19 @@ namespace Dubinci
             grid.AddNumberAt(9, new Vector2Int(1, 1)); */
 
             // Multiply add modifier
-            grid.AddModifierAt(ModifierType.Multiply, 3, new Vector2Int(1, 2));
+            /* grid.AddModifierAt(ModifierType.Multiply, 3, new Vector2Int(1, 2));
             grid.AddModifierAt(ModifierType.Multiply, 2, new Vector2Int(3, 3));
             grid.AddModifierAt(ModifierType.Add, 1, new Vector2Int(1, 1));
             grid.AddModifierAt(ModifierType.Add, 2, new Vector2Int(2, 1));
             grid.AddNumberAt(1, new Vector2Int(1, 0));
-            grid.AddNumberAt(1, new Vector2Int(2, 0));
+            grid.AddNumberAt(1, new Vector2Int(2, 0)); */
+
+            // Tower
+            grid.AddTowerAt('T', 1, 1, 1, new Vector2Int(1, 1));
+            grid.AddNumberAt(1, new Vector2Int(1, 0));
+            grid.AddNumberAt(1, new Vector2Int(1, 2));
+            grid.AddNumberAt(1, new Vector2Int(0, 1));
+            grid.AddNumberAt(1, new Vector2Int(2, 1));
         }
 
         private void Update()
@@ -80,6 +87,12 @@ namespace Dubinci
             else if (Input.GetKeyDown(KeyCode.P))
             {
                 PrintGrid();
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                CommandSO cmd = ScriptableObject.CreateInstance<CommandSO>();
+                cmd.changeType(CommandType.Shoot);
+                grid.Command(cmd, new Vector2Int(1, 1));
             }
         }
     }

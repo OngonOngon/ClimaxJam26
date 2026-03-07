@@ -52,6 +52,18 @@ namespace Dubinci
             this.nextCells[pos.x, pos.y].CreateModifier(type, value);
         }
 
+        public void AddTowerAt(char letter, int damage, int range, int hp, Vector2Int pos)
+        {
+            if (!IsValidPos(pos))
+            {
+                return;
+            }
+
+            Cell targetCell = this.cells[pos.x, pos.y];
+
+            targetCell.Content = new TowerEntity(letter, damage, range, hp);
+        }
+
         public bool IsValidPos(Vector2Int pos)
         {
             return pos.x >= 0 && pos.y >= 0 && pos.x < dim.x && pos.y < dim.y;
@@ -145,7 +157,11 @@ namespace Dubinci
                                         }
                                         break;
                                     case TowerEntity towerEntity: // tower cell
-                                                                  // TODO: Attack!!!!!
+                                        towerEntity.HP -= 1;
+                                        if (towerEntity.HP <= 0)
+                                        {
+                                            targetCell.Content = null;
+                                        }
                                         break;
                                 }
                                 numberEntity.Value--;
@@ -194,7 +210,62 @@ namespace Dubinci
             nextCells = temp;
         }
 
-        public void Command(CommandSO command, Vector2Int pos) { }
+        private Cell GetTarget(int range, Vector2Int pos)
+        {
+            Cell bestTarget = null;
+            int maxNumber = 0;
+
+            for (int y = pos.y - range; y <= pos.y + range; y++)
+            {
+                for (int x = pos.x + range; x >= pos.x - range; x--)
+                {
+                    Vector2Int checkPos = new Vector2Int(x, y);
+
+                    if (!IsValidPos(checkPos)) continue;
+
+                    if (Mathf.Abs(x - pos.x) + Mathf.Abs(y - pos.y) > range) continue;
+
+                    Cell currentCell = cells[checkPos.x, checkPos.y];
+                    if (currentCell.Content is NumberEntity numberEntity && numberEntity.Value > maxNumber)
+                    {
+                        maxNumber = numberEntity.Value;
+                        bestTarget = currentCell;
+                    }
+                }
+            }
+
+            return bestTarget;
+        }
+        public void Command(CommandSO command, Vector2Int pos)
+        {
+            if (!IsValidPos(pos))
+            {
+                return;
+            }
+
+            Debug.Log($"Executing command {command.type} at position {pos}");
+
+            switch (command.type)
+            {
+                case CommandType.Shoot:
+                    Cell currentCell = cells[pos.x, pos.y];
+                    if (currentCell.Content is TowerEntity tower)
+                    {
+                        Cell hitCell = GetTarget(tower.Range, pos);
+
+                        if (hitCell.Content is NumberEntity number)
+                        {
+                            number.Value -= tower.Damage;
+                            if (number.Value <= 0)
+                            {
+                                // make the cell be null
+                                hitCell.Content = null;
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
         public Cell GetCell(Vector2Int pos)
         {
             return cells[pos.x, pos.y];

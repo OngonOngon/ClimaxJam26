@@ -19,7 +19,16 @@ namespace Dubinci
     public class TowerEntity : IGridEntity
     {
         public char Letter;
-        public TowerEntity(char letter) { Letter = letter; }
+        public int Damage;
+        public int Range;
+        public int HP;
+        public TowerEntity(char letter, int damage, int range, int hp)
+        {
+            Letter = letter;
+            Damage = damage;
+            Range = range;
+            HP = hp;
+        }
         public string GetContentString() => Letter.ToString();
     }
 
@@ -47,6 +56,12 @@ namespace Dubinci
 
         public string GetContentString()
         {
+            // if turret show its name and hp
+            if (Content is TowerEntity tower)
+            {
+                return $"{tower.Letter}{tower.HP}";
+            }
+
             // if empty and has modifier, show modifier
             if (IsEmpty() && modifier.type != ModifierType.None)
             {
