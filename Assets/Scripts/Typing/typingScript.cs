@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System;
+using Dubinci;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -43,7 +44,7 @@ public class typingScript : MonoBehaviour
     [SerializeField] private string referenceText;
 
     [Header("Command Mode Settings")]
-    [SerializeField] private List<string> validCommands = new List<string> { "build", "upgrade", "shoot" };
+    [SerializeField] private List<CommandSO> validCommands;
     [SerializeField] private string commandPrefix = "> ";
 
     [Header("Colors")]
@@ -201,16 +202,19 @@ public class typingScript : MonoBehaviour
         if (CInput.IsSubmitTriggered() && !string.IsNullOrEmpty(_playerInput))
         {
             string cmd = _playerInput.Trim().ToLower();
-            if (validCommands.Contains(cmd))
+            bool success = false;
+            foreach (var c in validCommands)
             {
-                _soundProvider?.PlaySuccess();
-                Handler?.OnCommandExecuted(cmd);
-                _playerInput = "";
+                if (c.TryCommand(cmd))
+                {
+                    _soundProvider?.PlaySuccess();
+                    Handler?.OnCommandExecuted(cmd);
+                    _playerInput = "";
+                    success = true;
+                }
             }
-            else
-            {
+            if (!success)
                 TriggerError(_playerInput);
-            }
         }
     }
 
