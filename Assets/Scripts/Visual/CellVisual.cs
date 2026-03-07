@@ -12,6 +12,7 @@ namespace Dubinci
         [SerializeField] private CellValueSO value;
         [SerializeField] private Image blackOverlay;
         [SerializeField] private Image selectIMG;
+        [SerializeField] private Image mainImage;
         [SerializeField] private Color selectedCol = Color.white;
         [SerializeField] private Color highlitedCol = Color.white;
         [SerializeField] private TMP_FontAsset numberSDF;
@@ -79,9 +80,19 @@ namespace Dubinci
             valueTXT.text = "";
             HideModifier();
         }
- 
+
         public void UpdateVisual(Cell cell)
         {
+            if (cell.Content is Dubinci.VoidEntity)
+            {
+                SetMainText("");
+                if (mainImage)
+                {
+                    mainImage.enabled = false;
+                }
+                return;
+            }
+
             SetMainText(cell.GetContentString());
             if (cell.Content != null && cell.Content is Dubinci.NumberEntity)
             {
@@ -89,7 +100,7 @@ namespace Dubinci
                 valueTXT.color = numberColor;
                 blackOverlay.gameObject.SetActive(true);
             }
-            else 
+            else
             {
                 valueTXT.font = letterSDF;
                 valueTXT.color = letterColor;
