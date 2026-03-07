@@ -793,6 +793,9 @@ MonoBehaviour:
   modifPanel: {fileID: 1033255940}
   modifTXT: {fileID: 331821271}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  selectIMG: {fileID: 0}
+  selectedCol: {r: 0, g: 0, b: 0, a: 0}
+  highlitedCol: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 1, y: 0}
   grid: {fileID: 1023992895}
 --- !u!114 &369589273
@@ -889,6 +892,9 @@ MonoBehaviour:
   modifPanel: {fileID: 524311847}
   modifTXT: {fileID: 1152461666}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  selectIMG: {fileID: 0}
+  selectedCol: {r: 0, g: 0, b: 0, a: 0}
+  highlitedCol: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 2, y: 0}
   grid: {fileID: 1023992895}
 --- !u!114 &409446233
@@ -1349,6 +1355,9 @@ MonoBehaviour:
   modifPanel: {fileID: 1557475571}
   modifTXT: {fileID: 662495665}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  selectIMG: {fileID: 0}
+  selectedCol: {r: 0, g: 0, b: 0, a: 0}
+  highlitedCol: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 0, y: 0}
   grid: {fileID: 1023992895}
 --- !u!114 &609376939
@@ -2338,6 +2347,9 @@ MonoBehaviour:
   modifPanel: {fileID: 202044420}
   modifTXT: {fileID: 1585766146}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  selectIMG: {fileID: 0}
+  selectedCol: {r: 0, g: 0, b: 0, a: 0}
+  highlitedCol: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 2, y: 1}
   grid: {fileID: 1023992895}
 --- !u!114 &1010145075
@@ -2570,6 +2582,9 @@ MonoBehaviour:
   modifPanel: {fileID: 1223998451}
   modifTXT: {fileID: 1430289690}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  selectIMG: {fileID: 0}
+  selectedCol: {r: 0, g: 0, b: 0, a: 0}
+  highlitedCol: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 1, y: 2}
   grid: {fileID: 1023992895}
 --- !u!114 &1015887610
@@ -3438,6 +3453,9 @@ MonoBehaviour:
   modifPanel: {fileID: 556486459}
   modifTXT: {fileID: 657178553}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  selectIMG: {fileID: 0}
+  selectedCol: {r: 0, g: 0, b: 0, a: 0}
+  highlitedCol: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 0, y: 1}
   grid: {fileID: 1023992895}
 --- !u!114 &1573934031
@@ -3806,6 +3824,9 @@ MonoBehaviour:
   modifPanel: {fileID: 129313115}
   modifTXT: {fileID: 1785937094}
   value: {fileID: 11400000, guid: dd64b3bb9eb50a142bc168307a37795b, type: 2}
+  selectIMG: {fileID: 0}
+  selectedCol: {r: 0, g: 0, b: 0, a: 0}
+  highlitedCol: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 1, y: 1}
   grid: {fileID: 1023992895}
 --- !u!114 &1612823813
@@ -4003,6 +4024,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1838711212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838711214}
+  - component: {fileID: 1838711213}
+  m_Layer: 0
+  m_Name: Cursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1838711213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838711212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66dac727ce6033f4c8880e14aa1a85f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1023992895}
+--- !u!4 &1838711214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838711212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2023342380
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,6 +4125,9 @@ MonoBehaviour:
   modifPanel: {fileID: 528065721}
   modifTXT: {fileID: 1592724118}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  selectIMG: {fileID: 0}
+  selectedCol: {r: 0, g: 0, b: 0, a: 0}
+  highlitedCol: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 2, y: 2}
   grid: {fileID: 1023992895}
 --- !u!114 &2023342383
@@ -4508,6 +4577,9 @@ MonoBehaviour:
   modifPanel: {fileID: 806801940}
   modifTXT: {fileID: 1013759874}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  selectIMG: {fileID: 0}
+  selectedCol: {r: 0, g: 0, b: 0, a: 0}
+  highlitedCol: {r: 0, g: 0, b: 0, a: 0}
   pos: {x: 0, y: 2}
   grid: {fileID: 1023992895}
 --- !u!114 &2128779092
@@ -4576,3 +4648,4 @@ SceneRoots:
   - {fileID: 870298774}
   - {fileID: 2127362653}
   - {fileID: 271452912}
+  - {fileID: 1838711214}
