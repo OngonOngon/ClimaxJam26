@@ -18,8 +18,8 @@ public static class CInput
 
 public interface ITypingHandler
 {
-    bool OnLineCompleted(string completedLine); 
-    bool OnCommandExecuted(string command);     
+    bool OnLineCompleted(string completedLine);
+    bool OnCommandExecuted(string command);
     void OnAllLinesCompleted();
 }
 
@@ -256,6 +256,11 @@ public class typingScript : MonoBehaviour
                             buildCmd.Execute();
                         }
 
+                        if (c is BuildModifierSO modifierCmd)
+                        {
+                            modifierCmd.Execute();
+                        }
+
                         _soundProvider?.PlaySuccess();
                         DeactivateSystem(); // SUCCESS: Zavřeme terminál
                     }
@@ -271,7 +276,6 @@ public class typingScript : MonoBehaviour
             if (!commandFound) TriggerError(_playerInput);
         }
     }
-
 
     private void TriggerError(string textToFlash)
     {
@@ -303,7 +307,7 @@ public class typingScript : MonoBehaviour
         if (_currentLineIndex >= _lines.Count)
         {
             Handler?.OnAllLinesCompleted();
-            
+
             // HACK: Prevent the script from deactivating if we are in the main menu
             if (SceneManager.GetActiveScene().name != "VojtaMenuTest")
             {

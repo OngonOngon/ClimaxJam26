@@ -40,10 +40,9 @@ public class playerResources : MonoBehaviour, ITypingHandler
     // --- Method to update the texts on the screen ---
     private void UpdateUI()
     {
-        if (livesText != null) 
+        if (livesText != null)
             livesText.text = lives.ToString();
-            
-        if (moneyText != null) 
+        if (moneyText != null)
             moneyText.text = money.ToString();
     }
 
@@ -52,10 +51,8 @@ public class playerResources : MonoBehaviour, ITypingHandler
     public bool OnLineCompleted(string completedLine)
     {
         if (_isGameOver) return false;
-        
         money += moneyPerStoryLine;
         UpdateUI(); // Update UI after earning money
-        
         return true;
     }
 
@@ -74,6 +71,11 @@ public class playerResources : MonoBehaviour, ITypingHandler
         if (cmd.StartsWith("upgrade"))
         {
             return TrySpendMoney(upgradeCost, "Upgrading system");
+        }
+
+        if (cmd.StartsWith("modifier"))
+        {
+            return TrySpendMoney(buildCost, "Applying modifier");
         }
 
         if (cmd == "shoot")
