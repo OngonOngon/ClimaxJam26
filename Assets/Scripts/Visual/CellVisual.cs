@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 namespace Dubinci
@@ -9,6 +10,9 @@ namespace Dubinci
         [SerializeField] private GameObject modifPanel;
         [SerializeField] private TextMeshProUGUI modifTXT;
         [SerializeField] private CellValueSO value;
+        [SerializeField] private Image selectIMG;
+        [SerializeField] private Color selectedCol = Color.white;
+        [SerializeField] private Color highlitedCol = Color.white;
         [SerializeField, HideInInspector] private Vector2Int pos;
         [SerializeField, HideInInspector] private GridVisual grid;
 
@@ -73,6 +77,23 @@ namespace Dubinci
         public void UpdateVisual(Cell cell)
         {
             SetMainText(cell.GetContentString());
+        }
+
+        public void HighliteCell()
+        {
+            selectIMG.gameObject.SetActive(true);
+            selectIMG.color = highlitedCol;
+        }
+
+        public void SelectCell()
+        {
+            selectIMG.gameObject.SetActive(true);
+            selectIMG.color = selectedCol;
+        }
+
+        public void DeselectCell()
+        {
+            selectIMG.gameObject.SetActive(false);
         }
     }
 }
