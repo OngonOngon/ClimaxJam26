@@ -168,7 +168,9 @@ namespace Dubinci
                                         NumberEntity newNumberEntity = new NumberEntity(0);
                                         switch (targetCell.GetModifier())
                                         {
-                                            case Modifier { type: ModifierType.Add, value: var addValue }:
+                                            case Modifier { type: ModifierType.Add, value: _ }:
+                                            case Modifier { type: ModifierType.Subtract, value: _ }:
+                                            case Modifier { type: ModifierType.Divide, value: _ }:
                                                 newNumberEntity.Value = 1;
                                                 newNumberEntity.addThisTick = true;
                                                 break;
@@ -185,6 +187,8 @@ namespace Dubinci
                                         switch (targetCell.GetModifier())
                                         {
                                             case Modifier { type: ModifierType.Add, value: _ }:
+                                            case Modifier { type: ModifierType.Subtract, value: _ }:
+                                            case Modifier { type: ModifierType.Divide, value: _ }:
                                                 targetNumberEntity.Value += 1;
                                                 targetNumberEntity.addThisTick = true;
                                                 break;
@@ -227,7 +231,7 @@ namespace Dubinci
                                 num.Value += addValue;
                                 break;
                             case Modifier { type: ModifierType.Subtract, value: var subValue }:
-                                num.Value -= subValue;
+                                num.Value += subValue;
                                 break;
                             case Modifier { type: ModifierType.Divide, value: var divValue }:
                                 num.Value = Mathf.FloorToInt((float)num.Value / divValue);
@@ -352,9 +356,9 @@ namespace Dubinci
                     Shoot(pos);
                     break;
                 case CommandType.ShootAll:
-                    for (int x = pos.x; x >= pos.x; x--)
+                    for (int x = 0; x < dim.x; x++)
                     {
-                        for (int y = pos.y; y <= pos.y; y++)
+                        for (int y = 0; y < dim.y; y++)
                         {
                             Vector2Int checkPos = new Vector2Int(x, y);
 

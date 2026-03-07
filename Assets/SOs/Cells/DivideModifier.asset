@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d983fb8f95205146be47e4b6db447e1, type: 3}
   m_Name: DivideModifier
   m_EditorClassIdentifier: 
-  type: -1
-  modifText: 
-  value: 0
+  type: 3
+  modifText: /2
+  value: 2
   numberVal: {fileID: 0}
