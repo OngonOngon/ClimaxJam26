@@ -31613,7 +31613,7 @@ MonoBehaviour:
   - {fileID: 173518199}
   - {fileID: 1138276982}
   - {fileID: 1395174706}
-  TickInterval: 4
+  TickInterval: 3
 --- !u!114 &1050344317
 MonoBehaviour:
   m_ObjectHideFlags: 0
