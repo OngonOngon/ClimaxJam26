@@ -24,7 +24,7 @@ MonoBehaviour:
     DamageThreshold: 0
     RangeAmount: 0
     RangeThreshold: 0
-    HPAmount: 5
+    HPAmount: 15
     HPThreshold: 2
     AOEAmount: 0
     AOEThreshold: 0
