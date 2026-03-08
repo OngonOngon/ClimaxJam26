@@ -87,11 +87,7 @@ public class typingScript : MonoBehaviour
         PrepareStoryText();
         if (displayLabel != null) displayLabel.gameObject.SetActive(false);
 
-        // HACK: Hardcoded check for the main menu scene to start automatically
-        if (SceneManager.GetActiveScene().name == "VojtaMenuTest")
-        {
-            ActivateStoryMode();
-        }
+        ActivateStoryMode();
     }
 
     void Update()
@@ -363,7 +359,7 @@ public class typingScript : MonoBehaviour
         {
             Debug.Log("[TypingSystem] Main Menu text completed. Loading Scene 5...");
             SceneManager.LoadScene(5);
-            return; 
+            return;
         }
 
         // Colleague's logic: loop the text endlessly for other scenes
