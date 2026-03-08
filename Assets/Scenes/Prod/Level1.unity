@@ -1436,17 +1436,24 @@ PrefabInstance:
       objectReference: {fileID: 135643407}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: referenceText
-      value: 'try to build a shooter tower
+      value: 'type out this text to earn gold
 
-        to build a shooter tower press
+        your goal is to eliminate
+        all numbers
+
+        press tab to switch to building mode and then press
         enter
 
-        then write build shooter
+        you will see a list of possible commands
 
-        and you are done
+        your towers
+        have limited range use WASD to position elsewhere
 
-        build
-        modifier'
+        most towers have
+        to be shot manually
+
+        You are not in danger yet dont be afraid to
+        experiment'
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableTexts
