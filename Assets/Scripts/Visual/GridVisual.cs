@@ -233,6 +233,8 @@ namespace Dubinci
 
         void BuildTower(TowerSO tower)
         {
+            Debug.Log("Build tower");
+
             if (ValidateBuild())
             {
                 tower.Build(grid, selectedCell);
@@ -265,6 +267,8 @@ namespace Dubinci
 
         void ActivateAll()
         {
+            Debug.Log("Activate all");
+
             grid.Command(shootAllCommand, selectedCell);
             // use resources
             foreach (var cell in cells)

@@ -29,12 +29,8 @@ namespace Dubinci
 
         public virtual bool TryCommand(string text)
         {
-            if (this.text == text)
-            {
-                OnCommand?.Invoke();
-                return true;
-            }
-            return false;
+            OnCommand?.Invoke();
+            return true;
         }
 
         public virtual bool ValidCommand()

@@ -294,6 +294,7 @@ public class typingScript : MonoBehaviour
             {
                 targetCommand = possibleCommands[0];
                 cmd = targetCommand.text.ToLower(); // Pošleme plný název příkazu do peněženky
+                targetCommand.TryCommand(cmd);
             }
             else
             {
@@ -313,9 +314,9 @@ public class typingScript : MonoBehaviour
             {
                 bool canAfford = (Handler == null) || Handler.OnCommandExecuted(cmd);
 
-                if (canAfford)
+                if (targetCommand is BuildCommandSO buildCmd)
                 {
-                    if (targetCommand is BuildCommandSO buildCmd)
+                    if (canAfford)
                     {
                         buildCmd.Execute();
                     }
