@@ -3445,20 +3445,19 @@ PrefabInstance:
       objectReference: {fileID: 135643407}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: referenceText
-      value: 'numbers can grow their uhm numbers
+      value: 'numbers grow their uhm numbers
 
-        make sure to quell them
-        before you are overrun
+        quell them before you are overrun
 
-        aoe is your friend
+        better
+        turrets are your friends
 
-        operation tiles
-        influence number spread
+        operator tiles grow number spread
 
-        consider upgrading your towers
+        upgrade
+        your towers
 
-        where
-        did these invaders come from'
+        where did these invaders come from'
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableTexts
