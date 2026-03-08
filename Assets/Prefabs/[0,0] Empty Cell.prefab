@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4125925153531776831}
   - component: {fileID: 7126983979566629873}
   m_Layer: 5
-  m_Name: Number Black Overlay
+  m_Name: Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4373184736405950995, guid: 4fe4903c06741c7f192003bebcfc7b80, type: 3}
+  m_Sprite: {fileID: -7411422982612378393, guid: a2bf53e252c446449bafcd28c3f2897e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -171,15 +171,17 @@ MonoBehaviour:
   modifPanel: {fileID: 2090194991455658606}
   modifTXT: {fileID: 2946655888300354686}
   value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
-  blackOverlay: {fileID: 7126983979566629873}
   selectIMG: {fileID: 1906020419788491940}
   mainImage: {fileID: 5642754376437439947}
-  selectedCol: {r: 0.8490566, g: 0.73091257, b: 0.21226415, a: 1}
-  highlitedCol: {r: 0.9339623, g: 0.7850892, b: 0.118948035, a: 0.64705884}
+  selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
+  highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  overlay: {fileID: 7126983979566629873}
+  numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
+  letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.4, g: 0.8117647, b: 0.40784314, a: 1}
-  letterColor: {r: 0, g: 0, b: 0, a: 1}
+  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
+  letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 0}
   grid: {fileID: 0}
 --- !u!1 &2090194991455658606
@@ -292,8 +294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.4908, y: 0}
+  m_SizeDelta: {x: -0.9816, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3585152540278024749
 CanvasRenderer:
@@ -325,8 +327,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
-  m_sharedMaterial: {fileID: 7394284130901499604, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
+  m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -452,15 +454,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7924528, g: 0.78822833, b: 0.4448202, a: 0.6}
+  m_Color: {r: 0.79607844, g: 0.627451, b: 0.09803922, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4929819740224467812, guid: ad9e0df2955156172a87b7abf8798554, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
