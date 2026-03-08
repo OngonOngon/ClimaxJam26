@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fasciination
+  m_text: F<space=-15>asciination
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -1942,7 +1942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <color=#00000000>F</color>ascii<color=#00000000>nation</color>
+  m_text: <color=#00000000>F</color><space=-15>ascii<color=#00000000>nation</color>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
