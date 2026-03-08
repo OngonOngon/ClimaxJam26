@@ -16,6 +16,11 @@ namespace Dubinci
             SceneManager.LoadScene("VojtaMenuTest");
         }
 
+        public void LoadEnd()
+        {
+            SceneManager.LoadScene(12);
+        }
+
         public void LoadNextLevel()
         {
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
