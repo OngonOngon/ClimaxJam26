@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998addcb09ae44b1ab8a82623a0ce6a4, type: 3}
   m_Name: Build Modifier Subtract
   m_EditorClassIdentifier: 
-  text: modifier subtract
+  text: eraser
   type: 2
+  cost: 0
   modifier: {fileID: 11400000, guid: d90cb0933fab740b4b74b650ad7ce459, type: 2}

@@ -132,12 +132,12 @@ MonoBehaviour:
     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
     laborum'
   validCommands:
-  - {fileID: 11400000, guid: 461ed6887e7fdc9419030d90472b67f7, type: 2}
   - {fileID: 11400000, guid: 5a74afb492d6cee48b35ef0739340829, type: 2}
-  - {fileID: 11400000, guid: 9e6866e1192ead44480b49c43b9609ce, type: 2}
   - {fileID: 11400000, guid: 351c47b15052753419155ca7d9eb9d40, type: 2}
-  - {fileID: 11400000, guid: 7aa325dbb90c9524396a18bf636481a5, type: 2}
+  - {fileID: 11400000, guid: 9e6866e1192ead44480b49c43b9609ce, type: 2}
+  - {fileID: 11400000, guid: 461ed6887e7fdc9419030d90472b67f7, type: 2}
   - {fileID: 11400000, guid: e6f029cb392dd4ab980a67e0c87305d8, type: 2}
+  - {fileID: 11400000, guid: 7aa325dbb90c9524396a18bf636481a5, type: 2}
   - {fileID: 11400000, guid: 02803b5b552f84bb49b9f5b1fa8e90c5, type: 2}
   commandPrefix: '> '
   correctColor: {r: 1, g: 1, b: 1, a: 1}
