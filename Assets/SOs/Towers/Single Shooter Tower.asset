@@ -14,7 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Letter: 84
   HP: 2
+  CanBeUsed: 0
+  type: 0
   Damage: 2
   Range: 3
   AOE: 0
-  type: 0
+  Upgrades:
+    DamageAmount: 2
+    DamageThreshold: 2
+    RangeAmount: 0
+    RangeThreshold: 0
+    HPAmount: 0
+    HPThreshold: 0
+    AOEAmount: 0
+    AOEThreshold: 0

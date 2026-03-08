@@ -14,6 +14,7 @@ namespace Dubinci
         [SerializeField] private List<BuildModifierSO> buildModifierCommands;
         [SerializeField] private CommandSO shootCommand;
         [SerializeField] private CommandSO shootAllCommand;
+        [SerializeField] private CommandSO upgradeCommand;
 
         [SerializeField, HideInInspector] private List<CellVisual> cells = new List<CellVisual>();
 
@@ -92,6 +93,8 @@ namespace Dubinci
             shootCommand.Validate += ValidateShoot;
             shootAllCommand.OnCommand += ActivateAll;
             shootAllCommand.Validate += ValidateShootAll;
+            upgradeCommand.OnCommand += UpgradeTower;
+            upgradeCommand.Validate += ValidateUpgrade;
         }
 
         private bool ValidateBuild()
@@ -107,6 +110,11 @@ namespace Dubinci
         private bool ValidateShootAll()
         {
             return true;
+        }
+
+        private bool ValidateUpgrade()
+        {
+            return grid.GetCell(selectedCell).Content is TowerEntity;
         }
 
         private void Start()
@@ -131,6 +139,8 @@ namespace Dubinci
             shootCommand.Validate -= ValidateShoot;
             shootAllCommand.OnCommand -= ActivateAll;
             shootAllCommand.Validate -= ValidateShootAll;
+            upgradeCommand.OnCommand -= UpgradeTower;
+            upgradeCommand.Validate -= ValidateUpgrade;
         }
 
         private void Update()
@@ -188,6 +198,17 @@ namespace Dubinci
             // use resources
             foreach (var cell in cells)
                 cell.UpdateVisual(grid.GetCell(cell.Pos));
+        }
+
+        void UpgradeTower()
+        {
+            if (ValidateUpgrade())
+            {
+                grid.Command(upgradeCommand, selectedCell);
+                // use resources
+                foreach (var cell in cells)
+                    cell.UpdateVisual(grid.GetCell(cell.Pos));
+            }
         }
 
         public void MoveUp()
