@@ -93,6 +93,7 @@ namespace Dubinci
 
         private void Awake()
         {
+            RegenerateCells();
             selectedCell = gridSize / 2;
             grid = new Grid(gridSize);
             grid.onShot += GridOnShot;
