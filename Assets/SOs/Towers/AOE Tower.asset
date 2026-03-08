@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32ae356b39a59541afe4c89f1668063, type: 3}
   m_Name: AOE Tower
   m_EditorClassIdentifier: 
-  Letter: 79
+  Letter: 83
   HP: 5
   CanBeUsed: 0
   type: 0
