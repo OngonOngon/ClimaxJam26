@@ -1735,7 +1735,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   displayLabel: {fileID: 603554613}
-  availableTexts: {fileID: 0}
+  availableBGL: {fileID: 0}
+  availableBGR: {fileID: 0}
+  availableTextsL: {fileID: 0}
+  availableTextsR: {fileID: 0}
   referenceText: 'lorem ipsum
 
     dolor sit amet
@@ -1766,6 +1769,7 @@ MonoBehaviour:
   idleColor: {r: 0.7132075, g: 0.7132075, b: 0.7132075, a: 1}
   errorColor: {r: 0.5999999, g: 0, b: 0, a: 1}
   flashDuration: 0.2
+  nextSceneIndex: 5
 --- !u!82 &847010672
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2254,7 +2258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Max (2880 x 1800)
+  m_text: Max (1920 x 1080)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3126,7 +3130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   displayLabel: {fileID: 1233267025}
-  availableTexts: {fileID: 0}
+  availableBGL: {fileID: 0}
+  availableBGR: {fileID: 0}
+  availableTextsL: {fileID: 0}
+  availableTextsR: {fileID: 0}
   referenceText: start
   validCommands:
   - {fileID: 0}
@@ -3137,6 +3144,7 @@ MonoBehaviour:
   idleColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
   errorColor: {r: 1, g: 0.12156863, b: 0.36862746, a: 1}
   flashDuration: 0.2
+  nextSceneIndex: 5
 --- !u!4 &1269200080
 Transform:
   m_ObjectHideFlags: 0
@@ -5813,16 +5821,16 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: Max (2880 x 1800)
+    - m_Text: Max (1920 x 1080)
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: High (2048 x 1280)
+    - m_Text: High (1600 x 900)
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Middle (1280 x 800)
+    - m_Text: Middle (1366 x 768)
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Low (840 x 525)
+    - m_Text: Low (1280 x 720)
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
