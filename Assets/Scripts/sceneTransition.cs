@@ -79,6 +79,6 @@ namespace Dubinci
             }
         }
 
-        public void BackToMenu() => Transition();
+        public void goToNewScene() => Transition();
     }
 }
