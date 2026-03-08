@@ -9,14 +9,7 @@ namespace Dubinci
         public ModifierCellSO modifier;
         public event Action<ModifierCellSO> OnBuildCommand;
 
-        public override bool TryCommand(string text)
-        {
-            // Tady jen ověříme, jestli text sedí, ale NIC nestavíme
-            return base.TryCommand(text);
-        }
-
-        // Tuhle metodu zavoláme, až když budeme vědět, že máme peníze
-        public void Execute()
+        public override void RunCommand()
         {
             OnBuildCommand?.Invoke(modifier);
         }
@@ -24,7 +17,7 @@ namespace Dubinci
         [ContextMenu("Build")]
         public void PlayBuild()
         {
-            Execute();
+            RunCommand();
         }
     }
 }

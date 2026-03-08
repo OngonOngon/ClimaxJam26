@@ -294,14 +294,13 @@ public class typingScript : MonoBehaviour
             {
                 targetCommand = possibleCommands[0];
                 cmd = targetCommand.text.ToLower(); // Pošleme plný název příkazu do peněženky
-                targetCommand.TryCommand(cmd);
             }
             else
             {
                 // Fallback: Pokud je možností víc (nebo 0), zkusíme klasický exact match
                 foreach (var c in validCommands)
                 {
-                    if (c != null && c.ValidCommand() && c.TryCommand(cmd))
+                    if (c != null && c.ValidCommand() && c.ExactMatch(cmd))
                     {
                         targetCommand = c;
                         break;
@@ -314,13 +313,9 @@ public class typingScript : MonoBehaviour
             {
                 bool canAfford = (Handler == null) || Handler.OnCommandExecuted(cmd);
 
-                if (targetCommand is BuildCommandSO buildCmd)
+                if (canAfford)
                 {
-                    if (canAfford)
-                    {
-                        buildCmd.Execute();
-                    }
-
+                    targetCommand.RunCommand();
                     _soundProvider?.PlaySuccess();
                     DeactivateSystem();
                 }

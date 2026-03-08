@@ -27,10 +27,14 @@ namespace Dubinci
             this.type = type;
         }
 
-        public virtual bool TryCommand(string text)
+        public virtual void RunCommand()
         {
             OnCommand?.Invoke();
-            return true;
+        }
+
+        public bool ExactMatch(string text)
+        {
+            return text == this.text;
         }
 
         public virtual bool ValidCommand()
