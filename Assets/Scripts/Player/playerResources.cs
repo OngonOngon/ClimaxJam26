@@ -215,6 +215,12 @@ public class playerResources : MonoBehaviour, ITypingHandler
         Debug.LogError("==========================");
     }
 
+    public void IncreaseUpdateCost(int value)
+    {
+        upgradeCost += value;
+        Debug.Log($"[Resources] Upgrade cost increased by {value}. New cost: {upgradeCost}");
+    }
+
     private void PrintStats()
     {
         Debug.Log($"[Resources] Current Stats -> Money: {money}, Lives: {lives}");
