@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd7a2751c87dd240beb7918fc7f1d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLettersEconomy: 0
   livesText: {fileID: 0}
   moneyText: {fileID: 0}
   displayBox: {fileID: 0}
-  noLetterColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  noLetterColor: {r: 0, g: 0, b: 0, a: 0.19607843}
   letterGradStartColor: {r: 1, g: 0.7652887, b: 0, a: 1}
   letterGradEndColor: {r: 0.09669447, g: 1, b: 0, a: 1}
   maxStockVis: 5
@@ -105,7 +106,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   displayLabel: {fileID: 0}
-  availableTexts: {fileID: 0}
+  availableBGL: {fileID: 0}
+  availableBGR: {fileID: 0}
+  availableTextsL: {fileID: 0}
+  availableTextsR: {fileID: 0}
   referenceText: 'lorem ipsum
 
     dolor sit amet
@@ -128,13 +132,18 @@ MonoBehaviour:
     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
     laborum'
   validCommands:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 461ed6887e7fdc9419030d90472b67f7, type: 2}
+  - {fileID: 11400000, guid: 5a74afb492d6cee48b35ef0739340829, type: 2}
+  - {fileID: 11400000, guid: 9e6866e1192ead44480b49c43b9609ce, type: 2}
+  - {fileID: 11400000, guid: 351c47b15052753419155ca7d9eb9d40, type: 2}
+  - {fileID: 11400000, guid: 5489f5695c97269438ab530710a9beb7, type: 2}
+  - {fileID: 11400000, guid: 7aa325dbb90c9524396a18bf636481a5, type: 2}
+  - {fileID: 11400000, guid: e6f029cb392dd4ab980a67e0c87305d8, type: 2}
+  - {fileID: 11400000, guid: 02803b5b552f84bb49b9f5b1fa8e90c5, type: 2}
   commandPrefix: '> '
   correctColor: {r: 1, g: 1, b: 1, a: 1}
-  idleColor: {r: 0.7132075, g: 0.7132075, b: 0.7132075, a: 1}
-  errorColor: {r: 0.5999999, g: 0, b: 0, a: 1}
+  idleColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+  errorColor: {r: 0.745283, g: 0.0537697, b: 0.0035154943, a: 1}
   flashDuration: 0.2
 --- !u!82 &5780663744825480826
 AudioSource:

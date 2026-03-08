@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement; // Required for loading scenes
 using TMPro;
 using System;
@@ -35,7 +36,10 @@ public class typingScript : MonoBehaviour
     [Header("General Settings")]
     [SerializeField] private TypingMode mode = TypingMode.Story;
     [SerializeField] private TextMeshProUGUI displayLabel;
-    [SerializeField] private TextMeshProUGUI availableTexts;
+    [SerializeField] private Image availableBGL;
+    [SerializeField] private Image availableBGR;
+    [SerializeField] private TextMeshProUGUI availableTextsL;
+    [SerializeField] private TextMeshProUGUI availableTextsR;
 
     [Header("Story Mode Settings")]
     [TextArea(3, 5)]
@@ -92,7 +96,10 @@ public class typingScript : MonoBehaviour
 
     void Update()
     {
-        if (availableTexts != null) availableTexts.gameObject.SetActive(false);
+        if (availableBGL != null) availableBGL.enabled = false;
+        if (availableBGR != null) availableBGR.enabled = false;
+        if (availableTextsL != null) availableTextsL.text = "";
+        if (availableTextsR != null) availableTextsR.text = "";
 
         // Handle dedicated Story Mode activation (Tab)
         if (CInput.IsStoryTriggered())
@@ -192,20 +199,29 @@ public class typingScript : MonoBehaviour
                 continue;
             }
 
+            // allow only letters and space
+            if (!char.IsLetter(c) && c != ' ') continue;
+
             int idx = _playerInput.Length;
-            if (idx < target.Length && c == target[idx])
+
+            if (idx >= target.Length) break;
+
+            char inputCharLower = char.ToLower(c);
+            char targetLower = char.ToLower(target[idx]);
+
+            if (idx < target.Length && inputCharLower == targetLower)
             {
-                _playerInput += c;
-                _soundProvider?.PlayCharSound(c);
+                _playerInput += inputCharLower;
+                _soundProvider?.PlayCharSound(inputCharLower);
             }
             else
             {
-                TriggerError(_playerInput + c);
+                TriggerError(_playerInput + inputCharLower);
                 break;
             }
         }
 
-        if (_playerInput == target && CInput.IsSubmitTriggered())
+        if (_playerInput.Equals(target, StringComparison.OrdinalIgnoreCase))
         {
             CompleteStoryLine();
         }
@@ -213,14 +229,23 @@ public class typingScript : MonoBehaviour
 
     private void HandleCommandInput(string input)
     {
-        if (availableTexts != null)
+        if (availableTextsL != null)
         {
-            availableTexts.gameObject.SetActive(true);
-            availableTexts.text = "";
+            availableBGL.enabled = true;
             foreach (var c in validCommands)
             {
                 if (c.ValidCommand())
-                    availableTexts.text += c.text + "\n";
+                    availableTextsL.text += c.text + "\n";
+            }
+        }
+
+        if (availableTextsR != null)
+        {
+            availableBGR.enabled = true;
+            foreach (var c in validCommands)
+            {
+                if (c.ValidCommand())
+                    availableTextsR.text += c.text + "\n";
             }
         }
 
@@ -278,7 +303,7 @@ public class typingScript : MonoBehaviour
     private void TriggerError(string textToFlash)
     {
         _failedInput = textToFlash;
-        _playerInput = "";
+        // _playerInput = "";
         _soundProvider?.PlayFail();
         StartCoroutine(FlashErrorRoutine());
     }
@@ -315,7 +340,7 @@ public class typingScript : MonoBehaviour
         {
             Handler?.OnAllLinesCompleted();
         }
-        
+
         _currentLineIndex %= _lines.Count;
     }
 
@@ -334,15 +359,37 @@ public class typingScript : MonoBehaviour
 
             if (_isFlashingError)
             {
-                string errorPart = target.Substring(0, Mathf.Min(_failedInput.Length, target.Length));
-                string rest = target.Substring(Mathf.Min(_failedInput.Length, target.Length));
-                displayLabel.text = $"<color=#{errorHex}>{errorPart}</color><color=#{idleHex}>{rest}</color>";
+                string correctPart = target.Substring(0, _playerInput.Length);
+
+                string errorChar = _failedInput.Substring(_playerInput.Length, 1);
+
+                string rest = "";
+                if (_playerInput.Length + 1 < target.Length)
+                {
+                    rest = target.Substring(_playerInput.Length + 1);
+                }
+
+                if (errorChar == " ")
+                {
+                    errorChar = "-"; // Visuální náhrada pro mezery, aby bylo vidět, co bylo špatně
+                }
+                displayLabel.text = $"<color=#{correctHex}>{correctPart}</color><color=#{errorHex}><s>{errorChar}</s></color><color=#{idleHex}>{rest}</color>";
             }
             else
             {
                 string typed = target.Substring(0, _playerInput.Length);
-                string untyped = target.Substring(_playerInput.Length);
-                displayLabel.text = $"<color=#{correctHex}>{typed}</color><color=#{idleHex}>{untyped}</color>";
+
+                if (_playerInput.Length < target.Length)
+                {
+                    string currentChar = target.Substring(_playerInput.Length, 1);
+                    string untyped = target.Substring(_playerInput.Length + 1);
+                    displayLabel.text = $"<color=#{correctHex}>{typed}</color><mark=#FFFFFF7D><color=#000000><b>{currentChar}</b></color></mark><color=#{idleHex}>{untyped}</color>";
+                }
+                else
+                {
+                    string untyped = target.Substring(_playerInput.Length);
+                    displayLabel.text = $"<color=#{correctHex}>{typed}</color><color=#{idleHex}>{untyped}</color>";
+                }
             }
         }
         else

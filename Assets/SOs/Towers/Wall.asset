@@ -13,8 +13,18 @@ MonoBehaviour:
   m_Name: Wall
   m_EditorClassIdentifier: 
   Letter: 87
-  HP: 8
+  HP: 10
+  CanBeUsed: 0
+  type: 0
   Damage: 0
   Range: 0
   AOE: 0
-  type: 0
+  Upgrades:
+    DamageAmount: 0
+    DamageThreshold: 0
+    RangeAmount: 0
+    RangeThreshold: 0
+    HPAmount: 5
+    HPThreshold: 2
+    AOEAmount: 0
+    AOEThreshold: 0
