@@ -91,10 +91,8 @@ namespace Dubinci
             if (cell.Content is Dubinci.VoidEntity)
             {
                 SetMainText("");
-                if (mainImage)
-                {
-                    mainImage.enabled = false;
-                }
+                overlay.gameObject.SetActive(true);
+                overlay.color = numberOverlayColor;
                 return;
             }
 
@@ -110,7 +108,7 @@ namespace Dubinci
                 overlay.color = numberOverlayColor;
                 overlay.gameObject.SetActive(true);
             }
-            else
+            else if (cell.Content is Dubinci.TowerEntity)
             {
                 valueTXT.font = letterSDF;
                 valueTXT.color = letterColor;
