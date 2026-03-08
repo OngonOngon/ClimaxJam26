@@ -114,6 +114,16 @@ namespace Dubinci
                     {
                         nextCells[x, y].Content = content;
                     }
+                    else if (content is NumberEntity ne)
+                    {
+                        // if nubmer too big call GameOver from player resources
+                        if (ne.Value > 10000)
+                        {
+                            playerResources resources = Object.FindAnyObjectByType<playerResources>();
+                            resources.GameOver();
+                            return;
+                        }
+                    }
                     else
                     {
                         nextCells[x, y].Content = null;
