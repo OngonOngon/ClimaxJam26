@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Single Shooter Tower
   m_EditorClassIdentifier: 
   Letter: 84
-  HP: 2
+  HP: 5
   CanBeUsed: 0
   type: 0
   Damage: 2
@@ -22,9 +22,9 @@ MonoBehaviour:
   Upgrades:
     DamageAmount: 2
     DamageThreshold: 2
-    RangeAmount: 0
-    RangeThreshold: 0
-    HPAmount: 0
-    HPThreshold: 0
+    RangeAmount: 1
+    RangeThreshold: 4
+    HPAmount: 3
+    HPThreshold: 2
     AOEAmount: 0
-    AOEThreshold: 0
+    AOEThreshold: 5
