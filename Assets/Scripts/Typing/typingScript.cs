@@ -18,8 +18,8 @@ public static class CInput
 
 public interface ITypingHandler
 {
-    bool OnLineCompleted(string completedLine); 
-    bool OnCommandExecuted(string command);     
+    bool OnLineCompleted(string completedLine);
+    bool OnCommandExecuted(string command);
     void OnAllLinesCompleted();
 }
 

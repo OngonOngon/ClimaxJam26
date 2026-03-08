@@ -64,7 +64,7 @@ namespace Dubinci
             this.nextCells[pos.x, pos.y].CreateModifier(type, value);
         }
 
-        public void AddTowerAt(TowerType type, char letter, int damage, int range, int hp, int aoe, Vector2Int pos)
+        public void AddTowerAt(TowerType type, char letter, int damage, int range, int hp, int aoe, TowerUpgradeConfig upgrades, Vector2Int pos)
         {
             if (!IsValidPos(pos))
             {
@@ -73,7 +73,7 @@ namespace Dubinci
 
             Cell targetCell = this.cells[pos.x, pos.y];
 
-            targetCell.Content = new TowerEntity(type, letter, damage, range, hp, aoe);
+            targetCell.Content = new TowerEntity(type, letter, damage, range, hp, aoe, upgrades);
         }
 
         public void AddPlayerBase(Vector2Int pos)
@@ -357,6 +357,21 @@ namespace Dubinci
             }
         }
 
+        private void UpgradeTower(Vector2Int pos)
+        {
+            if (!IsValidPos(pos))
+            {
+                return;
+            }
+
+            Cell cell = cells[pos.x, pos.y];
+
+            if (cell.Content is TowerEntity tower)
+            {
+                tower.Upgrade();
+            }
+        }
+
         public void Command(CommandSO command, Vector2Int pos)
         {
             if (!IsValidPos(pos))
@@ -383,6 +398,9 @@ namespace Dubinci
                             Shoot(checkPos);
                         }
                     }
+                    break;
+                case CommandType.Upgrade:
+                    UpgradeTower(pos);
                     break;
             }
         }

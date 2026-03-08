@@ -28,7 +28,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
     [Header("Rewards & Costs")]
     [SerializeField] private int moneyPerStoryLine = 50;
     [SerializeField] private int buildCost = 100;
-    [SerializeField] private int upgradeCost = 250;
+    [SerializeField] private int upgradeCost = 50;
 
     private bool _isGameOver = false;
 

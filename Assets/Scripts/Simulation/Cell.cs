@@ -34,19 +34,94 @@ namespace Dubinci
         public int Range;
         public int HP;
         public int AOE;
+
+        // example of usage:
+        // Initial Tower Stats:
+        //          Damage: 3
+        //          DmgUpgrade: 2
+        //          DmgUpgradeThreshold: 3
+        //          Threshold counter: 0
+        // Upgrade 1:
+        //          Damage: 5
+        //          DmgUpgrade: 2
+        //          DmgUpgradeThreshold: 3
+        //          Threshold counter: 1
+        // Upgrade 2:
+        //          Damage: 7
+        //          DmgUpgrade: 2
+        //          DmgUpgradeThreshold: 3
+        //          Threshold counter: 2
+        // Upgrade 3:
+        //          Damage: 10
+        //          DmgUpgrade: 3
+        //          DmgUpgradeThreshold: 3
+        //          Threshold counter: 0
+        public int UpgradeAmountDamage;
+        public int UpgradeAmountDamageThreshold;
+        private int damageCounter = 0;
+
+        public int UpgradeAmountRange;
+        public int UpgradeAmountRangeThreshold;
+        private int rangeCounter = 0;
+
+        public int UpgradeAmountHP;
+        public int UpgradeAmountHPThreshold;
+        private int hpCounter = 0;
+
+        public int UpgradeAmountAOE;
+        public int UpgradeAmountAOEThreshold;
+        private int aoeCounter = 0;
+
+        public int ThresholdLevel = 0;
+
         public TowerType Type;
-        public TowerEntity(TowerType type, char letter, int damage, int range, int hp, int aoe)
+        public TowerEntity(TowerType type, char letter, int damage, int range, int hp, int aoe, TowerUpgradeConfig upgrades)
         {
+            Type = type;
             Letter = letter;
             Damage = damage;
             Range = range;
             HP = hp;
             AOE = aoe;
-            Type = type;
+
+            UpgradeAmountDamage = upgrades.DamageAmount;
+            UpgradeAmountDamageThreshold = upgrades.DamageThreshold;
+
+            UpgradeAmountRange = upgrades.RangeAmount;
+            UpgradeAmountRangeThreshold = upgrades.RangeThreshold;
+
+            UpgradeAmountHP = upgrades.HPAmount;
+            UpgradeAmountHPThreshold = upgrades.HPThreshold;
+
+            UpgradeAmountAOE = upgrades.AOEAmount;
+            UpgradeAmountAOEThreshold = upgrades.AOEThreshold;
         }
 
         // letter + HP
         public string GetContentString() => $"{Letter}";
+
+        public void Upgrade()
+        {
+            ApplyStatUpgrade(ref Damage, ref UpgradeAmountDamage, UpgradeAmountDamageThreshold, ref damageCounter);
+            ApplyStatUpgrade(ref Range, ref UpgradeAmountRange, UpgradeAmountRangeThreshold, ref rangeCounter);
+            ApplyStatUpgrade(ref HP, ref UpgradeAmountHP, UpgradeAmountHPThreshold, ref hpCounter);
+            ApplyStatUpgrade(ref AOE, ref UpgradeAmountAOE, UpgradeAmountAOEThreshold, ref aoeCounter);
+        }
+
+        private void ApplyStatUpgrade(ref int stat, ref int upgradeAmount, int threshold, ref int counter)
+        {
+            if (threshold <= 0) return;
+
+            counter++;
+
+            if (counter >= threshold)
+            {
+                upgradeAmount++;
+                counter = 0;
+            }
+
+            stat += upgradeAmount;
+        }
     }
 
     public class PlayerBase : IGridEntity

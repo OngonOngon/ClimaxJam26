@@ -8,7 +8,8 @@ namespace Dubinci
     {
         Shoot,
         ShootAll,
-        Build
+        Build,
+        Upgrade
     }
 
     [CreateAssetMenu(fileName = "Command", menuName = "Scriptable Objects/Command")]
