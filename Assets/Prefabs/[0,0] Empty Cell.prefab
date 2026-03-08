@@ -178,8 +178,8 @@ MonoBehaviour:
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.4, g: 0.8117647, b: 0.40784314, a: 1}
-  letterColor: {r: 0, g: 0, b: 0, a: 1}
+  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
+  letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 0}
   grid: {fileID: 0}
 --- !u!1 &2090194991455658606
