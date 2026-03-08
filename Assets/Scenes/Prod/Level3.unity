@@ -3899,17 +3899,46 @@ PrefabInstance:
       objectReference: {fileID: 135643407}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: referenceText
-      value: 'try to build a shooter tower
+      value: 'hope you get the gist now
 
-        to build a shooter tower press
-        enter
+        limitless growth
 
-        then write build shooter
+        strike
+        fast
 
-        and you are done
+        big maths
 
-        build
-        modifier'
+        what if theyre all mines
+
+        probably
+        not though
+
+        you didnt think youd get simpler text just because this
+        is a harder level did you
+
+        tralalalalalala was that enough las is
+        this hard yet
+
+        just keep typing
+
+        carpal tunnel is your friend
+
+        NUMERIFICATION
+
+        its
+        like that one richard and mortimer episode
+
+        why are we fighting again
+
+        they
+        just wanna grow and so do we
+
+        me no habla numerico
+
+        six seven
+        but seven eight nine so six is nine hehe six nine
+
+        in honor of hondje'
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableTexts
@@ -14191,6 +14220,7 @@ MonoBehaviour:
   upgradeCommand: {fileID: 11400000, guid: 02803b5b552f84bb49b9f5b1fa8e90c5, type: 2}
   hintL: {fileID: 1583880378}
   hintR: {fileID: 1949553292}
+  winPanel: {fileID: 0}
   shotPrefab: {fileID: 1157520195594212084, guid: 09ba0b39c21f31f4fa9b35b8e356e6de, type: 3}
   burstPrefab: {fileID: 5892587414113811264, guid: 11e05c5e503556f4cb6c0fc6c7eb630c, type: 3}
   shotDuration: 0.1
