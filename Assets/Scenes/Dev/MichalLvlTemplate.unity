@@ -27947,7 +27947,7 @@ GameObject:
   - component: {fileID: 507198326}
   - component: {fileID: 507198325}
   m_Layer: 5
-  m_Name: '[18,4] Empty Cell'
+  m_Name: '[18,4] 10 Cell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27968,7 +27968,7 @@ MonoBehaviour:
   valueTXT: {fileID: 777986775}
   modifPanel: {fileID: 1419201041}
   modifTXT: {fileID: 1850923106}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: e274f112b82ee464aa99ad831a27aa1e, type: 2}
   selectIMG: {fileID: 978407602}
   mainImage: {fileID: 507198326}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -42347,7 +42347,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -64027,7 +64027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x 9
+  m_text: x 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -80258,7 +80258,7 @@ GameObject:
   - component: {fileID: 1467850828}
   - component: {fileID: 1467850827}
   m_Layer: 5
-  m_Name: '[18,5] Mul 9, 9 Cell'
+  m_Name: '[18,5] Mul 2 Cell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80279,7 +80279,7 @@ MonoBehaviour:
   valueTXT: {fileID: 1586579651}
   modifPanel: {fileID: 43658591}
   modifTXT: {fileID: 1164934084}
-  value: {fileID: 11400000, guid: 8258567ddc7835648ad149f4014ec0b8, type: 2}
+  value: {fileID: 11400000, guid: 3f0bee5d3d3fdfd41852b40a4b878d95, type: 2}
   selectIMG: {fileID: 920118877}
   mainImage: {fileID: 1467850828}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -86446,7 +86446,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -106805,7 +106805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1359276402667130646, guid: 4fca4ec1add3bdd44b7c212ae1ce2020, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -37.166687
+      value: -37.166748
       objectReference: {fileID: 0}
     - target: {fileID: 1359276402667130646, guid: 4fca4ec1add3bdd44b7c212ae1ce2020, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -116474,7 +116474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1359276402667130646, guid: 4fca4ec1add3bdd44b7c212ae1ce2020, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 37.166687
+      value: 37.166748
       objectReference: {fileID: 0}
     - target: {fileID: 1359276402667130646, guid: 4fca4ec1add3bdd44b7c212ae1ce2020, type: 3}
       propertyPath: m_AnchoredPosition.y

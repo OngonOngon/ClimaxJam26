@@ -224,26 +224,7 @@ public class typingScript : MonoBehaviour
 
     private void HandleCommandInput(string input)
     {
-        if (availableTextsL != null)
-        {
-            availableBGL.enabled = true;
-            foreach (var c in validCommands)
-            {
-                if (c.ValidCommand())
-                    availableTextsL.text += c.text + "\n";
-            }
-        }
-
-        if (availableTextsR != null)
-        {
-            availableBGR.enabled = true;
-            foreach (var c in validCommands)
-            {
-                if (c.ValidCommand())
-                    availableTextsR.text += c.text + "\n";
-            }
-        }
-
+        // 1. Zpracování vstupu (přidání/mazání znaků)
         foreach (char c in input)
         {
             if (c == '\r' || c == '\n') continue;
@@ -252,48 +233,107 @@ public class typingScript : MonoBehaviour
                 if (_playerInput.Length > 0) _playerInput = _playerInput.Substring(0, _playerInput.Length - 1);
                 continue;
             }
-            _playerInput += c;
-            _soundProvider?.PlayCharSound(c);
+
+            if (!char.IsLetter(c) && c != ' ') continue;
+
+            char lowerC = char.ToLower(c);
+
+            _playerInput += lowerC;
+            _soundProvider?.PlayCharSound(lowerC);
         }
 
+        // 2. Zobrazení filtrované nápovědy podle aktuálního _playerInput
+        if (availableTextsL != null)
+        {
+            availableTextsL.text = ""; // Vyčištění předchozího textu
+            bool matchFound = false;
+            foreach (var c in validCommands)
+            {
+                if (c.ValidCommand() && c.text.ToLower().StartsWith(_playerInput))
+                {
+                    availableTextsL.text += c.text + "\n";
+                    matchFound = true;
+                }
+            }
+            availableBGL.enabled = matchFound;
+        }
+
+        if (availableTextsR != null)
+        {
+            availableTextsR.text = ""; // Vyčištění předchozího textu
+            bool matchFound = false;
+            foreach (var c in validCommands)
+            {
+                if (c.ValidCommand() && c.text.ToLower().StartsWith(_playerInput))
+                {
+                    availableTextsR.text += c.text + "\n";
+                    matchFound = true;
+                }
+            }
+            availableBGR.enabled = matchFound;
+        }
+
+        // 3. Vyhodnocení příkazu při potvrzení (Enter)
         if (CInput.IsSubmitTriggered() && !string.IsNullOrEmpty(_playerInput))
         {
             string cmd = _playerInput.Trim().ToLower();
-            bool commandFound = false;
+            CommandSO targetCommand = null;
 
+            // Najdeme všechny příkazy, které začínají na napsaný text
+            List<CommandSO> possibleCommands = new List<CommandSO>();
             foreach (var c in validCommands)
             {
-                if (c != null && c.ValidCommand() && c.TryCommand(cmd))
+                if (c != null && c.ValidCommand() && c.text.ToLower().StartsWith(cmd))
                 {
-                    commandFound = true;
-
-                    // 1. NEJDŘÍV se zeptáme na peníze
-                    bool canAfford = (Handler == null) || Handler.OnCommandExecuted(cmd);
-
-                    if (canAfford)
-                    {
-                        // 2. AŽ TEĎ reálně stavíme (pokud je to build příkaz)
-                        if (c is BuildCommandSO buildCmd)
-                        {
-                            buildCmd.Execute();
-                        }
-
-                        _soundProvider?.PlaySuccess();
-                        DeactivateSystem(); // SUCCESS: Zavřeme terminál
-                    }
-                    else
-                    {
-                        // FAILURE: Málo peněz -> červené bliknutí, terminál zůstane
-                        TriggerError(_playerInput);
-                    }
-                    break;
+                    possibleCommands.Add(c);
                 }
             }
 
-            if (!commandFound) TriggerError(_playerInput);
+            // AUTO-COMPLETE: Pokud zbyla přesně 1 možnost, vybereme ji
+            if (possibleCommands.Count == 1)
+            {
+                targetCommand = possibleCommands[0];
+                cmd = targetCommand.text.ToLower(); // Pošleme plný název příkazu do peněženky
+            }
+            else
+            {
+                // Fallback: Pokud je možností víc (nebo 0), zkusíme klasický exact match
+                foreach (var c in validCommands)
+                {
+                    if (c != null && c.ValidCommand() && c.TryCommand(cmd))
+                    {
+                        targetCommand = c;
+                        break;
+                    }
+                }
+            }
+
+            // Samotné spuštění nalezeného příkazu
+            if (targetCommand != null)
+            {
+                bool canAfford = (Handler == null) || Handler.OnCommandExecuted(cmd);
+
+                if (canAfford)
+                {
+                    if (targetCommand is BuildCommandSO buildCmd)
+                    {
+                        buildCmd.Execute();
+                    }
+
+                    _soundProvider?.PlaySuccess();
+                    DeactivateSystem();
+                }
+                else
+                {
+                    TriggerError(_playerInput); // Málo peněz
+                }
+            }
+            else
+            {
+                TriggerError(_playerInput); // Příkaz nenalezen (nebo je to příliš nejednoznačné)
+            }
         }
     }
-
 
     private void TriggerError(string textToFlash)
     {
@@ -391,7 +431,7 @@ public class typingScript : MonoBehaviour
         {
             string content = _isFlashingError ? _failedInput : _playerInput;
             string color = _isFlashingError ? errorHex : correctHex;
-            displayLabel.text = $"{commandPrefix}<color=#{color}>{content}</color>";
+            displayLabel.text = $"{commandPrefix}<color=#{color}>{content}</color><color=#FFFFFF><b>_</b></color>";
         }
     }
 }
