@@ -55,6 +55,9 @@ public class typingScript : MonoBehaviour
     [SerializeField] private Color errorColor = Color.red;
     [SerializeField] private float flashDuration = 0.25f;
 
+    [Tooltip("Index of the specific scene to jump to")]
+    [SerializeField] private int nextSceneIndex;
+
     private List<string> _lines = new List<string>();
     private int _currentLineIndex = 0;
     private string _playerInput = "";
@@ -357,7 +360,7 @@ public class typingScript : MonoBehaviour
         // HACK: If we are in the main menu and finished typing, load Scene 4
         if (_currentLineIndex >= _lines.Count && SceneManager.GetActiveScene().name == "VojtaMenuTest")
         {
-            Debug.Log("[TypingSystem] Main Menu text completed. Loading Scene 5...");
+            Debug.Log($"[TypingSystem] Main Menu text completed. Loading Scene index: {nextSceneIndex}");
             SceneManager.LoadScene(5);
             return;
         }
