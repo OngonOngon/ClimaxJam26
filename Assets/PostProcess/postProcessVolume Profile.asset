@@ -49,7 +49,26 @@ MonoBehaviour:
     m_Value: {r: 1, g: 0.97209066, b: 0.7905661, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: -52.9
+    m_Value: -43.1
+--- !u!114 &-2719792391828309755
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
+  m_Name: WhiteBalance
+  m_EditorClassIdentifier: 
+  active: 1
+  temperature:
+    m_OverrideState: 1
+    m_Value: 19.3
+  tint:
+    m_OverrideState: 1
+    m_Value: -3.3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +85,24 @@ MonoBehaviour:
   - {fileID: 7066106775266131349}
   - {fileID: -8569428764916497956}
   - {fileID: -4174935400157721858}
+  - {fileID: -2719792391828309755}
+  - {fileID: 2151653784799081927}
+--- !u!114 &2151653784799081927
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &7066106775266131349
 MonoBehaviour:
   m_ObjectHideFlags: 3
