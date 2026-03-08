@@ -3806,20 +3806,20 @@ PrefabInstance:
       objectReference: {fileID: 135643407}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: referenceText
-      value: 'numbers can grow their...numbers
+      value: 'numbers can grow their uhm numbers
 
-        make sure to quell them before
-        you are overrun
+        make sure to quell them
+        before you are overrun
 
         aoe is your friend
 
-        operation tiles influence
-        number spread
+        operation tiles
+        influence number spread
 
         consider upgrading your towers
 
-        where did
-        these invaders come from'
+        where
+        did these invaders come from'
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableTexts
@@ -31673,9 +31673,9 @@ MonoBehaviour:
   hintL: {fileID: 1583880378}
   hintR: {fileID: 1949553292}
   winPanel: {fileID: 1069149867}
-  shotPrefab: {fileID: 0}
-  burstPrefab: {fileID: 0}
-  shotDuration: 0
+  shotPrefab: {fileID: 1157520195594212084, guid: 09ba0b39c21f31f4fa9b35b8e356e6de, type: 3}
+  burstPrefab: {fileID: 5892587414113811264, guid: 11e05c5e503556f4cb6c0fc6c7eb630c, type: 3}
+  shotDuration: 0.1
   cells:
   - {fileID: 2106149712}
   - {fileID: 1033406325}
