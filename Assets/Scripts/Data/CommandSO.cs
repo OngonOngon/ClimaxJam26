@@ -17,7 +17,6 @@ namespace Dubinci
     {
         public string text;
         public CommandType type;
-        public int cost;
 
         public event Action OnCommand;
         public event Func<bool> Validate;

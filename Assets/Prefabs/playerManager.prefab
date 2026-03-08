@@ -49,6 +49,7 @@ MonoBehaviour:
   livesText: {fileID: 0}
   moneyText: {fileID: 0}
   displayBox: {fileID: 0}
+  gameOverPanel: {fileID: 0}
   noLetterColor: {r: 0, g: 0, b: 0, a: 0.19607843}
   letterGradStartColor: {r: 1, g: 0.7652887, b: 0, a: 1}
   letterGradEndColor: {r: 0.09669447, g: 1, b: 0, a: 1}
@@ -110,6 +111,7 @@ MonoBehaviour:
   availableBGR: {fileID: 0}
   availableTextsL: {fileID: 0}
   availableTextsR: {fileID: 0}
+  resources: {fileID: 230599075580402878}
   referenceText: 'lorem ipsum
 
     dolor sit amet
@@ -143,6 +145,7 @@ MonoBehaviour:
   correctColor: {r: 1, g: 1, b: 1, a: 1}
   idleColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   errorColor: {r: 0.745283, g: 0.0537697, b: 0.0035154943, a: 1}
+  aColor: {r: 0.6156863, g: 0.6156863, b: 0.6156863, a: 1}
   flashDuration: 0.2
 --- !u!82 &5780663744825480826
 AudioSource:

@@ -40,6 +40,7 @@ public class typingScript : MonoBehaviour
     [SerializeField] private Image availableBGR;
     [SerializeField] private TextMeshProUGUI availableTextsL;
     [SerializeField] private TextMeshProUGUI availableTextsR;
+    [SerializeField] private playerResources resources;
 
     [Header("Story Mode Settings")]
     [TextArea(3, 5)]
@@ -53,6 +54,7 @@ public class typingScript : MonoBehaviour
     [SerializeField] private Color correctColor = Color.green;
     [SerializeField] private Color idleColor = Color.gray;
     [SerializeField] private Color errorColor = Color.red;
+    [SerializeField] private Color aColor = Color.red;
     [SerializeField] private float flashDuration = 0.25f;
 
     [Tooltip("Index of the specific scene to jump to")]
@@ -242,34 +244,47 @@ public class typingScript : MonoBehaviour
         }
 
         // 2. Zobrazení filtrované nápovědy podle aktuálního _playerInput
+
+        string hintText = "";
+        int matchFound = 0;
+        foreach (var c in validCommands)
+        {
+            if (c.ValidCommand() && c.text.ToLower().StartsWith(_playerInput))
+            {
+                string hex = ColorUtility.ToHtmlStringRGB(aColor);
+                if (c.type == CommandType.Build)
+                {
+                    if (resources.BuildCost > resources.Money)
+                        hintText += $"<color=#{hex}>{c.text} ({resources.BuildCost} $)</color>\n";
+                    else
+                        hintText += $"{c.text} ({resources.BuildCost} $)\n";
+                }
+                else if (c.type == CommandType.Upgrade)
+                {
+                    if (resources.UpgrageCost > resources.Money)
+                        hintText += $"<color=#{hex}>{c.text} ({resources.UpgrageCost} $)</color>\n";
+                    else
+                        hintText += $"{c.text} ({resources.UpgrageCost} $)\n";
+                }
+                else
+                    hintText += $"{c.text} (free)\n";
+                matchFound++;
+            }
+        }
+
+        if (matchFound == 1)
+            hintText = "<u>" + hintText + "</u>";
+
         if (availableTextsL != null)
         {
-            availableTextsL.text = ""; // Vyčištění předchozího textu
-            bool matchFound = false;
-            foreach (var c in validCommands)
-            {
-                if (c.ValidCommand() && c.text.ToLower().StartsWith(_playerInput))
-                {
-                    availableTextsL.text += c.text + "\n";
-                    matchFound = true;
-                }
-            }
-            availableBGL.enabled = matchFound;
+            availableTextsL.text = hintText;
+            availableBGL.enabled = matchFound > 0;
         }
 
         if (availableTextsR != null)
         {
-            availableTextsR.text = ""; // Vyčištění předchozího textu
-            bool matchFound = false;
-            foreach (var c in validCommands)
-            {
-                if (c.ValidCommand() && c.text.ToLower().StartsWith(_playerInput))
-                {
-                    availableTextsR.text += c.text + "\n";
-                    matchFound = true;
-                }
-            }
-            availableBGR.enabled = matchFound;
+            availableTextsR.text = hintText;
+            availableBGR.enabled = matchFound > 0;
         }
 
         // 3. Vyhodnocení příkazu při potvrzení (Enter)

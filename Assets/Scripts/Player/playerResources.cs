@@ -30,6 +30,10 @@ public class playerResources : MonoBehaviour, ITypingHandler
     [SerializeField] private int buildCost = 100;
     [SerializeField] private int upgradeCost = 50;
 
+    public int BuildCost => buildCost;
+    public int UpgrageCost => upgradeCost;
+    public int Money => money;
+
     private bool _isGameOver = false;
 
     private void Start()
