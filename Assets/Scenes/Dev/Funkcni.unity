@@ -853,7 +853,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: money
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: livesText
@@ -868,8 +868,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2006662844}
     - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: upgradeCost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: noLetterColor.a
       value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: useLettersEconomy
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: debugStartingAmount
@@ -923,7 +931,7 @@ PrefabInstance:
       objectReference: {fileID: 1915439579}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: validCommands.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: 'validCommands.Array.data[0]'
@@ -957,6 +965,10 @@ PrefabInstance:
       propertyPath: 'validCommands.Array.data[7]'
       value: 
       objectReference: {fileID: 11400000, guid: e6f029cb392dd4ab980a67e0c87305d8, type: 2}
+    - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: 'validCommands.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 02803b5b552f84bb49b9f5b1fa8e90c5, type: 2}
     - target: {fileID: 4035798321127636470, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: m_Name
       value: playerManager
@@ -11886,6 +11898,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 126c1e0325cb443c9a2e3b012372af9f, type: 2}
   shootCommand: {fileID: 11400000, guid: 5489f5695c97269438ab530710a9beb7, type: 2}
   shootAllCommand: {fileID: 11400000, guid: 7aa325dbb90c9524396a18bf636481a5, type: 2}
+  upgradeCommand: {fileID: 11400000, guid: 02803b5b552f84bb49b9f5b1fa8e90c5, type: 2}
   cells:
   - {fileID: 1020594399}
   - {fileID: 1040255445}
