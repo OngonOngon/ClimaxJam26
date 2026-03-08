@@ -28,24 +28,28 @@ namespace Dubinci
                 return;
             }
 
-            if (Input.GetKeyDown(KeyCode.W)) { 
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
                 grid.MoveUp();
                 audioSource.PlayOneShot(moveCursorSound);// play move sound
             }
-            if (Input.GetKeyDown(KeyCode.A)){
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
                 grid.MoveLeft();
                 audioSource.PlayOneShot(moveCursorSound);// play move sound
             }
-            if (Input.GetKeyDown(KeyCode.S)){ 
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
                 grid.MoveDown();
                 audioSource.PlayOneShot(moveCursorSound);// play move sound
             }
-            if (Input.GetKeyDown(KeyCode.D)){ 
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
                 grid.MoveRight();
                 audioSource.PlayOneShot(moveCursorSound); // play move sound
             }
 
-if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
             {
                 grid.Select();
                 audioSource.PlayOneShot(selectCursorSound); // play select sound
