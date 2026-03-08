@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f469dc45ae97e24dbbba3714f14dc9e, type: 3}
   m_Name: ActivateAll
   m_EditorClassIdentifier: 
-  text: activate all
+  text: use
   type: 1
+  cost: 0

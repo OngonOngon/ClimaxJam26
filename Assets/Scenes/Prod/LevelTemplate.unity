@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 16255299}
   - component: {fileID: 16255298}
   m_Layer: 5
-  m_Name: '[7,8] Empty Cell'
+  m_Name: '[7,8] PlayerBase'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -967,7 +967,7 @@ MonoBehaviour:
   valueTXT: {fileID: 1103789423}
   modifPanel: {fileID: 572067187}
   modifTXT: {fileID: 1589538031}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: ef1e66c30c3b34df4bf27462079426d8, type: 2}
   selectIMG: {fileID: 525059866}
   mainImage: {fileID: 16255299}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -2556,7 +2556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &43658592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4169,7 +4169,7 @@ GameObject:
   - component: {fileID: 84508113}
   - component: {fileID: 84508112}
   m_Layer: 5
-  m_Name: '[12,8] Empty Cell'
+  m_Name: '[12,8] Add 4 Cell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4190,7 +4190,7 @@ MonoBehaviour:
   valueTXT: {fileID: 36530145}
   modifPanel: {fileID: 1365718303}
   modifTXT: {fileID: 723579344}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: 0b2726ecb0881a549b8a6112c526b3b8, type: 2}
   selectIMG: {fileID: 1319711044}
   mainImage: {fileID: 84508113}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -5110,7 +5110,7 @@ GameObject:
   - component: {fileID: 109809076}
   - component: {fileID: 109809075}
   m_Layer: 5
-  m_Name: '[14,8] Empty Cell'
+  m_Name: '[14,8] VoidCell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5131,7 +5131,7 @@ MonoBehaviour:
   valueTXT: {fileID: 145456542}
   modifPanel: {fileID: 1792909448}
   modifTXT: {fileID: 1454937768}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: 18c9fc9a329e6440d9574a39cf55ff2e, type: 2}
   selectIMG: {fileID: 622163814}
   mainImage: {fileID: 109809076}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -5883,10 +5883,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
-      propertyPath: money
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: livesText
       value: 
       objectReference: {fileID: 1437455580}
@@ -5898,10 +5894,6 @@ PrefabInstance:
       propertyPath: displayBox
       value: 
       objectReference: {fileID: 2006662844}
-    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
-      propertyPath: upgradeCost
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableBGL
       value: 
@@ -7780,7 +7772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: ~
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -15084,7 +15076,7 @@ GameObject:
   - component: {fileID: 271945119}
   - component: {fileID: 271945118}
   m_Layer: 5
-  m_Name: '[14,9] Empty Cell'
+  m_Name: '[14,9] VoidCell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15105,7 +15097,7 @@ MonoBehaviour:
   valueTXT: {fileID: 1422189404}
   modifPanel: {fileID: 531339680}
   modifTXT: {fileID: 1400156394}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: 18c9fc9a329e6440d9574a39cf55ff2e, type: 2}
   selectIMG: {fileID: 763177232}
   mainImage: {fileID: 271945119}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -18602,7 +18594,7 @@ GameObject:
   - component: {fileID: 345221635}
   - component: {fileID: 345221634}
   m_Layer: 5
-  m_Name: '[12,1] Empty Cell'
+  m_Name: '[12,1] 9 Cell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18623,7 +18615,7 @@ MonoBehaviour:
   valueTXT: {fileID: 487429224}
   modifPanel: {fileID: 1811273765}
   modifTXT: {fileID: 582226942}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: 70a8cb21ba9c72548bcfcfc6e5863f77, type: 2}
   selectIMG: {fileID: 260100862}
   mainImage: {fileID: 345221635}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -27398,7 +27390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 9
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -29939,7 +29931,7 @@ GameObject:
   - component: {fileID: 554966603}
   - component: {fileID: 554966602}
   m_Layer: 5
-  m_Name: '[5,9] Empty Cell'
+  m_Name: '[5,9] VoidCell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29960,7 +29952,7 @@ MonoBehaviour:
   valueTXT: {fileID: 1758677566}
   modifPanel: {fileID: 1364948160}
   modifTXT: {fileID: 2142586830}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: 18c9fc9a329e6440d9574a39cf55ff2e, type: 2}
   selectIMG: {fileID: 1903628074}
   mainImage: {fileID: 554966603}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -31348,7 +31340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +2
+  m_text: +8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -39426,7 +39418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +2
+  m_text: +4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -43536,7 +43528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: ~
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -59559,7 +59551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: $
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -74096,7 +74088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1365718304
 RectTransform:
   m_ObjectHideFlags: 0
@@ -77391,7 +77383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: ~
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -80258,7 +80250,7 @@ GameObject:
   - component: {fileID: 1467850828}
   - component: {fileID: 1467850827}
   m_Layer: 5
-  m_Name: '[18,5] Mul 9, 9 Cell'
+  m_Name: '[18,5] Empty Cell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80279,7 +80271,7 @@ MonoBehaviour:
   valueTXT: {fileID: 1586579651}
   modifPanel: {fileID: 43658591}
   modifTXT: {fileID: 1164934084}
-  value: {fileID: 11400000, guid: 8258567ddc7835648ad149f4014ec0b8, type: 2}
+  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
   selectIMG: {fileID: 920118877}
   mainImage: {fileID: 1467850828}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -86446,7 +86438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -96454,7 +96446,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: ~
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -99901,7 +99893,7 @@ GameObject:
   - component: {fileID: 1821760112}
   - component: {fileID: 1821760111}
   m_Layer: 5
-  m_Name: '[14,7] Empty Cell'
+  m_Name: '[14,7] VoidCell'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99922,7 +99914,7 @@ MonoBehaviour:
   valueTXT: {fileID: 791718926}
   modifPanel: {fileID: 442639941}
   modifTXT: {fileID: 1079952866}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: 18c9fc9a329e6440d9574a39cf55ff2e, type: 2}
   selectIMG: {fileID: 323618177}
   mainImage: {fileID: 1821760112}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}

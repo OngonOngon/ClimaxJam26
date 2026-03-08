@@ -331,7 +331,7 @@ public class typingScript : MonoBehaviour
         if (_currentLineIndex >= _lines.Count && SceneManager.GetActiveScene().name == "VojtaMenuTest")
         {
             Debug.Log("[TypingSystem] Main Menu text completed. Loading Scene 4...");
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(1);
             return; // Důležité: zastavíme kód tady, aby nešel dál
         }
 
