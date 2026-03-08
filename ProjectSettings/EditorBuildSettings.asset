@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prod/Level5.unity
     guid: 2182d0800296c3844ae49e165f2884f0
   - enabled: 1
+    path: Assets/Scenes/Prod/Epilogue.unity
+    guid: 7a2337fe96e431b448ba6c2993823261
+  - enabled: 1
     path: Assets/Scenes/Prod/CutScenePT.unity
     guid: 35a3b118446b2ea47951b91aaa80df57
   - enabled: 1

@@ -2664,6 +2664,10 @@ PrefabInstance:
       propertyPath: displayBox
       value: 
       objectReference: {fileID: 2006662844}
+    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 1806189303469272905}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableBGL
       value: 
