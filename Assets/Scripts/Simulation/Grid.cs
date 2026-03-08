@@ -7,6 +7,7 @@ namespace Dubinci
         private Vector2Int dim;
         private Cell[,] cells; // back buffer
         private Cell[,] nextCells; // front buffer
+        public event System.Action<Vector2Int, Vector2Int> onShot;
 
         public Grid(Vector2Int dim)
         {
@@ -327,6 +328,7 @@ namespace Dubinci
                     return;
                 }
 
+                onShot?.Invoke(pos, hitCell.Position);
                 Vector2Int targetPos = hitCell.Position;
 
                 // apply aoe
