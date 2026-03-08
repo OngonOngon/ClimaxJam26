@@ -1550,8 +1550,8 @@ MonoBehaviour:
   m_fontColorGradient:
     topLeft: {r: 1, g: 0.8909357, b: 0.5896226, a: 1}
     topRight: {r: 1, g: 0.8909357, b: 0.5896226, a: 1}
-    bottomLeft: {r: 1, g: 0.5372367, b: 0.4009434, a: 1}
-    bottomRight: {r: 1, g: 0.5372367, b: 0.4009434, a: 1}
+    bottomLeft: {r: 1, g: 0.31243068, b: 0.10849059, a: 1}
+    bottomRight: {r: 1, g: 0.31243068, b: 0.10849059, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -3973,7 +3973,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 33fc00fd09d05294bbed6baf404d290d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6ce9d88f8451d2347b1ff1e2ee8825d1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
