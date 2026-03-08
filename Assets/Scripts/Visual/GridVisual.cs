@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,10 @@ namespace Dubinci
 
         // Reference to the Game Over / Level Cleared UI panel
         [SerializeField] private GameObject winPanel;
+        [Header("Particles")]
+        [SerializeField] private ParticleSystem shotPrefab;
+        [SerializeField] private ParticleSystem burstPrefab;
+        [SerializeField] private float shotDuration;
 
         [SerializeField, HideInInspector] private List<CellVisual> cells = new List<CellVisual>();
 
@@ -90,6 +95,7 @@ namespace Dubinci
         {
             selectedCell = gridSize / 2;
             grid = new Grid(gridSize);
+            grid.onShot += GridOnShot;
             foreach (var cell in cells)
                 cell.Setup(grid);
             GetCell(selectedCell).HighliteCell();
@@ -115,6 +121,25 @@ namespace Dubinci
             {
                 winPanel.SetActive(false);
             }
+        }
+
+        private void GridOnShot(Vector2Int from, Vector2Int to)
+        {
+            if (shotPrefab == null)
+                return;
+
+            var ps = Instantiate(shotPrefab);
+            ps.transform.position = GetCell(from).transform.position;
+
+            // 2. Move to point B over the specified duration
+            ps.transform.DOMove(GetCell(to).transform.position, shotDuration)
+                .SetEase(Ease.InOutQuad)
+                .OnComplete(() =>
+                {
+                    Instantiate(burstPrefab, GetCell(to).transform.position, Quaternion.identity, null);
+                    ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                    Destroy(ps.gameObject, 3.0f);
+                });
         }
 
         private bool ValidateBuild()

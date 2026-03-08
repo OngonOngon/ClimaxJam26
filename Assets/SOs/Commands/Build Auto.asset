@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e53ea61c588f514f8cc64f9264fa2bd, type: 3}
   m_Name: Build Auto
   m_EditorClassIdentifier: 
-  text: build auto
+  text: auto
   type: 2
+  cost: 0
   tower: {fileID: 11400000, guid: 8b55b0e6fc88b3f46973d498ee3575ab, type: 2}

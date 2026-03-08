@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e53ea61c588f514f8cc64f9264fa2bd, type: 3}
   m_Name: Build AOE
   m_EditorClassIdentifier: 
-  text: build aoe
+  text: sentry
   type: 2
+  cost: 0
   tower: {fileID: 11400000, guid: 9b62f15def0e6404282e4d5fdb66edd6, type: 2}
