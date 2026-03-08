@@ -413,6 +413,9 @@ namespace Dubinci
                     break;
                 case CommandType.Upgrade:
                     UpgradeTower(pos);
+                    // increase global upgrade cost
+                    playerResources resources = Object.FindAnyObjectByType<playerResources>();
+                    resources.IncreaseUpdateCost(1);
                     break;
             }
         }
