@@ -18,6 +18,9 @@ namespace Dubinci
         [SerializeField] private GameObject hintL;
         [SerializeField] private GameObject hintR;
 
+        // Reference to the Game Over / Level Cleared UI panel
+        [SerializeField] private GameObject winPanel;
+
         [SerializeField, HideInInspector] private List<CellVisual> cells = new List<CellVisual>();
 
         private Grid grid;
@@ -25,6 +28,9 @@ namespace Dubinci
 
         private float Timer;
         [SerializeField] private float TickInterval;
+        
+        // Flag to prevent further ticks after winning
+        private bool isGameWon = false;
 
         [ContextMenu("Generate")]
         private void GenerateCells()
@@ -103,6 +109,12 @@ namespace Dubinci
             shootAllCommand.Validate += ValidateShootAll;
             upgradeCommand.OnCommand += UpgradeTower;
             upgradeCommand.Validate += ValidateUpgrade;
+            
+            // Hide the win panel on start
+            if (winPanel != null)
+            {
+                winPanel.SetActive(false);
+            }
         }
 
         private bool ValidateBuild()
@@ -153,6 +165,9 @@ namespace Dubinci
 
         private void Update()
         {
+            // Stop logic if the level is already cleared
+            if (isGameWon) return;
+
             Timer += Time.deltaTime;
             bool showLHint = selectedCell.x > gridSize.x / 2;
             hintL?.SetActive(showLHint);
@@ -164,6 +179,24 @@ namespace Dubinci
                 foreach (var cell in cells)
                     cell.UpdateVisual(grid.GetCell(cell.Pos));
                 Timer = 0;
+                
+                // Check win condition after each tick
+                if (grid.IsLevelCleared())
+                {
+                    HandleWin();
+                }
+            }
+        }
+
+        // Handles the level clear event
+        private void HandleWin()
+        {
+            isGameWon = true;
+            Debug.Log("LEVEL CLEARED! Showing Win Panel.");
+            
+            if (winPanel != null)
+            {
+                winPanel.SetActive(true);
             }
         }
 

@@ -408,5 +408,19 @@ namespace Dubinci
         {
             return cells[pos.x, pos.y];
         }
+        public bool IsLevelCleared()
+        {
+            for (int x = 0; x < dim.x; x++)
+            {
+                for (int y = 0; y < dim.y; y++)
+                {
+                    if (cells[x, y].Content is NumberEntity num && num.Value > 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }
