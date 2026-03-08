@@ -365,9 +365,9 @@ public class typingScript : MonoBehaviour
         // HACK: If we are in the main menu and finished typing, load Scene 4
         if (_currentLineIndex >= _lines.Count && SceneManager.GetActiveScene().name == "VojtaMenuTest")
         {
-            Debug.Log("[TypingSystem] Main Menu text completed. Loading Scene 4...");
-            SceneManager.LoadScene(1);
-            return; // Důležité: zastavíme kód tady, aby nešel dál
+            Debug.Log("[TypingSystem] Main Menu text completed. Loading Scene 5...");
+            SceneManager.LoadScene(5);
+            return; 
         }
 
         // Colleague's logic: loop the text endlessly for other scenes
