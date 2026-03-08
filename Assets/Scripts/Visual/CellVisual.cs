@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.SceneManagement;
 
 namespace Dubinci
 {
@@ -15,6 +16,7 @@ namespace Dubinci
         [SerializeField] private Image mainImage;
         [SerializeField] private Color selectedCol = Color.white;
         [SerializeField] private Color highlitedCol = Color.white;
+        [SerializeField] private Color inTowerRangeCol = Color.white;
 
         [SerializeField] private Image overlay;
         [SerializeField] private Color numberOverlayColor;
@@ -86,15 +88,18 @@ namespace Dubinci
             HideModifier();
         }
 
+        public void PreUpdateViz()
+        {
+            mainImage.color = Color.white;
+        }
+
         public void UpdateVisual(Cell cell)
         {
             if (cell.Content is Dubinci.VoidEntity)
             {
                 SetMainText("");
-                if (mainImage)
-                {
-                    mainImage.enabled = false;
-                }
+                overlay.gameObject.SetActive(true);
+                overlay.color = numberOverlayColor;
                 return;
             }
 
@@ -108,6 +113,14 @@ namespace Dubinci
                 valueTXT.font = numberSDF;
                 valueTXT.color = numberColor;
                 overlay.color = numberOverlayColor;
+                overlay.gameObject.SetActive(true);
+            }
+            else if (cell.Content is Dubinci.TowerEntity tower)
+            {
+                valueTXT.font = letterSDF;
+                valueTXT.color = letterColor;
+                grid.InTowerRange(Pos, tower.Range);
+                overlay.color = letterOverlayColor * 0.5f;
                 overlay.gameObject.SetActive(true);
             }
             else
@@ -134,6 +147,11 @@ namespace Dubinci
         public void DeselectCell()
         {
             selectIMG.gameObject.SetActive(false);
+        }
+
+        public void InTowerRange()
+        {
+            mainImage.color = inTowerRangeCol;
         }
     }
 }

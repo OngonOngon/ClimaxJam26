@@ -129,6 +129,10 @@ MonoBehaviour:
   upgradeCommand: {fileID: 11400000, guid: 02803b5b552f84bb49b9f5b1fa8e90c5, type: 2}
   hintL: {fileID: 0}
   hintR: {fileID: 0}
+  winPanel: {fileID: 0}
+  shotPrefab: {fileID: 1157520195594212084, guid: 09ba0b39c21f31f4fa9b35b8e356e6de, type: 3}
+  burstPrefab: {fileID: 5892587414113811264, guid: 11e05c5e503556f4cb6c0fc6c7eb630c, type: 3}
+  shotDuration: 0.1
   cells:
   - {fileID: 0}
   - {fileID: 0}

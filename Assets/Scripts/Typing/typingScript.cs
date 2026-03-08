@@ -300,7 +300,7 @@ public class typingScript : MonoBehaviour
                 // Fallback: Pokud je možností víc (nebo 0), zkusíme klasický exact match
                 foreach (var c in validCommands)
                 {
-                    if (c != null && c.ValidCommand() && c.TryCommand(cmd))
+                    if (c != null && c.ValidCommand() && c.ExactMatch(cmd))
                     {
                         targetCommand = c;
                         break;
@@ -315,11 +315,7 @@ public class typingScript : MonoBehaviour
 
                 if (canAfford)
                 {
-                    if (targetCommand is BuildCommandSO buildCmd)
-                    {
-                        buildCmd.Execute();
-                    }
-
+                    targetCommand.RunCommand();
                     _soundProvider?.PlaySuccess();
                     DeactivateSystem();
                 }

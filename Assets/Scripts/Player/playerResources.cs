@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; 
+using TMPro;
 using System.Collections.Generic;
 using System.Linq;
 using System;
@@ -20,7 +20,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
     [SerializeField] private int maxStockVis = 5;
 
     [Header("Stats")]
-    [SerializeField] private int lives = 3; 
+    [SerializeField] private int lives = 3;
     [SerializeField] private int money = 0;
     [SerializeField] private int debugStartingAmount = 0;
     private Dictionary<char, int> inventory;
@@ -58,7 +58,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
             .ToDictionary(c => (char)c, c => debugStartingAmount);
 
         PrintStats();
-        UpdateUI(); 
+        UpdateUI();
     }
 
     private string GetGradientColor(int count)
@@ -97,12 +97,12 @@ public class playerResources : MonoBehaviour, ITypingHandler
     {
         if (_isGameOver) return false;
 
-        foreach (char c in completedLine.ToLower()) 
+        foreach (char c in completedLine.ToLower())
             if (inventory.ContainsKey(c))
                 inventory[c]++;
 
         money += moneyPerStoryLine;
-        UpdateUI(); 
+        UpdateUI();
         return true;
     }
 
@@ -119,7 +119,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
                 if (inventory.ContainsKey(req.Key) && inventory[req.Key] < req.Count())
                 {
                     Debug.Log($"Not enough of this letter {req.Key}");
-                    return false; 
+                    return false;
                 }
             }
 
@@ -131,22 +131,23 @@ public class playerResources : MonoBehaviour, ITypingHandler
         {
             string cmd = command.ToLower();
 
-            if (cmd.StartsWith("build"))
+            // Check if the command starts with "build" (covers "build shooter", "build wall" etc.)
+            if (cmd.StartsWith("g") || cmd.StartsWith("a") || cmd.StartsWith("w") || cmd.StartsWith("s"))
             {
                 return TrySpendMoney(buildCost, "Building structure");
             }
 
-            if (cmd.StartsWith("upgrade"))
+            if (cmd.StartsWith("u"))
             {
                 return TrySpendMoney(upgradeCost, "Upgrading system");
             }
 
-            if (cmd.StartsWith("modifier"))
+            if (cmd.StartsWith("e"))
             {
                 return TrySpendMoney(buildCost, "Applying modifier");
             }
 
-            if (cmd == "shoot")
+            if (cmd.StartsWith("f"))
             {
                 Debug.Log("[Resources] PEW PEW!");
                 return true;
@@ -163,7 +164,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
     {
         Debug.Log("[Resources] Story finished! Bonus 500 money awarded.");
         money += 500;
-        UpdateUI(); 
+        UpdateUI();
         PrintStats();
     }
 
@@ -172,14 +173,14 @@ public class playerResources : MonoBehaviour, ITypingHandler
         if (money >= cost)
         {
             money -= cost;
-            UpdateUI(); 
+            UpdateUI();
             Debug.Log($"[Resources] {actionName} success! Remaining: {money}");
-            return true; 
+            return true;
         }
         else
         {
             Debug.LogWarning($"[Resources] Not enough money for {actionName}!");
-            return false; 
+            return false;
         }
     }
 
@@ -188,7 +189,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
         if (_isGameOver) return;
 
         lives -= amount;
-        UpdateUI(); 
+        UpdateUI();
         Debug.Log($"[Resources] Ouch! Took {amount} damage. Lives left: {lives}");
 
         if (lives <= 0)
@@ -201,7 +202,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
     {
         _isGameOver = true;
         lives = 0;
-        UpdateUI(); 
+        UpdateUI();
 
         if (gameOverPanel != null)
         {

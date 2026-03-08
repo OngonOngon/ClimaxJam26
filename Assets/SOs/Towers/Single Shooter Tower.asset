@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32ae356b39a59541afe4c89f1668063, type: 3}
   m_Name: Single Shooter Tower
   m_EditorClassIdentifier: 
-  Letter: 84
+  Letter: 71
   HP: 5
   CanBeUsed: 0
   type: 0
