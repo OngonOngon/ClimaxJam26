@@ -2408,24 +2408,26 @@ PrefabInstance:
       objectReference: {fileID: 135643407}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: referenceText
-      value: 'type out this text to earn gold
+      value: 'type this text to earn gold
 
-        your goal is to eliminate
+        you are safe now experiment
+
+        eliminate
         all numbers
 
-        press tab to switch to building mode and then press
-        enter
+        press tab to switch to build mode
 
-        you will see a list of possible commands
+        use wasd
+        to move
 
-        your towers
-        have limited range use WASD to position elsewhere
+        press enter to build
 
-        most towers have
-        to be shot manually
+        view list of possible commands
 
-        You are not in danger yet dont be afraid to
-        experiment'
+        towers
+        have limited range
+
+        shoot towers by typing fire'
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableTexts
