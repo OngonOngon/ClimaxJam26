@@ -11903,6 +11903,8 @@ MonoBehaviour:
   shootCommand: {fileID: 11400000, guid: 5489f5695c97269438ab530710a9beb7, type: 2}
   shootAllCommand: {fileID: 11400000, guid: 7aa325dbb90c9524396a18bf636481a5, type: 2}
   upgradeCommand: {fileID: 11400000, guid: 02803b5b552f84bb49b9f5b1fa8e90c5, type: 2}
+  hintL: {fileID: 0}
+  hintR: {fileID: 0}
   cells:
   - {fileID: 1020594399}
   - {fileID: 1040255445}
@@ -13473,14 +13475,6 @@ PrefabInstance:
     - target: {fileID: 5040749958609219238, guid: e02ce2fcb420c471ab64b7969c404d87, type: 3}
       propertyPath: m_text
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040749958609219238, guid: e02ce2fcb420c471ab64b7969c404d87, type: 3}
-      propertyPath: m_fontSize
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040749958609219238, guid: e02ce2fcb420c471ab64b7969c404d87, type: 3}
-      propertyPath: m_fontStyle
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5040749958609219238, guid: e02ce2fcb420c471ab64b7969c404d87, type: 3}
       propertyPath: m_fontSizeBase
