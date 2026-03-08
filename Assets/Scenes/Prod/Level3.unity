@@ -234,6 +234,7 @@ MonoBehaviour:
   mainImage: {fileID: 4856723}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1800277302}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -418,6 +419,7 @@ MonoBehaviour:
   mainImage: {fileID: 10044463}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 560318855}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -527,6 +529,7 @@ MonoBehaviour:
   mainImage: {fileID: 17721701}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 510679639}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -1994,6 +1997,7 @@ MonoBehaviour:
   mainImage: {fileID: 66455741}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 645517158}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -3022,6 +3026,7 @@ MonoBehaviour:
   mainImage: {fileID: 87391908}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1596828446}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -3207,6 +3212,7 @@ MonoBehaviour:
   mainImage: {fileID: 100476884}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 300792667}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -3542,6 +3548,7 @@ MonoBehaviour:
   mainImage: {fileID: 107883963}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 538605938}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -3651,6 +3658,7 @@ MonoBehaviour:
   mainImage: {fileID: 109586045}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1572240874}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -3877,6 +3885,10 @@ PrefabInstance:
       propertyPath: displayBox
       value: 
       objectReference: {fileID: 2006662844}
+    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 923097658}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableBGL
       value: 
@@ -6468,6 +6480,7 @@ MonoBehaviour:
   mainImage: {fileID: 175477565}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1102042712}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -7212,6 +7225,7 @@ MonoBehaviour:
   mainImage: {fileID: 203950653}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 604767111}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -7548,6 +7562,7 @@ MonoBehaviour:
   mainImage: {fileID: 223235501}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1835471983}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -7868,6 +7883,7 @@ MonoBehaviour:
   mainImage: {fileID: 228013605}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1710337964}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -8685,6 +8701,7 @@ MonoBehaviour:
   mainImage: {fileID: 256370909}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 914554510}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -9504,6 +9521,7 @@ MonoBehaviour:
   mainImage: {fileID: 271023627}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1453391716}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -10327,6 +10345,7 @@ MonoBehaviour:
   mainImage: {fileID: 287824494}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1723304858}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -10572,6 +10591,7 @@ MonoBehaviour:
   mainImage: {fileID: 295599073}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1502168299}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -10953,6 +10973,7 @@ MonoBehaviour:
   mainImage: {fileID: 299375895}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 777975691}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -11213,6 +11234,7 @@ MonoBehaviour:
   mainImage: {fileID: 301590608}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 894487971}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -11322,6 +11344,7 @@ MonoBehaviour:
   mainImage: {fileID: 305687134}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 2042469242}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -11567,6 +11590,7 @@ MonoBehaviour:
   mainImage: {fileID: 311041090}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1302146298}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -12037,6 +12061,7 @@ MonoBehaviour:
   mainImage: {fileID: 335395726}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 418854945}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -12856,6 +12881,7 @@ MonoBehaviour:
   mainImage: {fileID: 363218448}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1986202241}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -12965,6 +12991,7 @@ MonoBehaviour:
   mainImage: {fileID: 366292753}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1507562917}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -14220,7 +14247,7 @@ MonoBehaviour:
   upgradeCommand: {fileID: 11400000, guid: 02803b5b552f84bb49b9f5b1fa8e90c5, type: 2}
   hintL: {fileID: 1583880378}
   hintR: {fileID: 1949553292}
-  winPanel: {fileID: 0}
+  winPanel: {fileID: 718846235}
   shotPrefab: {fileID: 1157520195594212084, guid: 09ba0b39c21f31f4fa9b35b8e356e6de, type: 3}
   burstPrefab: {fileID: 5892587414113811264, guid: 11e05c5e503556f4cb6c0fc6c7eb630c, type: 3}
   shotDuration: 0.1
@@ -14546,6 +14573,7 @@ MonoBehaviour:
   mainImage: {fileID: 407609747}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 245824677}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -15898,6 +15926,7 @@ MonoBehaviour:
   mainImage: {fileID: 447871675}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 743403226}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -16445,6 +16474,7 @@ MonoBehaviour:
   mainImage: {fileID: 464063519}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1495134207}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -16630,6 +16660,7 @@ MonoBehaviour:
   mainImage: {fileID: 469537518}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 281038721}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -17236,6 +17267,7 @@ MonoBehaviour:
   mainImage: {fileID: 490878352}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 9328957}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -17556,6 +17588,7 @@ MonoBehaviour:
   mainImage: {fileID: 494424016}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1279568137}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -17665,6 +17698,7 @@ MonoBehaviour:
   mainImage: {fileID: 496629158}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 608488791}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -17774,6 +17808,7 @@ MonoBehaviour:
   mainImage: {fileID: 496990387}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1606326876}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -17883,6 +17918,7 @@ MonoBehaviour:
   mainImage: {fileID: 501032706}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1052007295}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -17992,6 +18028,7 @@ MonoBehaviour:
   mainImage: {fileID: 504478047}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 750382107}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -20198,6 +20235,7 @@ MonoBehaviour:
   mainImage: {fileID: 559978571}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 399764357}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -20670,6 +20708,7 @@ MonoBehaviour:
   mainImage: {fileID: 568675022}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1335429912}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -20855,6 +20894,7 @@ MonoBehaviour:
   mainImage: {fileID: 571368342}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1123421009}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -22517,6 +22557,7 @@ MonoBehaviour:
   mainImage: {fileID: 614555855}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 133783438}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -22895,6 +22936,7 @@ MonoBehaviour:
   mainImage: {fileID: 620386312}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 584792209}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -23140,6 +23182,7 @@ MonoBehaviour:
   mainImage: {fileID: 626930582}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1586105360}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -23460,6 +23503,7 @@ MonoBehaviour:
   mainImage: {fileID: 645594360}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 2147446077}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -24265,6 +24309,7 @@ MonoBehaviour:
   mainImage: {fileID: 665068008}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 844104427}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -24374,6 +24419,7 @@ MonoBehaviour:
   mainImage: {fileID: 666448221}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 69755710}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -24847,6 +24893,7 @@ MonoBehaviour:
   mainImage: {fileID: 686135327}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1306854381}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -25959,6 +26006,113 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &718846233
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2127362653}
+    m_Modifications:
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657176371205783327, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_Name
+      value: NextLevelPanel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+--- !u!224 &718846234 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+  m_PrefabInstance: {fileID: 718846233}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &718846235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5657176371205783327, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+  m_PrefabInstance: {fileID: 718846233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &723340739
 GameObject:
   m_ObjectHideFlags: 0
@@ -25998,6 +26152,7 @@ MonoBehaviour:
   mainImage: {fileID: 723340741}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 373685611}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -26319,6 +26474,7 @@ MonoBehaviour:
   mainImage: {fileID: 741099553}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 828414595}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -27136,6 +27292,7 @@ MonoBehaviour:
   mainImage: {fileID: 752875300}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1667503703}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -27607,6 +27764,7 @@ MonoBehaviour:
   mainImage: {fileID: 763094757}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1248151401}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -27791,6 +27949,7 @@ MonoBehaviour:
   mainImage: {fileID: 776239285}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 123672858}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -27900,6 +28059,7 @@ MonoBehaviour:
   mainImage: {fileID: 777949503}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 2077380614}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -28084,6 +28244,7 @@ MonoBehaviour:
   mainImage: {fileID: 778200778}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1326255484}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -28193,6 +28354,7 @@ MonoBehaviour:
   mainImage: {fileID: 778649337}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1094570786}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -28313,6 +28475,7 @@ MonoBehaviour:
   mainImage: {fileID: 784882675}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1503869386}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -28800,6 +28963,7 @@ MonoBehaviour:
   mainImage: {fileID: 811751899}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1621413140}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -29844,6 +30008,7 @@ MonoBehaviour:
   mainImage: {fileID: 847307324}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 190511146}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -30300,6 +30465,7 @@ MonoBehaviour:
   mainImage: {fileID: 853581554}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1375646020}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -30756,6 +30922,7 @@ MonoBehaviour:
   mainImage: {fileID: 862252223}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1874897434}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -30865,6 +31032,7 @@ MonoBehaviour:
   mainImage: {fileID: 864096339}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 58337472}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -32350,6 +32518,7 @@ MonoBehaviour:
   mainImage: {fileID: 906248325}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 881567269}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -33053,6 +33222,113 @@ RectTransform:
   m_AnchoredPosition: {x: 0.4908, y: 0}
   m_SizeDelta: {x: -0.9816, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &923097657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2127362653}
+    m_Modifications:
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620549353580479178, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_Name
+      value: GameOverPanel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+--- !u!1 &923097658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2620549353580479178, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+  m_PrefabInstance: {fileID: 923097657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &923097659 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1635652264783469715, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+  m_PrefabInstance: {fileID: 923097657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &924324147
 GameObject:
   m_ObjectHideFlags: 0
@@ -33605,6 +33881,7 @@ MonoBehaviour:
   mainImage: {fileID: 933040978}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1355320441}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -36067,6 +36344,7 @@ MonoBehaviour:
   mainImage: {fileID: 1037619083}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1964473672}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -36538,6 +36816,7 @@ MonoBehaviour:
   mainImage: {fileID: 1049843118}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1837388132}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -37704,6 +37983,7 @@ MonoBehaviour:
   mainImage: {fileID: 1088425694}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 2034678926}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -38039,6 +38319,7 @@ MonoBehaviour:
   mainImage: {fileID: 1101138486}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1904432211}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -38993,6 +39274,7 @@ MonoBehaviour:
   mainImage: {fileID: 1119150852}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1645691533}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -39252,6 +39534,7 @@ MonoBehaviour:
   mainImage: {fileID: 1126802628}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1953419799}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -39361,6 +39644,7 @@ MonoBehaviour:
   mainImage: {fileID: 1128297573}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 596485090}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -40267,6 +40551,7 @@ MonoBehaviour:
   mainImage: {fileID: 1154698946}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1103780125}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -41824,6 +42109,7 @@ MonoBehaviour:
   mainImage: {fileID: 1191758297}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 51550299}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -41933,6 +42219,7 @@ MonoBehaviour:
   mainImage: {fileID: 1193619625}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 961723389}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -42117,6 +42404,7 @@ MonoBehaviour:
   mainImage: {fileID: 1196184064}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1744657064}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -42226,6 +42514,7 @@ MonoBehaviour:
   mainImage: {fileID: 1199553283}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 585999269}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -42371,6 +42660,108 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000015258789}
   m_SizeDelta: {x: 0, y: -0.00005722}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1208402648
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2127362653}
+    m_Modifications:
+    - target: {fileID: 6705466615130153508, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_Name
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5282391d532fbb3409440abad026313f, type: 3}
+--- !u!224 &1208402649 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7711091369494179622, guid: 5282391d532fbb3409440abad026313f, type: 3}
+  m_PrefabInstance: {fileID: 1208402648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1209981314
 GameObject:
   m_ObjectHideFlags: 0
@@ -43409,6 +43800,7 @@ MonoBehaviour:
   mainImage: {fileID: 1241647110}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1200717512}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -45449,6 +45841,7 @@ MonoBehaviour:
   mainImage: {fileID: 1319628965}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1709515397}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -45769,6 +46162,7 @@ MonoBehaviour:
   mainImage: {fileID: 1325248034}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 248958823}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -46089,6 +46483,7 @@ MonoBehaviour:
   mainImage: {fileID: 1328509455}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1731854119}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -46409,6 +46804,7 @@ MonoBehaviour:
   mainImage: {fileID: 1332214009}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 795001658}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -47302,6 +47698,7 @@ MonoBehaviour:
   mainImage: {fileID: 1352221080}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1039852496}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -48800,6 +49197,7 @@ MonoBehaviour:
   mainImage: {fileID: 1395966669}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1725595566}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -49916,6 +50314,7 @@ MonoBehaviour:
   mainImage: {fileID: 1441893706}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 317320411}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -50252,6 +50651,7 @@ MonoBehaviour:
   mainImage: {fileID: 1454999394}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 459656157}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -50436,6 +50836,7 @@ MonoBehaviour:
   mainImage: {fileID: 1457364755}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1533375623}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -50686,6 +51087,7 @@ MonoBehaviour:
   mainImage: {fileID: 1467883829}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 374065942}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -50931,6 +51333,7 @@ MonoBehaviour:
   mainImage: {fileID: 1475841640}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 544026712}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -51040,6 +51443,7 @@ MonoBehaviour:
   mainImage: {fileID: 1480097287}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 990562249}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -51510,6 +51914,7 @@ MonoBehaviour:
   mainImage: {fileID: 1496142146}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1805095974}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -51920,6 +52325,7 @@ MonoBehaviour:
   mainImage: {fileID: 1504290296}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1668855053}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -52315,6 +52721,7 @@ MonoBehaviour:
   mainImage: {fileID: 1515502953}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1825672671}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -52635,6 +53042,7 @@ MonoBehaviour:
   mainImage: {fileID: 1530127218}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1187776989}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -53666,6 +54074,7 @@ MonoBehaviour:
   mainImage: {fileID: 1570185648}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 53730288}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -54744,6 +55153,7 @@ MonoBehaviour:
   mainImage: {fileID: 1606996578}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 493612263}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -57477,6 +57887,7 @@ MonoBehaviour:
   mainImage: {fileID: 1673252810}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 758535987}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -57586,6 +57997,7 @@ MonoBehaviour:
   mainImage: {fileID: 1680814621}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1994664811}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -58253,6 +58665,7 @@ MonoBehaviour:
   mainImage: {fileID: 1706122330}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1050892433}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -58724,6 +59137,7 @@ MonoBehaviour:
   mainImage: {fileID: 1719948105}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1310829081}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -58833,6 +59247,7 @@ MonoBehaviour:
   mainImage: {fileID: 1722617228}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 144044315}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -59666,6 +60081,7 @@ MonoBehaviour:
   mainImage: {fileID: 1742363247}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1790799952}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -60694,6 +61110,7 @@ MonoBehaviour:
   mainImage: {fileID: 1770274305}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 520997665}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -61164,6 +61581,7 @@ MonoBehaviour:
   mainImage: {fileID: 1779336564}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1490879255}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -61273,6 +61691,7 @@ MonoBehaviour:
   mainImage: {fileID: 1783819784}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 508959387}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -61518,6 +61937,7 @@ MonoBehaviour:
   mainImage: {fileID: 1786794796}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1895640043}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -61915,6 +62335,7 @@ MonoBehaviour:
   mainImage: {fileID: 1788716164}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 517344988}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -62326,6 +62747,7 @@ MonoBehaviour:
   mainImage: {fileID: 1791785726}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1769641988}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -62646,6 +63068,7 @@ MonoBehaviour:
   mainImage: {fileID: 1803332860}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1268805904}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -63328,6 +63751,7 @@ MonoBehaviour:
   mainImage: {fileID: 1829794165}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1909082845}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -63437,6 +63861,7 @@ MonoBehaviour:
   mainImage: {fileID: 1830390260}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 2014051611}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -63682,6 +64107,7 @@ MonoBehaviour:
   mainImage: {fileID: 1832362806}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 487873613}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -65422,6 +65848,7 @@ MonoBehaviour:
   mainImage: {fileID: 1878565122}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 67671714}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -66494,6 +66921,7 @@ MonoBehaviour:
   mainImage: {fileID: 1918979657}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1759354946}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -68076,6 +68504,7 @@ MonoBehaviour:
   mainImage: {fileID: 1960551123}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 436407834}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -68335,6 +68764,7 @@ MonoBehaviour:
   mainImage: {fileID: 1973621963}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 865957733}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -68580,6 +69010,7 @@ MonoBehaviour:
   mainImage: {fileID: 1982186427}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1612514790}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -69322,6 +69753,7 @@ MonoBehaviour:
   mainImage: {fileID: 1996244013}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 825771874}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -69854,6 +70286,7 @@ MonoBehaviour:
   mainImage: {fileID: 2010025091}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1763926976}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -69963,6 +70396,7 @@ MonoBehaviour:
   mainImage: {fileID: 2013634820}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1517602078}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -70510,6 +70944,7 @@ MonoBehaviour:
   mainImage: {fileID: 2028689838}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 1391938431}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -70920,6 +71355,7 @@ MonoBehaviour:
   mainImage: {fileID: 2036725400}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 847638187}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -71648,6 +72084,7 @@ MonoBehaviour:
   mainImage: {fileID: 2053729791}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 865485514}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -72569,6 +73006,7 @@ MonoBehaviour:
   mainImage: {fileID: 2095425789}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 204595826}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -73100,6 +73538,7 @@ MonoBehaviour:
   mainImage: {fileID: 2103624302}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 869116745}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -73570,6 +74009,7 @@ MonoBehaviour:
   mainImage: {fileID: 2108614103}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 889881843}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
@@ -74223,6 +74663,9 @@ RectTransform:
   - {fileID: 1465133474}
   - {fileID: 1583880379}
   - {fileID: 1949553289}
+  - {fileID: 1208402649}
+  - {fileID: 923097659}
+  - {fileID: 718846234}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -74557,6 +75000,7 @@ MonoBehaviour:
   mainImage: {fileID: 2140518008}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
   highlitedCol: {r: 0.9056604, g: 0.7137255, b: 0.101960786, a: 0.5882353}
+  inTowerRangeCol: {r: 1, g: 1, b: 1, a: 1}
   overlay: {fileID: 116895026}
   numberOverlayColor: {r: 0, g: 0, b: 0, a: 0.6745098}
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
