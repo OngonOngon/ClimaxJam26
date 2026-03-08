@@ -193,11 +193,6 @@ public class typingScript : MonoBehaviour
         foreach (char c in input)
         {
             if (c == '\r' || c == '\n') continue;
-            if (c == '\b')
-            {
-                if (_playerInput.Length > 0) _playerInput = _playerInput.Substring(0, _playerInput.Length - 1);
-                continue;
-            }
 
             // allow only letters and space
             if (!char.IsLetter(c) && c != ' ') continue;
