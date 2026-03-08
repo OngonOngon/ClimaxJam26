@@ -6,6 +6,7 @@ namespace Dubinci
     {
         public char Letter;
         public int HP;
+        public bool CanBeUsed;
 
         public virtual void Build(Grid grid, Vector2Int pos)
         {

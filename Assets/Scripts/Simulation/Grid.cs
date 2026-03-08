@@ -76,6 +76,18 @@ namespace Dubinci
             targetCell.Content = new TowerEntity(type, letter, damage, range, hp, aoe);
         }
 
+        public void AddPlayerBase(Vector2Int pos)
+        {
+            if (!IsValidPos(pos))
+            {
+                return;
+            }
+
+            Cell targetCell = this.cells[pos.x, pos.y];
+
+            targetCell.Content = new PlayerBase();
+        }
+
         public bool IsValidPos(Vector2Int pos)
         {
             if (!(pos.x >= 0 && pos.y >= 0 && pos.x < dim.x && pos.y < dim.y))
@@ -97,7 +109,7 @@ namespace Dubinci
                 for (int y = 0; y < dim.y; y++)
                 {
                     IGridEntity content = cells[x, y].Content;
-                    if (content is TowerEntity || content is VoidEntity)
+                    if (content is TowerEntity || content is VoidEntity || content is PlayerBase)
                     {
                         nextCells[x, y].Content = content;
                     }
@@ -168,7 +180,9 @@ namespace Dubinci
                                         NumberEntity newNumberEntity = new NumberEntity(0);
                                         switch (targetCell.GetModifier())
                                         {
-                                            case Modifier { type: ModifierType.Add, value: var addValue }:
+                                            case Modifier { type: ModifierType.Add, value: _ }:
+                                            case Modifier { type: ModifierType.Subtract, value: _ }:
+                                            case Modifier { type: ModifierType.Divide, value: _ }:
                                                 newNumberEntity.Value = 1;
                                                 newNumberEntity.addThisTick = true;
                                                 break;
@@ -185,6 +199,8 @@ namespace Dubinci
                                         switch (targetCell.GetModifier())
                                         {
                                             case Modifier { type: ModifierType.Add, value: _ }:
+                                            case Modifier { type: ModifierType.Subtract, value: _ }:
+                                            case Modifier { type: ModifierType.Divide, value: _ }:
                                                 targetNumberEntity.Value += 1;
                                                 targetNumberEntity.addThisTick = true;
                                                 break;
@@ -202,6 +218,10 @@ namespace Dubinci
                                         {
                                             targetCell.Content = null;
                                         }
+                                        break;
+                                    case PlayerBase playerBase: // player base cell
+                                        playerBase.DamageBase();
+                                        Debug.Log("Base got damaged!");
                                         break;
                                 }
                                 numberEntity.Value--;
@@ -227,7 +247,7 @@ namespace Dubinci
                                 num.Value += addValue;
                                 break;
                             case Modifier { type: ModifierType.Subtract, value: var subValue }:
-                                num.Value -= subValue;
+                                num.Value += subValue;
                                 break;
                             case Modifier { type: ModifierType.Divide, value: var divValue }:
                                 num.Value = Mathf.FloorToInt((float)num.Value / divValue);
@@ -352,9 +372,9 @@ namespace Dubinci
                     Shoot(pos);
                     break;
                 case CommandType.ShootAll:
-                    for (int x = pos.x; x >= pos.x; x--)
+                    for (int x = 0; x < dim.x; x++)
                     {
-                        for (int y = pos.y; y <= pos.y; y++)
+                        for (int y = 0; y < dim.y; y++)
                         {
                             Vector2Int checkPos = new Vector2Int(x, y);
 

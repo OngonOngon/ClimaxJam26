@@ -11,6 +11,7 @@ namespace Dubinci
         [SerializeField] private GridLayoutGroup gridLayout;
         [SerializeField] private CellValueSO emptyCellVal;
         [SerializeField] private List<BuildCommandSO> buildCommands;
+        [SerializeField] private List<BuildModifierSO> buildModifierCommands;
         [SerializeField] private CommandSO shootCommand;
         [SerializeField] private CommandSO shootAllCommand;
 
@@ -18,6 +19,9 @@ namespace Dubinci
 
         private Grid grid;
         private Vector2Int selectedCell;
+
+        private float Timer;
+        [SerializeField] private float TickInterval;
 
         [ContextMenu("Generate")]
         private void GenerateCells()
@@ -75,9 +79,34 @@ namespace Dubinci
                 cell.Setup(grid);
             GetCell(selectedCell).HighliteCell();
             foreach (var b in buildCommands)
+            {
                 b.OnBuildCommand += BuildTower;
+                b.Validate += ValidateBuild;
+            }
+            foreach (var b in buildModifierCommands)
+            {
+                b.OnBuildCommand += BuildModifier;
+                b.Validate += ValidateBuild;
+            }
             shootCommand.OnCommand += ActivateTower;
+            shootCommand.Validate += ValidateShoot;
             shootAllCommand.OnCommand += ActivateAll;
+            shootAllCommand.Validate += ValidateShootAll;
+        }
+
+        private bool ValidateBuild()
+        {
+            return grid.GetCell(selectedCell).Content == null;
+        }
+
+        private bool ValidateShoot()
+        {
+            return grid.GetCell(selectedCell).Content is TowerEntity;
+        }
+
+        private bool ValidateShootAll()
+        {
+            return true;
         }
 
         private void Start()
@@ -89,18 +118,30 @@ namespace Dubinci
         private void OnDestroy()
         {
             foreach (var b in buildCommands)
+            {
                 b.OnBuildCommand -= BuildTower;
+                b.Validate -= ValidateBuild;
+            }
+            foreach (var b in buildModifierCommands)
+            {
+                b.OnBuildCommand -= BuildModifier;
+                b.Validate -= ValidateBuild;
+            }
             shootCommand.OnCommand -= ActivateTower;
+            shootCommand.Validate -= ValidateShoot;
             shootAllCommand.OnCommand -= ActivateAll;
+            shootAllCommand.Validate -= ValidateShootAll;
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            Timer += Time.deltaTime;
+            if (Timer >= TickInterval)
             {
                 grid.Tick();
                 foreach (var cell in cells)
                     cell.UpdateVisual(grid.GetCell(cell.Pos));
+                Timer = 0;
             }
         }
 
@@ -111,7 +152,7 @@ namespace Dubinci
 
         void BuildTower(TowerSO tower)
         {
-            if (grid.GetCell(selectedCell).Content == null)
+            if (ValidateBuild())
             {
                 tower.Build(grid, selectedCell);
                 // use resources
@@ -119,9 +160,20 @@ namespace Dubinci
             }
         }
 
+        void BuildModifier(ModifierCellSO modifier)
+        {
+            if (grid.GetCell(selectedCell).Content == null)
+            {
+                modifier.Setup(grid, selectedCell);
+                modifier.SetupUI(GetCell(selectedCell));
+                // use resources
+                GetCell(selectedCell).UpdateVisual(grid.GetCell(selectedCell));
+            }
+        }
+
         void ActivateTower()
         {
-            if (grid.GetCell(selectedCell).Content is TowerEntity)
+            if (ValidateShoot())
             {
                 grid.Command(shootCommand, selectedCell);
                 // use resources

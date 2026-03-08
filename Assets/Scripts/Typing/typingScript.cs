@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // HACK: Added to read the active scene name
+using UnityEngine.SceneManagement; // Required for loading scenes
 using TMPro;
 using System;
 using Dubinci;
@@ -35,6 +35,7 @@ public class typingScript : MonoBehaviour
     [Header("General Settings")]
     [SerializeField] private TypingMode mode = TypingMode.Story;
     [SerializeField] private TextMeshProUGUI displayLabel;
+    [SerializeField] private TextMeshProUGUI availableTexts;
 
     [Header("Story Mode Settings")]
     [TextArea(3, 5)]
@@ -91,6 +92,8 @@ public class typingScript : MonoBehaviour
 
     void Update()
     {
+        if (availableTexts != null) availableTexts.gameObject.SetActive(false);
+
         // Handle dedicated Story Mode activation (Tab)
         if (CInput.IsStoryTriggered())
         {
@@ -211,6 +214,17 @@ public class typingScript : MonoBehaviour
 
     private void HandleCommandInput(string input)
     {
+        if (availableTexts != null)
+        {
+            availableTexts.gameObject.SetActive(true);
+            availableTexts.text = "";
+            foreach (var c in validCommands)
+            {
+                if (c.ValidCommand())
+                    availableTexts.text += c.text + "\n";
+            }
+        }
+
         foreach (char c in input)
         {
             if (c == '\r' || c == '\n') continue;
@@ -230,7 +244,7 @@ public class typingScript : MonoBehaviour
 
             foreach (var c in validCommands)
             {
-                if (c != null && c.TryCommand(cmd))
+                if (c != null && c.ValidCommand() && c.TryCommand(cmd))
                 {
                     commandFound = true;
 
@@ -289,13 +303,20 @@ public class typingScript : MonoBehaviour
 
         Handler?.OnLineCompleted(finishedLine);
 
+        // Check if all text blocks are completely typed
         if (_currentLineIndex >= _lines.Count)
         {
             Handler?.OnAllLinesCompleted();
             
-            // HACK: Prevent the script from deactivating if we are in the main menu
-            if (SceneManager.GetActiveScene().name != "VojtaMenuTest")
+            // HACK: If we are in the main menu, load the actual game scene (build index 4)
+            if (SceneManager.GetActiveScene().name == "VojtaMenuTest")
             {
+                Debug.Log("[TypingSystem] Main Menu text completed. Loading Scene 4...");
+                SceneManager.LoadScene(4);
+            }
+            else
+            {
+                // For all other normal levels, just close the typing interface
                 DeactivateSystem();
             }
         }
