@@ -20,11 +20,11 @@ MonoBehaviour:
   Range: 3
   AOE: 0
   Upgrades:
-    DamageAmount: 2
+    DamageAmount: 4
     DamageThreshold: 2
     RangeAmount: 1
     RangeThreshold: 4
-    HPAmount: 3
+    HPAmount: 6
     HPThreshold: 2
     AOEAmount: 0
-    AOEThreshold: 5
+    AOEThreshold: 10

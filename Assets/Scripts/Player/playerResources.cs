@@ -102,6 +102,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
                 inventory[c]++;
 
         money += moneyPerStoryLine;
+        moneyPerStoryLine++;
         UpdateUI();
         return true;
     }
@@ -163,7 +164,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
     public void OnAllLinesCompleted()
     {
         Debug.Log("[Resources] Story finished! Bonus 500 money awarded.");
-        money += 500;
+        money += 100;
         UpdateUI();
         PrintStats();
     }
