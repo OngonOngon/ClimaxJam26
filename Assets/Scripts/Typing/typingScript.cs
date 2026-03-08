@@ -294,14 +294,13 @@ public class typingScript : MonoBehaviour
             {
                 targetCommand = possibleCommands[0];
                 cmd = targetCommand.text.ToLower(); // Pošleme plný název příkazu do peněženky
-                targetCommand.TryCommand(cmd);
             }
             else
             {
                 // Fallback: Pokud je možností víc (nebo 0), zkusíme klasický exact match
                 foreach (var c in validCommands)
                 {
-                    if (c != null && c.ValidCommand() && c.TryCommand(cmd))
+                    if (c != null && c.ValidCommand() && c.ExactMatch(cmd))
                     {
                         targetCommand = c;
                         break;
@@ -314,13 +313,9 @@ public class typingScript : MonoBehaviour
             {
                 bool canAfford = (Handler == null) || Handler.OnCommandExecuted(cmd);
 
-                if (targetCommand is BuildCommandSO buildCmd)
+                if (canAfford)
                 {
-                    if (canAfford)
-                    {
-                        buildCmd.Execute();
-                    }
-
+                    targetCommand.RunCommand();
                     _soundProvider?.PlaySuccess();
                     DeactivateSystem();
                 }
@@ -366,9 +361,9 @@ public class typingScript : MonoBehaviour
         // HACK: If we are in the main menu and finished typing, load Scene 4
         if (_currentLineIndex >= _lines.Count && SceneManager.GetActiveScene().name == "VojtaMenuTest")
         {
-            Debug.Log("[TypingSystem] Main Menu text completed. Loading Scene 4...");
-            SceneManager.LoadScene(1);
-            return; // Důležité: zastavíme kód tady, aby nešel dál
+            Debug.Log("[TypingSystem] Main Menu text completed. Loading Scene 5...");
+            SceneManager.LoadScene(5);
+            return; 
         }
 
         // Colleague's logic: loop the text endlessly for other scenes
