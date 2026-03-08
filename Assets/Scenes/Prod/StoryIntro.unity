@@ -977,8 +977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'We have must have been fighting since the <color=#4880b8>beginning of
-    time</color>... '
+  m_text: 'We must have been fighting since the <color=#4880b8>beginning of time</color>... '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
   m_sharedMaterial: {fileID: -2168543029833476439, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
