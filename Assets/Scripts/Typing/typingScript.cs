@@ -181,7 +181,6 @@ public class typingScript : MonoBehaviour
 
     private void HandleStoryInput(string input)
     {
-        if (_currentLineIndex >= _lines.Count) return;
         string target = _lines[_currentLineIndex];
 
         foreach (char c in input)
@@ -303,23 +302,7 @@ public class typingScript : MonoBehaviour
 
         Handler?.OnLineCompleted(finishedLine);
 
-        // Check if all text blocks are completely typed
-        if (_currentLineIndex >= _lines.Count)
-        {
-            Handler?.OnAllLinesCompleted();
-            
-            // HACK: If we are in the main menu, load the actual game scene (build index 4)
-            if (SceneManager.GetActiveScene().name == "VojtaMenuTest")
-            {
-                Debug.Log("[TypingSystem] Main Menu text completed. Loading Scene 4...");
-                SceneManager.LoadScene(4);
-            }
-            else
-            {
-                // For all other normal levels, just close the typing interface
-                DeactivateSystem();
-            }
-        }
+        _currentLineIndex %= _lines.Count;
     }
 
     private void UpdateVisuals()

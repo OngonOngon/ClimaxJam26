@@ -10,11 +10,16 @@ namespace Dubinci
         [SerializeField] private GameObject modifPanel;
         [SerializeField] private TextMeshProUGUI modifTXT;
         [SerializeField] private CellValueSO value;
-        [SerializeField] private Image blackOverlay;
+
         [SerializeField] private Image selectIMG;
         [SerializeField] private Image mainImage;
         [SerializeField] private Color selectedCol = Color.white;
         [SerializeField] private Color highlitedCol = Color.white;
+
+        [SerializeField] private Image overlay;
+        [SerializeField] private Color numberOverlayColor;
+        [SerializeField] private Color letterOverlayColor;
+
         [SerializeField] private TMP_FontAsset numberSDF;
         [SerializeField] private TMP_FontAsset letterSDF;
         [SerializeField] private Color numberColor;
@@ -94,17 +99,23 @@ namespace Dubinci
             }
 
             SetMainText(cell.GetContentString());
-            if (cell.Content != null && cell.Content is Dubinci.NumberEntity)
+            if (cell.Content == null) 
+            {
+                overlay.gameObject.SetActive(false);
+            }
+            else if (cell.Content is Dubinci.NumberEntity)
             {
                 valueTXT.font = numberSDF;
                 valueTXT.color = numberColor;
-                blackOverlay.gameObject.SetActive(true);
+                overlay.color = numberOverlayColor;
+                overlay.gameObject.SetActive(true);
             }
             else
             {
                 valueTXT.font = letterSDF;
                 valueTXT.color = letterColor;
-                blackOverlay.gameObject.SetActive(false);
+                overlay.color = letterOverlayColor;
+                overlay.gameObject.SetActive(true);
             }
         }
 

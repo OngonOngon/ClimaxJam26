@@ -47,8 +47,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   livesText: {fileID: 0}
   moneyText: {fileID: 0}
+  displayBox: {fileID: 0}
+  noLetterColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  letterGradStartColor: {r: 1, g: 0.7652887, b: 0, a: 1}
+  letterGradEndColor: {r: 0.09669447, g: 1, b: 0, a: 1}
+  maxStockVis: 5
   lives: 3
   money: 0
+  debugStartingAmount: 0
   moneyPerStoryLine: 50
   buildCost: 100
   upgradeCost: 250
@@ -99,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   displayLabel: {fileID: 0}
+  availableTexts: {fileID: 0}
   referenceText: 'lorem ipsum
 
     dolor sit amet

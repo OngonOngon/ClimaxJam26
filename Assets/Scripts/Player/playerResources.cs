@@ -1,16 +1,29 @@
 using UnityEngine;
 using TMPro; // Added for TextMeshPro support
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using UnityEngine.Windows;
 
 public class playerResources : MonoBehaviour, ITypingHandler
 {
+    [SerializeField] private bool useLettersEconomy = true;
+
     [Header("UI Elements")]
     [Tooltip("Drag the TextMeshPro objects for the numbers here")]
     [SerializeField] private TextMeshProUGUI livesText;
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private TextMeshProUGUI displayBox;
+    [SerializeField] private Color noLetterColor;
+    [SerializeField] private Color letterGradStartColor;
+    [SerializeField] private Color letterGradEndColor;
+    [SerializeField] private int maxStockVis = 5;
 
     [Header("Stats")]
     [SerializeField] private int lives = 3; // player hp Health
     [SerializeField] private int money = 0;
+    [SerializeField] private int debugStartingAmount = 0;
+    private Dictionary<char, int> inventory;
 
     [Header("Rewards & Costs")]
     [SerializeField] private int moneyPerStoryLine = 50;
@@ -33,8 +46,25 @@ public class playerResources : MonoBehaviour, ITypingHandler
             Debug.LogError("[Resources] TypingSystem not found in scene!");
         }
 
+#if !UNITY_EDITOR
+        debugStartingAmount = 0;
+#endif
+
+        inventory = Enumerable.Range('a', 26)
+            .ToDictionary(c => (char)c, c => debugStartingAmount);
+
         PrintStats();
         UpdateUI(); // Initial UI update
+    }
+
+    private string GetGradientColor(int count)
+    {
+        Color displayColor;
+        if (count == 0)
+            displayColor = noLetterColor;
+        else
+            displayColor = Color.Lerp(letterGradStartColor, letterGradEndColor, (float)count / maxStockVis);
+        return ColorUtility.ToHtmlStringRGB(displayColor);
     }
 
     // --- Method to update the texts on the screen ---
@@ -42,8 +72,22 @@ public class playerResources : MonoBehaviour, ITypingHandler
     {
         if (livesText != null)
             livesText.text = lives.ToString();
-        if (moneyText != null)
+        if (!useLettersEconomy && moneyText != null)
             moneyText.text = money.ToString();
+
+        if (displayBox == null) return;
+
+        if (!useLettersEconomy)
+            return;
+
+        string output = "";
+        foreach (var item in inventory)
+        {
+            string hex = GetGradientColor(item.Value);
+            output += $"<color=#{hex}>{item.Key.ToString().ToUpper()}</color>  ";
+        }
+
+        displayBox.text = output;
     }
 
     // --- ITypingHandler Implementation ---
@@ -51,6 +95,11 @@ public class playerResources : MonoBehaviour, ITypingHandler
     public bool OnLineCompleted(string completedLine)
     {
         if (_isGameOver) return false;
+
+        foreach (char c in completedLine.ToLower()) // Normalize to lowercase
+            if (inventory.ContainsKey(c))
+                inventory[c]++;
+
         money += moneyPerStoryLine;
         UpdateUI(); // Update UI after earning money
         return true;
@@ -60,32 +109,55 @@ public class playerResources : MonoBehaviour, ITypingHandler
     {
         if (_isGameOver) return false;
 
-        string cmd = command.ToLower();
-
-        // Check if the command starts with "build" (covers "build shooter", "build wall" etc.)
-        if (cmd.StartsWith("build"))
+        if (useLettersEconomy)
         {
-            return TrySpendMoney(buildCost, "Building structure");
+            var requirements = command.ToLower().GroupBy(c => c);
+
+            foreach (var req in requirements)
+            {
+                if (inventory.ContainsKey(req.Key) && inventory[req.Key] < req.Count())
+                {
+                    Debug.Log($"Not enough of this letter {req.Key}");
+                    return false; // Not enough of this letter
+                }
+            }
+
+            // Spend money
+            foreach (char c in command.ToLower())
+                if (inventory.ContainsKey(c))
+                    inventory[c]--;
+        }
+        else
+        {
+            string cmd = command.ToLower();
+
+            // Check if the command starts with "build" (covers "build shooter", "build wall" etc.)
+            if (cmd.StartsWith("build"))
+            {
+                return TrySpendMoney(buildCost, "Building structure");
+            }
+
+            if (cmd.StartsWith("upgrade"))
+            {
+                return TrySpendMoney(upgradeCost, "Upgrading system");
+            }
+
+            if (cmd.StartsWith("modifier"))
+            {
+                return TrySpendMoney(buildCost, "Applying modifier");
+            }
+
+            if (cmd == "shoot")
+            {
+                Debug.Log("[Resources] PEW PEW!");
+                return true;
+            }
+
+            // Command not recognized as a paid action
+            Debug.Log($"[Resources] Command '{command}' is free or unknown.");
         }
 
-        if (cmd.StartsWith("upgrade"))
-        {
-            return TrySpendMoney(upgradeCost, "Upgrading system");
-        }
-
-        if (cmd.StartsWith("modifier"))
-        {
-            return TrySpendMoney(buildCost, "Applying modifier");
-        }
-
-        if (cmd == "shoot")
-        {
-            Debug.Log("[Resources] PEW PEW!");
-            return true;
-        }
-
-        // Command not recognized as a paid action
-        Debug.Log($"[Resources] Command '{command}' is free or unknown.");
+        UpdateUI();
         return true;
     }
 
