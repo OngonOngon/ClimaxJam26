@@ -3806,17 +3806,20 @@ PrefabInstance:
       objectReference: {fileID: 135643407}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: referenceText
-      value: 'try to build a shooter tower
+      value: 'numbers can grow their...numbers
 
-        to build a shooter tower press
-        enter
+        make sure to quell them
+        before you are overrun
 
-        then write build shooter
+        aoe is your friend
 
-        and you are done
+        operation tiles
+        influence number spread
 
-        build
-        modifier'
+        consider upgrading your towers
+
+        where
+        did these invaders come from'
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableTexts

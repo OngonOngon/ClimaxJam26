@@ -1622,6 +1622,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1915439579}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: correctColor.b
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: correctColor.g
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: correctColor.r
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: validCommands.Array.size
       value: 9
       objectReference: {fileID: 0}
