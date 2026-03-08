@@ -166,6 +166,8 @@ namespace Dubinci
         private void Start()
         {
             foreach (var cell in cells)
+                cell.PreUpdateViz();
+            foreach (var cell in cells)
                 cell.UpdateVisual(grid.GetCell(cell.Pos));
         }
 
@@ -202,6 +204,8 @@ namespace Dubinci
             if (Timer >= TickInterval)
             {
                 grid.Tick();
+                foreach (var cell in cells)
+                    cell.PreUpdateViz();
                 foreach (var cell in cells)
                     cell.UpdateVisual(grid.GetCell(cell.Pos));
                 Timer = 0;
@@ -261,6 +265,8 @@ namespace Dubinci
                 grid.Command(shootCommand, selectedCell);
                 // use resources
                 foreach (var cell in cells)
+                    cell.PreUpdateViz();
+                foreach (var cell in cells)
                     cell.UpdateVisual(grid.GetCell(cell.Pos));
             }
         }
@@ -272,6 +278,8 @@ namespace Dubinci
             grid.Command(shootAllCommand, selectedCell);
             // use resources
             foreach (var cell in cells)
+                cell.PreUpdateViz();
+            foreach (var cell in cells)
                 cell.UpdateVisual(grid.GetCell(cell.Pos));
         }
 
@@ -281,6 +289,8 @@ namespace Dubinci
             {
                 grid.Command(upgradeCommand, selectedCell);
                 // use resources
+                foreach (var cell in cells)
+                    cell.PreUpdateViz();
                 foreach (var cell in cells)
                     cell.UpdateVisual(grid.GetCell(cell.Pos));
             }
@@ -298,6 +308,10 @@ namespace Dubinci
                 MoveUp();
                 return;
             }
+            foreach (var cell in cells)
+                cell.PreUpdateViz();
+            foreach (var cell in cells)
+                cell.UpdateVisual(grid.GetCell(cell.Pos));
             GetCell(selectedCell).HighliteCell();
         }
 
@@ -313,6 +327,10 @@ namespace Dubinci
                 MoveDown();
                 return;
             }
+            foreach (var cell in cells)
+                cell.PreUpdateViz();
+            foreach (var cell in cells)
+                cell.UpdateVisual(grid.GetCell(cell.Pos));
             GetCell(selectedCell).HighliteCell();
         }
 
@@ -329,6 +347,10 @@ namespace Dubinci
                 MoveLeft();
                 return;
             }
+            foreach (var cell in cells)
+                cell.PreUpdateViz();
+            foreach (var cell in cells)
+                cell.UpdateVisual(grid.GetCell(cell.Pos));
             GetCell(selectedCell).HighliteCell();
         }
 
@@ -344,6 +366,10 @@ namespace Dubinci
                 MoveRight();
                 return;
             }
+            foreach (var cell in cells)
+                cell.PreUpdateViz();
+            foreach (var cell in cells)
+                cell.UpdateVisual(grid.GetCell(cell.Pos));
             GetCell(selectedCell).HighliteCell();
         }
 
@@ -355,6 +381,23 @@ namespace Dubinci
         public void Unselect()
         {
             GetCell(selectedCell).HighliteCell();
+        }
+
+        public void InTowerRange(Vector2Int pos, int range)
+        {
+            if (pos != selectedCell)
+                return;
+            for (int y = pos.y - range; y <= pos.y + range; y++)
+            {
+                for (int x = pos.x + range; x >= pos.x - range; x--)
+                {
+                    Vector2Int checkPos = new Vector2Int(x, y);
+                    if (!grid.IsValidPos(checkPos)) continue;
+                    int distance = Mathf.Abs(x - pos.x) + Mathf.Abs(y - pos.y);
+                    if (distance > range) continue;
+                    GetCell(new Vector2Int(x, y)).InTowerRange();
+                }
+            }
         }
     }
 }
