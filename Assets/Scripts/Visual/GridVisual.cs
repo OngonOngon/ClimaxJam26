@@ -15,6 +15,8 @@ namespace Dubinci
         [SerializeField] private CommandSO shootCommand;
         [SerializeField] private CommandSO shootAllCommand;
         [SerializeField] private CommandSO upgradeCommand;
+        [SerializeField] private GameObject hintL;
+        [SerializeField] private GameObject hintR;
 
         [SerializeField, HideInInspector] private List<CellVisual> cells = new List<CellVisual>();
 
@@ -27,8 +29,11 @@ namespace Dubinci
         [ContextMenu("Generate")]
         private void GenerateCells()
         {
+            if (cells == null)
+                cells = new List<CellVisual>();
             foreach (var cell in cells)
-                DestroyImmediate(cell.gameObject);
+                if (cell != null)
+                    DestroyImmediate(cell.gameObject);
             cells.Clear();
 
             gridLayout.constraintCount = gridSize.x;
@@ -47,6 +52,8 @@ namespace Dubinci
         [ContextMenu("Regenerate")]
         private void RegenerateCells()
         {
+            if (cells == null)
+                cells = new List<CellVisual>();
             if (cells.Count != gridSize.x * gridSize.y)
             {
                 Debug.LogError("Can't regenerate, sizes don't match. Use Generate instead or match prev size");
@@ -69,7 +76,8 @@ namespace Dubinci
             }
 
             foreach (var cell in prevCels)
-                DestroyImmediate(cell.gameObject);
+                if (cell != null)
+                    DestroyImmediate(cell.gameObject);
         }
 
         private void Awake()
@@ -146,6 +154,10 @@ namespace Dubinci
         private void Update()
         {
             Timer += Time.deltaTime;
+            bool showLHint = selectedCell.x > gridSize.x / 2;
+            hintL?.SetActive(showLHint);
+            hintR?.SetActive(!showLHint);
+
             if (Timer >= TickInterval)
             {
                 grid.Tick();

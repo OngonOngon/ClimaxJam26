@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4383670054065240045}
   - component: {fileID: 3309589575557539459}
   - component: {fileID: 635774121051163609}
+  - component: {fileID: 109048137208000691}
   m_Layer: 0
   m_Name: audioManagerV
   m_TagString: Untagged
@@ -152,3 +153,17 @@ MonoBehaviour:
   successClip: {fileID: 8300000, guid: 8aea24d5b44c20445a03903166c5fb33, type: 3}
   failClip: {fileID: 8300000, guid: ed617b2457da9a648ba7b6981426b5ae, type: 3}
   pitchVariation: 0
+--- !u!114 &109048137208000691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4995943930236974157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaff0ce56d60b249821df2a36156c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourcePrefab: {fileID: 3132377804447066509, guid: 7bbde7d4c1e47e84cb515cd359debfe5, type: 3}
+  mainSFXPool: 1

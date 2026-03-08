@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement; // Required for loading scenes
 using TMPro;
 using System;
@@ -35,7 +36,10 @@ public class typingScript : MonoBehaviour
     [Header("General Settings")]
     [SerializeField] private TypingMode mode = TypingMode.Story;
     [SerializeField] private TextMeshProUGUI displayLabel;
-    [SerializeField] private TextMeshProUGUI availableTexts;
+    [SerializeField] private Image availableBGL;
+    [SerializeField] private Image availableBGR;
+    [SerializeField] private TextMeshProUGUI availableTextsL;
+    [SerializeField] private TextMeshProUGUI availableTextsR;
 
     [Header("Story Mode Settings")]
     [TextArea(3, 5)]
@@ -92,7 +96,10 @@ public class typingScript : MonoBehaviour
 
     void Update()
     {
-        if (availableTexts != null) availableTexts.gameObject.SetActive(false);
+        if (availableBGL != null) availableBGL.enabled = false;
+        if (availableBGR != null) availableBGR.enabled = false;
+        if (availableTextsL != null) availableTextsL.text = "";
+        if (availableTextsR != null) availableTextsR.text = "";
 
         // Handle dedicated Story Mode activation (Tab)
         if (CInput.IsStoryTriggered())
@@ -213,14 +220,23 @@ public class typingScript : MonoBehaviour
 
     private void HandleCommandInput(string input)
     {
-        if (availableTexts != null)
+        if (availableTextsL != null)
         {
-            availableTexts.gameObject.SetActive(true);
-            availableTexts.text = "";
+            availableBGL.enabled = true;
             foreach (var c in validCommands)
             {
                 if (c.ValidCommand())
-                    availableTexts.text += c.text + "\n";
+                    availableTextsL.text += c.text + "\n";
+            }
+        }
+
+        if (availableTextsR != null)
+        {
+            availableBGR.enabled = true;
+            foreach (var c in validCommands)
+            {
+                if (c.ValidCommand())
+                    availableTextsR.text += c.text + "\n";
             }
         }
 
