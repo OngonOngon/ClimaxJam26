@@ -219,7 +219,8 @@ namespace Dubinci
         }
 
         // Handles the level clear event
-        private void HandleWin()
+        [ContextMenu("Win")]
+        public void HandleWin()
         {
             isGameWon = true;
             Debug.Log("LEVEL CLEARED! Showing Win Panel.");

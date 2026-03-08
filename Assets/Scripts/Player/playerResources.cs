@@ -198,7 +198,8 @@ public class playerResources : MonoBehaviour, ITypingHandler
         }
     }
 
-    private void GameOver()
+    [ContextMenu("Loose")]
+    public void GameOver()
     {
         _isGameOver = true;
         lives = 0;
