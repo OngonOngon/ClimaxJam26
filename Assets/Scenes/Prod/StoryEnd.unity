@@ -468,7 +468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: -0}
+  m_AnchoredPosition: {x: 22, y: 0}
   m_SizeDelta: {x: 566.89, y: 198.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &584044787
@@ -1005,7 +1005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: -0}
+  m_AnchoredPosition: {x: 22, y: 0}
   m_SizeDelta: {x: 566.89, y: 198.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1281872110
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: We must win this conflict at all costs, we must eliminate all of the evil
+  m_text: We must win this conflict at all costs, we must eliminate all the evil
     numbers!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
