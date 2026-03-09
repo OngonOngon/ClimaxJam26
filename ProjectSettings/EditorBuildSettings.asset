@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Dev/VojtaMenuTest.unity
+    path: Assets/Scenes/Prod/VojtaMenuTest.unity
     guid: 83a5c9343d14c384e9159936c9561722
   - enabled: 1
     path: Assets/Scenes/Prod/LevelTemplate.unity
