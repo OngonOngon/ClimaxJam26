@@ -164,7 +164,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 5, y: 6}
   grid: {fileID: 1023992895}
@@ -711,7 +710,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 2}
   grid: {fileID: 1023992895}
@@ -821,7 +819,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 3, y: 4}
   grid: {fileID: 1023992895}
@@ -1142,7 +1139,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 5, y: 8}
   grid: {fileID: 1023992895}
@@ -1252,7 +1248,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 4, y: 3}
   grid: {fileID: 1023992895}
@@ -2057,7 +2052,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 3, y: 5}
   grid: {fileID: 1023992895}
@@ -2167,7 +2161,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 5, y: 3}
   grid: {fileID: 1023992895}
@@ -2352,7 +2345,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 3, y: 2}
   grid: {fileID: 1023992895}
@@ -3823,7 +3815,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 8, y: 4}
   grid: {fileID: 1023992895}
@@ -4085,7 +4076,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 1, y: 1}
   grid: {fileID: 1023992895}
@@ -4270,7 +4260,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 7, y: 0}
   grid: {fileID: 1023992895}
@@ -4380,7 +4369,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 7, y: 4}
   grid: {fileID: 1023992895}
@@ -5003,7 +4991,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 2, y: 1}
   grid: {fileID: 1023992895}
@@ -6096,7 +6083,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 4, y: 2}
   grid: {fileID: 1023992895}
@@ -6206,7 +6192,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 8, y: 6}
   grid: {fileID: 1023992895}
@@ -7798,7 +7783,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 2, y: 8}
   grid: {fileID: 1023992895}
@@ -8889,7 +8873,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 2, y: 2}
   grid: {fileID: 1023992895}
@@ -9707,7 +9690,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 8}
   grid: {fileID: 1023992895}
@@ -10738,7 +10720,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 1}
   grid: {fileID: 1023992895}
@@ -12254,7 +12235,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 3}
   grid: {fileID: 1023992895}
@@ -12439,7 +12419,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 3, y: 7}
   grid: {fileID: 1023992895}
@@ -12784,7 +12763,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 8, y: 8}
   grid: {fileID: 1023992895}
@@ -12947,7 +12925,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 7, y: 8}
   grid: {fileID: 1023992895}
@@ -13752,7 +13729,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 4}
   grid: {fileID: 1023992895}
@@ -14012,7 +13988,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 8, y: 2}
   grid: {fileID: 1023992895}
@@ -14164,7 +14139,7 @@ GameObject:
   - component: {fileID: 598549441}
   - component: {fileID: 598549440}
   m_Layer: 5
-  m_Name: Tutorial
+  m_Name: Tutorial - disabled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14197,7 +14172,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598549438}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -14696,7 +14671,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 4, y: 7}
   grid: {fileID: 1023992895}
@@ -15228,7 +15202,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 4, y: 1}
   grid: {fileID: 1023992895}
@@ -16107,7 +16080,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 7, y: 3}
   grid: {fileID: 1023992895}
@@ -16367,7 +16339,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 6, y: 4}
   grid: {fileID: 1023992895}
@@ -16477,7 +16448,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 6, y: 1}
   grid: {fileID: 1023992895}
@@ -16662,7 +16632,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 2, y: 7}
   grid: {fileID: 1023992895}
@@ -16772,7 +16741,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 3, y: 1}
   grid: {fileID: 1023992895}
@@ -17034,7 +17002,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 6, y: 2}
   grid: {fileID: 1023992895}
@@ -17144,7 +17111,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 4, y: 5}
   grid: {fileID: 1023992895}
@@ -18336,7 +18302,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 6, y: 5}
   grid: {fileID: 1023992895}
@@ -21410,7 +21375,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 8, y: 3}
   grid: {fileID: 1023992895}
@@ -21519,7 +21483,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958933215}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -21532,7 +21496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Round 1/5
+  m_text: Round ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -22873,7 +22837,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 6, y: 3}
   grid: {fileID: 1023992895}
@@ -23346,7 +23309,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 2, y: 0}
   grid: {fileID: 1023992895}
@@ -23456,7 +23418,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 1, y: 2}
   grid: {fileID: 1023992895}
@@ -24260,7 +24221,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 5, y: 5}
   grid: {fileID: 1023992895}
@@ -24597,7 +24557,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 8, y: 5}
   grid: {fileID: 1023992895}
@@ -24707,7 +24666,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 6, y: 8}
   grid: {fileID: 1023992895}
@@ -26239,6 +26197,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6401685269232240528, guid: e02ce2fcb420c471ab64b7969c404d87, type: 3}
+      propertyPath: m_text
+      value: Round ???
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -27364,7 +27326,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 5, y: 4}
   grid: {fileID: 1023992895}
@@ -27610,7 +27571,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 6, y: 0}
   grid: {fileID: 1023992895}
@@ -28353,7 +28313,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 5, y: 0}
   grid: {fileID: 1023992895}
@@ -28463,7 +28422,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 5, y: 1}
   grid: {fileID: 1023992895}
@@ -29358,7 +29316,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 4, y: 8}
   grid: {fileID: 1023992895}
@@ -29905,7 +29862,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 1, y: 6}
   grid: {fileID: 1023992895}
@@ -30165,7 +30121,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 3, y: 3}
   grid: {fileID: 1023992895}
@@ -30275,7 +30230,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 7, y: 1}
   grid: {fileID: 1023992895}
@@ -30821,7 +30775,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 7, y: 2}
   grid: {fileID: 1023992895}
@@ -31611,7 +31564,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 3, y: 6}
   grid: {fileID: 1023992895}
@@ -33800,7 +33752,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 2, y: 3}
   grid: {fileID: 1023992895}
@@ -33910,7 +33861,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 1, y: 4}
   grid: {fileID: 1023992895}
@@ -34533,7 +34483,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 5, y: 2}
   grid: {fileID: 1023992895}
@@ -34724,7 +34673,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 3, y: 0}
   grid: {fileID: 1023992895}
@@ -35618,7 +35566,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 6}
   grid: {fileID: 1023992895}
@@ -35728,7 +35675,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 4, y: 4}
   grid: {fileID: 1023992895}
@@ -35838,7 +35784,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 8, y: 1}
   grid: {fileID: 1023992895}
@@ -36400,7 +36345,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 6, y: 7}
   grid: {fileID: 1023992895}
@@ -36796,7 +36740,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 4, y: 0}
   grid: {fileID: 1023992895}
@@ -37728,7 +37671,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 2, y: 6}
   grid: {fileID: 1023992895}
@@ -38910,7 +38852,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 6, y: 6}
   grid: {fileID: 1023992895}
@@ -39595,7 +39536,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 2, y: 4}
   grid: {fileID: 1023992895}
@@ -40439,7 +40379,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 7, y: 7}
   grid: {fileID: 1023992895}
@@ -40836,7 +40775,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 1, y: 0}
   grid: {fileID: 1023992895}
@@ -40946,7 +40884,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 1, y: 8}
   grid: {fileID: 1023992895}
@@ -41781,7 +41718,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 4, y: 6}
   grid: {fileID: 1023992895}
@@ -42252,7 +42188,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 1, y: 5}
   grid: {fileID: 1023992895}
@@ -42437,7 +42372,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 7, y: 5}
   grid: {fileID: 1023992895}
@@ -42547,7 +42481,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 8, y: 0}
   grid: {fileID: 1023992895}
@@ -43154,7 +43087,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 7, y: 6}
   grid: {fileID: 1023992895}
@@ -43986,7 +43918,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 2, y: 5}
   grid: {fileID: 1023992895}
@@ -44443,7 +44374,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 3, y: 8}
   grid: {fileID: 1023992895}
@@ -44990,7 +44920,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 8, y: 7}
   grid: {fileID: 1023992895}
@@ -45447,7 +45376,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 0}
   grid: {fileID: 1023992895}
@@ -45829,7 +45757,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 7}
   grid: {fileID: 1023992895}
@@ -45939,7 +45866,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 1, y: 7}
   grid: {fileID: 1023992895}
@@ -47220,7 +47146,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 1, y: 3}
   grid: {fileID: 1023992895}
@@ -47616,7 +47541,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 0, y: 5}
   grid: {fileID: 1023992895}
@@ -49357,7 +49281,6 @@ MonoBehaviour:
   letterOverlayColor: {r: 0.8117647, g: 0.78039217, b: 0.30980393, a: 0.13333334}
   numberSDF: {fileID: 11400000, guid: acc935b3cc2df3cf1ab043574c5bc25b, type: 2}
   letterSDF: {fileID: 11400000, guid: d6329df05d0d097a0b369c9cf2f0baf1, type: 2}
-  numberColor: {r: 0.26666668, g: 0.7921569, b: 0.27450982, a: 1}
   letterColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   pos: {x: 5, y: 7}
   grid: {fileID: 1023992895}
