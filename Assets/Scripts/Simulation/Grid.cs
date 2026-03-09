@@ -185,9 +185,22 @@ namespace Dubinci
                             Vector2Int targetPos = new Vector2Int(x, y) + directions[currDirectionIndex];
                             if (IsValidPos(targetPos))
                             {
-                                Cell targetCell = nextCells[targetPos.x, targetPos.y];
                                 vals[currDirectionIndex]++;
+                                numberEntity.Value--;
+                            }
 
+                            currDirectionIndex += 1;
+                            currDirectionIndex %= directions.Length;
+                        }
+
+                        Vector2Int from = new Vector2Int(x, y);
+                        for (int i = 0; i < vals.Length; i++)
+                        {
+                            if (vals[i] > 0)
+                            {
+                                Vector2Int targetPos = from + directions[i];
+                                OnMove?.Invoke(from, targetPos, vals[i]);
+                                Cell targetCell = nextCells[targetPos.x, targetPos.y];
                                 switch (targetCell.Content)
                                 {
                                     case null: // empty cell
@@ -197,14 +210,14 @@ namespace Dubinci
                                             case Modifier { type: ModifierType.Add, value: _ }:
                                             case Modifier { type: ModifierType.Subtract, value: _ }:
                                             case Modifier { type: ModifierType.Divide, value: _ }:
-                                                newNumberEntity.Value = 1;
+                                                newNumberEntity.Value = vals[i];
                                                 newNumberEntity.addThisTick = true;
                                                 break;
                                             case Modifier { type: ModifierType.Multiply, value: var mulValue }:
-                                                newNumberEntity.Value += 1 * mulValue;
+                                                newNumberEntity.Value += vals[i] * mulValue;
                                                 break;
                                             case Modifier { type: ModifierType.None, value: _ }:
-                                                newNumberEntity.Value = 1;
+                                                newNumberEntity.Value = vals[i];
                                                 break;
                                         }
                                         targetCell.Content = newNumberEntity;
@@ -215,40 +228,52 @@ namespace Dubinci
                                             case Modifier { type: ModifierType.Add, value: _ }:
                                             case Modifier { type: ModifierType.Subtract, value: _ }:
                                             case Modifier { type: ModifierType.Divide, value: _ }:
-                                                targetNumberEntity.Value += 1;
+                                                targetNumberEntity.Value += vals[i];
                                                 targetNumberEntity.addThisTick = true;
                                                 break;
                                             case Modifier { type: ModifierType.Multiply, value: var mulValue }:
-                                                targetNumberEntity.Value += 1 * mulValue;
+                                                targetNumberEntity.Value += vals[i] * mulValue;
                                                 break;
                                             case Modifier { type: ModifierType.None, value: _ }:
-                                                targetNumberEntity.Value++;
+                                                targetNumberEntity.Value += vals[i];
                                                 break;
                                         }
                                         break;
                                     case TowerEntity towerEntity: // tower cell
-                                        towerEntity.HP -= 1;
-                                        if (towerEntity.HP <= 0)
+                                        towerEntity.HP -= vals[i];
+                                        if (towerEntity.HP == 0)
                                         {
                                             targetCell.Content = null;
                                         }
+                                        else if (towerEntity.HP < 0)
+                                        {
+                                            newNumberEntity = new NumberEntity(0);
+                                            switch (targetCell.GetModifier())
+                                            {
+                                                case Modifier { type: ModifierType.Add, value: _ }:
+                                                case Modifier { type: ModifierType.Subtract, value: _ }:
+                                                case Modifier { type: ModifierType.Divide, value: _ }:
+                                                    newNumberEntity.Value = -towerEntity.HP;
+                                                    newNumberEntity.addThisTick = true;
+                                                    break;
+                                                case Modifier { type: ModifierType.Multiply, value: var mulValue }:
+                                                    newNumberEntity.Value += -towerEntity.HP * mulValue;
+                                                    break;
+                                                case Modifier { type: ModifierType.None, value: _ }:
+                                                    newNumberEntity.Value = -towerEntity.HP;
+                                                    break;
+                                            }
+                                            targetCell.Content = newNumberEntity;
+                                        }
                                         break;
                                     case PlayerBase playerBase: // player base cell
-                                        playerBase.DamageBase();
+                                        for (int v = 0; v < vals[i]; v++)
+                                            playerBase.DamageBase();
                                         Debug.Log("Base got damaged!");
                                         break;
                                 }
-                                numberEntity.Value--;
                             }
-
-                            currDirectionIndex += 1;
-                            currDirectionIndex %= directions.Length;
                         }
-
-                        Vector2Int from = new Vector2Int(x, y);
-                        for (int i = 0; i < vals.Length; i++)
-                            if (vals[i] > 0)
-                                OnMove?.Invoke(from, from + directions[i], vals[i]);
                     }
                 }
             }
