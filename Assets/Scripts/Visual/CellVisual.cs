@@ -97,8 +97,7 @@ namespace Dubinci
             if (cell.Content is Dubinci.VoidEntity)
             {
                 SetMainText("");
-                mainImage.enabled = false;
-                overlay.gameObject.SetActive(false);
+                overlay.gameObject.SetActive(true);
                 overlay.color = numberOverlayColor;
                 return;
             }

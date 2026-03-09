@@ -24,7 +24,9 @@ namespace Dubinci
         [Header("Particles")]
         [SerializeField] private ParticleSystem shotPrefab;
         [SerializeField] private ParticleSystem burstPrefab;
+        [SerializeField] private GameObject movePrefab;
         [SerializeField] private float shotDuration;
+        [SerializeField] private float moveDuration;
 
         [SerializeField, HideInInspector] private List<CellVisual> cells = new List<CellVisual>();
 
@@ -96,7 +98,8 @@ namespace Dubinci
             RegenerateCells();
             selectedCell = gridSize / 2;
             grid = new Grid(gridSize);
-            grid.onShot += GridOnShot;
+            grid.OnShot += GridOnShot;
+            grid.OnMove += GridOnMove;
             foreach (var cell in cells)
                 cell.Setup(grid);
             GetCell(selectedCell).HighliteCell();
@@ -124,7 +127,23 @@ namespace Dubinci
             }
         }
 
-        private void GridOnShot(Vector2Int from, Vector2Int to)
+        private void GridOnMove(Vector2Int from, Vector2Int to, int val)
+        {
+            if (movePrefab == null)
+                return;
+
+            var ps = Instantiate(movePrefab);
+            ps.transform.position = GetCell(from).transform.position;
+
+            ps.transform.DOMove(GetCell(to).transform.position, moveDuration * Random.Range(0.75f, 1.25f))
+                .SetEase(Ease.InOutQuad)
+                .OnComplete(() =>
+                {
+                    Destroy(ps);
+                });
+        }
+
+        private void GridOnShot(Vector2Int from, Vector2Int to, int damage, int aoe)
         {
             if (shotPrefab == null)
                 return;
@@ -132,7 +151,6 @@ namespace Dubinci
             var ps = Instantiate(shotPrefab);
             ps.transform.position = GetCell(from).transform.position;
 
-            // 2. Move to point B over the specified duration
             ps.transform.DOMove(GetCell(to).transform.position, shotDuration)
                 .SetEase(Ease.InOutQuad)
                 .OnComplete(() =>

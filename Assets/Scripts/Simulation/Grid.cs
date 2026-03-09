@@ -7,7 +7,8 @@ namespace Dubinci
         private Vector2Int dim;
         private Cell[,] cells; // back buffer
         private Cell[,] nextCells; // front buffer
-        public event System.Action<Vector2Int, Vector2Int> onShot;
+        public event System.Action<Vector2Int, Vector2Int, int, int> OnShot;
+        public event System.Action<Vector2Int, Vector2Int, int> OnMove;
 
         public Grid(Vector2Int dim)
         {
@@ -174,6 +175,7 @@ namespace Dubinci
                             new Vector2Int(0, 0) // stay
                         };
                         int currDirectionIndex = 0;
+                        int[] vals = new int[directions.Length];
 
                         // print x y
                         while (numberEntity.Value > 0)
@@ -184,6 +186,7 @@ namespace Dubinci
                             if (IsValidPos(targetPos))
                             {
                                 Cell targetCell = nextCells[targetPos.x, targetPos.y];
+                                vals[currDirectionIndex]++;
 
                                 switch (targetCell.Content)
                                 {
@@ -241,6 +244,11 @@ namespace Dubinci
                             currDirectionIndex += 1;
                             currDirectionIndex %= directions.Length;
                         }
+
+                        Vector2Int from = new Vector2Int(x, y);
+                        for (int i = 0; i < vals.Length; i++)
+                            if (vals[i] > 0)
+                                OnMove?.Invoke(from, from + directions[i], vals[i]);
                     }
                 }
             }
@@ -338,7 +346,7 @@ namespace Dubinci
                     return;
                 }
 
-                onShot?.Invoke(pos, hitCell.Position);
+                OnShot?.Invoke(pos, hitCell.Position, tower.Damage, tower.AOE);
                 Vector2Int targetPos = hitCell.Position;
 
                 // apply aoe
