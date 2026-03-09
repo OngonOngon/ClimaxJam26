@@ -24,6 +24,8 @@ namespace Dubinci
         [Header("Particles")]
         [SerializeField] private ParticleSystem shotPrefab;
         [SerializeField] private ParticleSystem burstPrefab;
+        [SerializeField] private ParticleSystem towerHitPrefab;
+        [SerializeField] private ParticleSystem baseHitPrefab;
         [SerializeField] private SpriteRenderer movePrefab;
         [SerializeField] private float shotDuration;
         [SerializeField] private float moveDuration;
@@ -102,6 +104,8 @@ namespace Dubinci
             grid = new Grid(gridSize);
             grid.OnShot += GridOnShot;
             grid.OnMove += GridOnMove;
+            grid.OnTowerHit += GridOnTowerHit;
+            grid.OnBaseHit += GridOnBaseHit;
             foreach (var cell in cells)
                 cell.Setup(grid);
             GetCell(selectedCell).HighliteCell();
@@ -129,6 +133,22 @@ namespace Dubinci
             }
         }
 
+        private void GridOnBaseHit(Vector2Int pos, int val)
+        {
+            if (baseHitPrefab == null)
+                return;
+            var ps = Instantiate(baseHitPrefab, GetCell(pos).transform.position, Quaternion.identity, null);
+            Destroy(ps.gameObject, ps.totalTime);
+        }
+
+        private void GridOnTowerHit(Vector2Int pos, int val)
+        {
+            if (towerHitPrefab == null)
+                return;
+            var ps = Instantiate(towerHitPrefab, GetCell(pos).transform.position, Quaternion.identity, null);
+            Destroy(ps.gameObject, ps.totalTime);
+        }
+
         private void GridOnMove(Vector2Int from, Vector2Int to, int val)
         {
             if (movePrefab == null)
@@ -142,7 +162,7 @@ namespace Dubinci
                 .SetEase(Ease.InOutQuad)
                 .OnComplete(() =>
                 {
-                    Destroy(ps);
+                    Destroy(ps.gameObject);
                 });
         }
 

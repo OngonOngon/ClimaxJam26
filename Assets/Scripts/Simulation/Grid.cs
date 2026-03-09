@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 namespace Dubinci
@@ -9,6 +10,8 @@ namespace Dubinci
         private Cell[,] nextCells; // front buffer
         public event System.Action<Vector2Int, Vector2Int, int, int> OnShot;
         public event System.Action<Vector2Int, Vector2Int, int> OnMove;
+        public event System.Action<Vector2Int, int> OnTowerHit;
+        public event System.Action<Vector2Int, int> OnBaseHit;
 
         public Grid(Vector2Int dim)
         {
@@ -241,6 +244,7 @@ namespace Dubinci
                                         break;
                                     case TowerEntity towerEntity: // tower cell
                                         towerEntity.HP -= vals[i];
+                                        OnTowerHit?.Invoke(targetPos, vals[i]);
                                         if (towerEntity.HP == 0)
                                         {
                                             targetCell.Content = null;
@@ -248,19 +252,20 @@ namespace Dubinci
                                         else if (towerEntity.HP < 0)
                                         {
                                             newNumberEntity = new NumberEntity(0);
+                                            int rest = -towerEntity.HP;
                                             switch (targetCell.GetModifier())
                                             {
                                                 case Modifier { type: ModifierType.Add, value: _ }:
                                                 case Modifier { type: ModifierType.Subtract, value: _ }:
                                                 case Modifier { type: ModifierType.Divide, value: _ }:
-                                                    newNumberEntity.Value = -towerEntity.HP;
+                                                    newNumberEntity.Value = rest;
                                                     newNumberEntity.addThisTick = true;
                                                     break;
                                                 case Modifier { type: ModifierType.Multiply, value: var mulValue }:
-                                                    newNumberEntity.Value += -towerEntity.HP * mulValue;
+                                                    newNumberEntity.Value += rest * mulValue;
                                                     break;
                                                 case Modifier { type: ModifierType.None, value: _ }:
-                                                    newNumberEntity.Value = -towerEntity.HP;
+                                                    newNumberEntity.Value = rest;
                                                     break;
                                             }
                                             targetCell.Content = newNumberEntity;
@@ -269,6 +274,7 @@ namespace Dubinci
                                     case PlayerBase playerBase: // player base cell
                                         for (int v = 0; v < vals[i]; v++)
                                             playerBase.DamageBase();
+                                        OnTowerHit?.Invoke(targetPos, vals[i]);
                                         Debug.Log("Base got damaged!");
                                         break;
                                 }
