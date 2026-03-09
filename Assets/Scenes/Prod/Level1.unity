@@ -2625,9 +2625,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2006662844}
     - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1146389393}
+    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: damageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a961a57fd17e7ff4c9f875ef155be003, type: 3}
+    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1922970643}
+    - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
+      propertyPath: gameOverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 253bfb2ed2553834b8a672d2e1abf490, type: 3}
     - target: {fileID: 230599075580402878, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: moneyPerStoryLine
       value: 10
@@ -26328,6 +26340,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143823339}
   m_CullTransparentMesh: 1
+--- !u!82 &1146389393 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3309589575557539459, guid: 23792756a4e4a5548b8d264d880adf84, type: 3}
+  m_PrefabInstance: {fileID: 619294741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1154908114
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,6 +30,11 @@ public class playerResources : MonoBehaviour, ITypingHandler
     [SerializeField] private int buildCost = 100;
     [SerializeField] private int upgradeCost = 50;
 
+    [Header("Feedback")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip damageSound;
+    [SerializeField] private AudioClip gameOverSound;
+
     public int BuildCost => buildCost;
     public int UpgrageCost => upgradeCost;
     public int Money => money;
@@ -196,9 +201,13 @@ public class playerResources : MonoBehaviour, ITypingHandler
         lives -= amount;
         UpdateUI();
         Debug.Log($"[Resources] Ouch! Took {amount} damage. Lives left: {lives}");
-
+        if (audioSource is not null && damageSound is not null)
+        {
+            audioSource.PlayOneShot(damageSound); // play sound
+        }
         if (lives <= 0)
         {
+
             GameOver();
         }
     }
@@ -215,9 +224,11 @@ public class playerResources : MonoBehaviour, ITypingHandler
             gameOverPanel.SetActive(true);
         }
 
-        Debug.LogError("==========================");
+        if (audioSource is not null && gameOverSound is not null)
+        {
+            audioSource.PlayOneShot(gameOverSound); // play sound
+        }
         Debug.LogError("GAME OVER - YOU DIED");
-        Debug.LogError("==========================");
     }
 
     public void IncreaseUpdateCost(int value)
