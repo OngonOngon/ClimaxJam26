@@ -290,6 +290,7 @@ GameObject:
   - component: {fileID: 105014803}
   - component: {fileID: 105014807}
   - component: {fileID: 105014808}
+  - component: {fileID: 105014809}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -430,6 +431,19 @@ MonoBehaviour:
   sfxSource: {fileID: 822251241}
   sourcesToFade:
   - {fileID: 822251241}
+--- !u!114 &105014809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105014802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f9b336f1727a645bee6b078b0ffbbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSource: {fileID: 822251241}
 --- !u!1 &128268596
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,11 +3107,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822251240}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5f9b336f1727a645bee6b078b0ffbbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxSource: {fileID: 822251241}
 --- !u!1 &833454294
 GameObject:
   m_ObjectHideFlags: 0

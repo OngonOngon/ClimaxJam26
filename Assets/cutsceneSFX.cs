@@ -4,16 +4,15 @@ namespace Dubinci
 {
     public class cutsceneSFX : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-        
-        }
+        [SerializeField] private AudioSource sfxSource;
 
-        // Update is called once per frame
-        void Update()
+        // This function will be visible in the Animation Event dropdown
+        public void PlaySoundEffect(AudioClip clip)
         {
-        
+            if (sfxSource != null && clip != null)
+            {
+                sfxSource.PlayOneShot(clip); // Uses logic similar to sceneTransition
+            }
         }
     }
 }
