@@ -8608,7 +8608,7 @@ GameObject:
   - component: {fileID: 163949070}
   - component: {fileID: 163949072}
   m_Layer: 5
-  m_Name: '[12,7] Empty Cell'
+  m_Name: '[12,7] PlayerBase'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8690,7 +8690,7 @@ MonoBehaviour:
   valueTXT: {fileID: 837920259}
   modifPanel: {fileID: 538941280}
   modifTXT: {fileID: 2080468271}
-  value: {fileID: 11400000, guid: e9dd55a497acdcc469c6da25cd146011, type: 2}
+  value: {fileID: 11400000, guid: ef1e66c30c3b34df4bf27462079426d8, type: 2}
   selectIMG: {fileID: 572713506}
   mainImage: {fileID: 163949070}
   selectedCol: {r: 0.90588236, g: 0.7137255, b: 0.101960786, a: 1}
@@ -47480,7 +47480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: $
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
   m_sharedMaterial: {fileID: 9147963076542105445, guid: 4bc7b10bbf1a24f63a01104d0aded90a, type: 2}
@@ -69917,7 +69917,7 @@ Transform:
   m_GameObject: {fileID: 1271352802}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -275.1, y: 60, z: -4050}
+  m_LocalPosition: {x: 65.8, y: 70.2, z: -4050}
   m_LocalScale: {x: 12.60495, y: 12.60495, z: 12.60495}
   m_ConstrainProportionsScale: 0
   m_Children: []
