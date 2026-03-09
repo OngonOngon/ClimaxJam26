@@ -5429,17 +5429,17 @@ PrefabInstance:
         they cannot handle our burdens
 
         who
-        they think they are
+        do they think they are
 
         how disrespectful it is
 
-        to ignore our
-        rich heritage
+        to ignore
+        our rich heritage
 
         and the strength we have caried
 
-        through the
-        ages
+        through
+        the ages
 
         digitalization wont lead to anything good'
       objectReference: {fileID: 0}
@@ -54473,6 +54473,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2127362653}
     m_Modifications:
+    - target: {fileID: 1349221984907703939, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349221984907703939, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349221984907703939, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349221984907703939, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4394486060318021350, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -54560,6 +54576,22 @@ PrefabInstance:
     - target: {fileID: 5657176371205783327, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520703254156533671, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520703254156533671, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520703254156533671, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520703254156533671, guid: 0a19dcbea82d045cead96c3a8e6f1c8a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84259,6 +84291,38 @@ PrefabInstance:
     - target: {fileID: 2620549353580479178, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421270214154673784, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421270214154673784, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421270214154673784, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421270214154673784, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582510769660561369, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582510769660561369, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582510769660561369, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582510769660561369, guid: ffa421ebeb94a4c2684b4173460471ab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
