@@ -36,6 +36,7 @@ namespace Dubinci
 
         private Grid grid;
         private Vector2Int selectedCell;
+        private playerResources playerRes;
 
         private float Timer;
         [SerializeField] private float TickInterval;
@@ -138,7 +139,8 @@ namespace Dubinci
             if (baseHitPrefab == null)
                 return;
             var ps = Instantiate(baseHitPrefab, GetCell(pos).transform.position, Quaternion.identity, null);
-            Destroy(ps.gameObject, ps.totalTime);
+            var main = ps.main;
+            Destroy(ps.gameObject, main.duration);
         }
 
         private void GridOnTowerHit(Vector2Int pos, int val)
@@ -146,7 +148,8 @@ namespace Dubinci
             if (towerHitPrefab == null)
                 return;
             var ps = Instantiate(towerHitPrefab, GetCell(pos).transform.position, Quaternion.identity, null);
-            Destroy(ps.gameObject, ps.totalTime);
+            var main = ps.main;
+            Destroy(ps.gameObject, main.duration);
         }
 
         private void GridOnMove(Vector2Int from, Vector2Int to, int val)
@@ -222,6 +225,7 @@ namespace Dubinci
 
         private void Start()
         {
+            playerRes = FindFirstObjectByType<playerResources>();
             foreach (var cell in cells)
                 cell.PreUpdateViz();
             foreach (var cell in cells)
@@ -251,7 +255,7 @@ namespace Dubinci
         private void Update()
         {
             // Stop logic if the level is already cleared
-            if (isGameWon) return;
+            if (isGameWon || playerRes.IsGameOver) return;
 
             Timer += Time.deltaTime;
             bool showLHint = selectedCell.x > gridSize.x / 2;
@@ -358,7 +362,6 @@ namespace Dubinci
         {
             GetCell(selectedCell).DeselectCell();
             selectedCell.y = (selectedCell.y + 1 + gridSize.y) % gridSize.y;
-            Debug.Log(selectedCell);
 
             // we skip void cell
             if (grid.GetCell(selectedCell).Content is VoidEntity ve)
@@ -377,7 +380,6 @@ namespace Dubinci
         {
             GetCell(selectedCell).DeselectCell();
             selectedCell.y = (selectedCell.y - 1 + gridSize.y) % gridSize.y;
-            Debug.Log(selectedCell);
 
             // we skip void cell
             if (grid.GetCell(selectedCell).Content is VoidEntity ve)
@@ -397,7 +399,6 @@ namespace Dubinci
             GetCell(selectedCell).DeselectCell();
 
             selectedCell.x = (selectedCell.x - 1 + gridSize.x) % gridSize.x;
-            Debug.Log(selectedCell);
 
             // we skip void cell
             if (grid.GetCell(selectedCell).Content is VoidEntity ve)
@@ -416,7 +417,6 @@ namespace Dubinci
         {
             GetCell(selectedCell).DeselectCell();
             selectedCell.x = (selectedCell.x + 1 + gridSize.x) % gridSize.x;
-            Debug.Log(selectedCell);
 
             // we skip void cell
             if (grid.GetCell(selectedCell).Content is VoidEntity ve)

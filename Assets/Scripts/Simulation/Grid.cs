@@ -120,13 +120,9 @@ namespace Dubinci
                     }
                     else if (content is NumberEntity ne)
                     {
-                        // if nubmer too big call GameOver from player resources
+                        // if nubmer too big clamp it
                         if (ne.Value > 10000)
-                        {
-                            playerResources resources = Object.FindAnyObjectByType<playerResources>();
-                            resources.GameOver();
-                            return;
-                        }
+                            ne.Value = 10000;
                     }
                     else
                     {
@@ -272,9 +268,8 @@ namespace Dubinci
                                         }
                                         break;
                                     case PlayerBase playerBase: // player base cell
-                                        for (int v = 0; v < vals[i]; v++)
-                                            playerBase.DamageBase();
-                                        OnTowerHit?.Invoke(targetPos, vals[i]);
+                                        playerBase.DamageBase();
+                                        OnBaseHit?.Invoke(targetPos, vals[i]);
                                         Debug.Log("Base got damaged!");
                                         break;
                                 }

@@ -38,6 +38,7 @@ public class playerResources : MonoBehaviour, ITypingHandler
     public int BuildCost => buildCost;
     public int UpgrageCost => upgradeCost;
     public int Money => money;
+    public bool IsGameOver => _isGameOver;
 
     private bool _isGameOver = false;
 
