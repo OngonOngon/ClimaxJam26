@@ -2677,7 +2677,12 @@ PrefabInstance:
         towers
         have limited range
 
-        shoot towers by typing fire'
+        shoot towers by typing fire
+
+        dont let
+        numbers destroy our books
+
+        thats it'
       objectReference: {fileID: 0}
     - target: {fileID: 3671718204274170471, guid: ca29c691dfabe2048ae3056be54b4d8f, type: 3}
       propertyPath: availableTexts
@@ -13948,6 +13953,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3309589575557539459, guid: 23792756a4e4a5548b8d264d880adf84, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 49d6abf784fbef8469ecde526883eed1, type: 3}
     - target: {fileID: 4383670054065240045, guid: 23792756a4e4a5548b8d264d880adf84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 375.1238
