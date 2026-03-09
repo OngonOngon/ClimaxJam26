@@ -158,7 +158,23 @@ namespace Dubinci
                 .SetEase(Ease.InOutQuad)
                 .OnComplete(() =>
                 {
-                    Instantiate(burstPrefab, GetCell(to).transform.position, Quaternion.identity, null);
+                    var ps2 = Instantiate(burstPrefab, GetCell(to).transform.position, Quaternion.identity, null);
+                    var main = ps2.main;
+                    var limitVelocity = ps2.limitVelocityOverLifetime;
+                    var emission = ps2.emission;
+
+                    float fixedLifetime = main.startLifetime.constant;
+                    float calculatedSpeed = aoe / fixedLifetime;
+                    float dragForce = limitVelocity.dampen;
+                    main.startSpeed = calculatedSpeed / (1f - dragForce);
+
+                    ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[emission.burstCount];
+                    emission.GetBursts(bursts);
+                    bursts[0].minCount = (short)(bursts[0].minCount * damage * aoe);
+                    bursts[0].maxCount = (short)(bursts[0].maxCount * damage * aoe);
+                    emission.SetBursts(bursts);
+
+                    ps2.Play();
                     ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
                     Destroy(ps.gameObject, 3.0f);
                 });
