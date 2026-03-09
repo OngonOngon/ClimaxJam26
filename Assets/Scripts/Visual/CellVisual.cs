@@ -23,7 +23,6 @@ namespace Dubinci
 
         [SerializeField] private TMP_FontAsset numberSDF;
         [SerializeField] private TMP_FontAsset letterSDF;
-        [SerializeField] private Color numberColor;
         [SerializeField] private Color letterColor;
 
         [SerializeField, HideInInspector] private Vector2Int pos;
@@ -107,10 +106,10 @@ namespace Dubinci
             {
                 overlay.gameObject.SetActive(false);
             }
-            else if (cell.Content is Dubinci.NumberEntity)
+            else if (cell.Content is Dubinci.NumberEntity num)
             {
                 valueTXT.font = numberSDF;
-                valueTXT.color = numberColor;
+                valueTXT.color = grid.GetNumberColor(num.Value);
                 overlay.color = numberOverlayColor;
                 overlay.gameObject.SetActive(true);
             }

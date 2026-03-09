@@ -24,9 +24,11 @@ namespace Dubinci
         [Header("Particles")]
         [SerializeField] private ParticleSystem shotPrefab;
         [SerializeField] private ParticleSystem burstPrefab;
-        [SerializeField] private GameObject movePrefab;
+        [SerializeField] private SpriteRenderer movePrefab;
         [SerializeField] private float shotDuration;
         [SerializeField] private float moveDuration;
+        [SerializeField] private Gradient numberColors;
+        [SerializeField] private int maxNumberToColor = 100;
 
         [SerializeField, HideInInspector] private List<CellVisual> cells = new List<CellVisual>();
 
@@ -133,6 +135,7 @@ namespace Dubinci
                 return;
 
             var ps = Instantiate(movePrefab);
+            ps.color = GetNumberColor(val);
             ps.transform.position = GetCell(from).transform.position;
 
             ps.transform.DOMove(GetCell(to).transform.position, moveDuration * Random.Range(0.75f, 1.25f))
@@ -417,6 +420,14 @@ namespace Dubinci
                     GetCell(new Vector2Int(x, y)).InTowerRange();
                 }
             }
+        }
+
+        public Color GetNumberColor(int val)
+        {
+            if (val > maxNumberToColor)
+                val = maxNumberToColor;
+            float t = val / (float)maxNumberToColor;
+            return numberColors.Evaluate(t);
         }
     }
 }

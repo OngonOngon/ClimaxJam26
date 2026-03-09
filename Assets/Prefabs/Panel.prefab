@@ -132,9 +132,40 @@ MonoBehaviour:
   winPanel: {fileID: 0}
   shotPrefab: {fileID: 1157520195594212084, guid: 09ba0b39c21f31f4fa9b35b8e356e6de, type: 3}
   burstPrefab: {fileID: 5892587414113811264, guid: 11e05c5e503556f4cb6c0fc6c7eb630c, type: 3}
-  movePrefab: {fileID: 2604369969366683017, guid: 9b691583fdb71544585f802cfff72107, type: 3}
+  movePrefab: {fileID: 1436726449708885866, guid: 9b691583fdb71544585f802cfff72107, type: 3}
   shotDuration: 0.1
   moveDuration: 0.2
+  numberColors:
+    serializedVersion: 2
+    key0: {r: 0.64358854, g: 0.39811313, b: 1, a: 1}
+    key1: {r: 0.42830187, g: 0.43951175, b: 1, a: 1}
+    key2: {r: 0, g: 1, b: 0.86046505, a: 0}
+    key3: {r: 0.17056611, g: 1, b: 0.111320674, a: 0}
+    key4: {r: 1, g: 0.691663, b: 0, a: 0}
+    key5: {r: 1, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 2621
+    ctime2: 10486
+    ctime3: 20971
+    ctime4: 41942
+    ctime5: 65535
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 6
+    m_NumAlphaKeys: 2
+  maxNumberToColor: 100
   cells:
   - {fileID: 0}
   - {fileID: 0}
