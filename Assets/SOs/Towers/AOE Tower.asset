@@ -16,15 +16,15 @@ MonoBehaviour:
   HP: 5
   CanBeUsed: 0
   type: 0
-  Damage: 2
+  Damage: 1
   Range: 2
   AOE: 1
   Upgrades:
-    DamageAmount: 1
+    DamageAmount: 0
     DamageThreshold: 10
     RangeAmount: 0
-    RangeThreshold: 10
+    RangeThreshold: 11
     HPAmount: 5
     HPThreshold: 2
     AOEAmount: 1
-    AOEThreshold: 3
+    AOEThreshold: 10

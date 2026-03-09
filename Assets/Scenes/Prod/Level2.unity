@@ -35366,7 +35366,7 @@ MonoBehaviour:
   - {fileID: 1650093412}
   - {fileID: 64242990}
   - {fileID: 436642114}
-  TickInterval: 4
+  TickInterval: 3
 --- !u!114 &1142038525
 MonoBehaviour:
   m_ObjectHideFlags: 0

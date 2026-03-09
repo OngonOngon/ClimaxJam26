@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Prod/Level4.unity
     guid: d7e8c2c9836f1b34a8ff80b479d41bcb
   - enabled: 1
-    path: Assets/Scenes/Prod/Level5.unity
+    path: Assets/Scenes/Prod/Level6.unity
     guid: 2182d0800296c3844ae49e165f2884f0
   - enabled: 1
     path: Assets/Scenes/Prod/Epilogue.unity
